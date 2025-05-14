@@ -1,10 +1,22 @@
+"""
+
+This module is responsible for rewriting the question to allow the system to use the historical conversations.
+
+On doing so, the system resumes the conversation context and the last question asked to find out the user's intent.
+
+"""
+
+
 from langchain_core.prompts import ChatPromptTemplate 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage 
 from backend.modules.utils.schemas import AgentState
 from backend.modules.utils.llm import ChatLLM
-
+from backend.modules.utils.templates import QUESTION_REWRITER_TEMPLATE
 
 def question_rewriter(state: AgentState) -> AgentState:
+    """
+    This function is responsible for rewriting the question to allow the system to use the historical conversations.
+    """
     print(f"Entering question_rrewriter with following state: {state}")
 
 
@@ -27,7 +39,7 @@ def question_rewriter(state: AgentState) -> AgentState:
         current_question = state['question'].content 
         messages = [
             SystemMessage(
-                content='Você é um assistente que reescreve questões do usuário para ser uma única questão otimizada para o Retrieval do RAG'
+                content=QUESTION_REWRITER_TEMPLATE
                 )
         ]
 
@@ -42,7 +54,7 @@ def question_rewriter(state: AgentState) -> AgentState:
         
         print(f"question_rewriter: Rephrased question: {better_question}")
         state['rephrased_question'] = better_question
-        state['agent_think'] = f"Estou eescrevendo a questão para otimizar a busca. Questão reescrita: {better_question}"
+        state['agent_think'] = f"Estou reescrevendo a questão para otimizar a busca. Questão reescrita: {better_question}"
     else:
         state['rephrased_question'] = state['question'].content 
         state['agent_think'] = f"Não verifiquei necessidade de reescrever a questão."

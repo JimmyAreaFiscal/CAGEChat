@@ -15,14 +15,14 @@ def generate_answer(state: AgentState):
     if 'messages' not in state or state['messages'] is None:
         raise ValueError("messages not found in state")
     history = state['messages']
-    documents = state['documents']
+    qa_context = state['qa_context']
     rephrased_question = state['rephrased_question']
 
     llm = ChatLLM
     prompt = ChatPromptTemplate.from_template(GENERATOR_PROMPT_TEMPLATE)
     rag_chain = prompt | llm 
     response = rag_chain.invoke(
-        {'chat_history': history, "context": documents, "question": rephrased_question}
+        {'chat_history': history, "context": qa_context, "question": rephrased_question}
     )
     generation = response.content.strip() 
 

@@ -1,3 +1,16 @@
+"""
+
+This module is responsible for the configuration of the backend.
+
+It uses the pydantic_settings library to load the environment variables.
+
+This is an idea extracted from Cognita's code, which relies on an python class to hold all the configuration.
+
+Cognita github repo: https://github.com/truefoundry/cognita
+
+"""
+
+
 import os
 from typing import Any, Dict
 
@@ -15,6 +28,7 @@ class Settings(BaseSettings):
     # model_config = ConfigDict(extra="allow")
 
     CHAT_MODEL_CONFIG : Dict[str, Any] = Field(default_factory=lambda: {"type": "openai", 'kwargs': {"model": "gpt-4o-mini", "temperature": 0, }})
+
     EMBEDDING_MODEL_CONFIG : Dict[str, Any] = Field(default_factory=lambda: {"type": "openai", 'kwargs': {"model": "text-embedding-3-small"}})
 
     VECTOR_STORE_TYPE : str = "chroma"

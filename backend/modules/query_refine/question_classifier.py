@@ -1,5 +1,12 @@
-import os
-import yaml
+"""
+
+This module is responsible for verifying if the question can be answered by the CAGEChat system or not. 
+
+General questions are not answered by the CAGEChat system, because they are not related to the CAGE-RS. This is an attempt to avoid misleading uses of the system and efficiency (due to not using tokens and LLM calls to return 'cannot_answer' messages).
+
+For example, the question "Como posso me tornar um melhor atleta?" is not related to the CAGE-RS, so it is not answered by the CAGEChat system. 
+
+"""
 from langchain_core.prompts import ChatPromptTemplate 
 from langchain_core.messages import SystemMessage, HumanMessage
 from backend.modules.utils.schemas import AgentState, GradeQuestion
