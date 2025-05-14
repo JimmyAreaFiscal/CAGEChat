@@ -30,7 +30,9 @@ The 'chat_graph' is the graph responsible for generating the response for questi
 
 <br><br>
 
-<center><img src="docs/chat_graph_image.svg" alt="Chat Graph Architecture" width="600"/></center>
+<p align='center'>
+    <img src="docs/chat_graph_image.svg" alt="Chat Graph Architecture" width="600"/>
+</p>
 
 <br><br>
 The nodes used are:
@@ -60,8 +62,11 @@ The nodes used are:
 Inside the main graph, I've created a subgraph specialized on RAG retrieval. This is intended to make RAG a component, which could be used in parallel or be modified without changing the main graph.
 
 Also, there are oportunities to improve the system by making different retrieval subgraph configurations based on the query, vector store or other characteristics. 
+
 <br><br>
-<center><img src="docs/rag_subgraph_image.svg" alt="Retrieval Subgraph Architecture" width="600"/></center>
+<p align='center'>
+    <img src="docs/rag_subgraph_image.svg" alt="Retrieval Subgraph Architecture" width="600"/>
+</p>
 
 <br><br>
 Then, this subgraph is a component made of the following nodes:
@@ -83,7 +88,9 @@ Then, this subgraph is a component made of the following nodes:
 The 'upload_graph' is a LangGraph Graph responsible for indexing and saving documents in the VectorStore. It is a secundary, but extreme important, graph for the CAGEChat system. 
 
 
-<center><img src="docs/upload_graph_image.svg" alt="Upload Graph Architecture" width="200"/></center>
+<p align='center'>
+    <img src="docs/upload_graph_image.svg" alt="Upload Graph Architecture" width="200"/>
+</p>
 
 <br><br>
 Nowadays, it is still basic, using the LangGraph framework in order to embedding and indexing tasks. 
