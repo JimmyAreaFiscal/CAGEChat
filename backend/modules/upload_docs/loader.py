@@ -9,8 +9,9 @@ from docling.document_converter import DocumentConverter
 from typing import List
 from langchain.schema import Document
 from langchain_text_splitters import MarkdownHeaderTextSplitter
+import logging
 
-
+logging.basicConfig(level=logging.INFO)
 
 ALLOWED_DOCUMENT_TYPES = ['manuais', 'leis', 'jurisprudencia']
 
@@ -50,7 +51,7 @@ class CustomLoader:
             ]
 
     def load(self) -> List[Document]:
-        print(f"Start loading the document: {self.file_path.split('.')[-2]}")
+        logging.info(f"Start loading the document: {self.file_path.split('.')[-2]}")
         converter = DocumentConverter()
         markdown_document = converter.convert(self.file_path).document.export_to_markdown()
         markdown_splitter = MarkdownHeaderTextSplitter(self.headers_to_split_on)

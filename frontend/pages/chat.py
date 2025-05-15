@@ -6,7 +6,9 @@ from typing import Dict, Iterator, List, Tuple, Set
 
 import streamlit as st
 from frontend.components.connection import get_chat_stream
+import sys, os 
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 # ------------------ GLOBAL STYLES ------------------ #
 st.markdown(
     """

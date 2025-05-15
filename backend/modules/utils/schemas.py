@@ -1,9 +1,9 @@
-from typing import TypedDict, List, Dict, Annotated, Literal, Any
+from typing import TypedDict, List, Dict, Annotated, Literal, Any, Union
 from pydantic import BaseModel, Field
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage
 from langchain_core.documents import Document
+from typing import Optional
 
-State = None
 
 
 class AgentState(TypedDict):
@@ -19,10 +19,7 @@ class AgentState(TypedDict):
     rephrased_question: str 
     proceed_to_generate: bool 
 
-
-    
-    
-    
+    tags: Optional[Dict[str, Any]] = {}
 
 
 class RetrievalState(TypedDict):
@@ -37,6 +34,7 @@ class RetrievalState(TypedDict):
     agent_think: str
     proceed_to_generate: bool
     rephrase_count: int
+    tags: Optional[Dict[str, Any]] = {}
 
 
 
@@ -53,3 +51,15 @@ class InputDocument(BaseModel):
 
 class DecomposedQuestion(BaseModel):
     subquestions: List[str] = Field(description="Lista com as subquestões independentes.")
+
+
+
+def _avoid_spam(state: Union[RetrievalState, AgentState]) -> Union[RetrievalState, AgentState]:
+    """
+    This internal function is responsible for avoiding spam.
+    """
+    if not state.get('tags', {}):
+        state['tags'] = {'avoid_spam': True}
+    else:
+        state['tags'].update({'avoid_spam': True})
+    return state

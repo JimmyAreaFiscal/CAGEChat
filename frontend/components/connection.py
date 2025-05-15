@@ -2,7 +2,9 @@ from typing import List, Iterator, Dict
 import requests 
 import json
 
+import sys, os 
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 CHAT_STREAM_URL = "http://127.0.0.1:8000/chat_stream"
 
 def get_chat_stream(

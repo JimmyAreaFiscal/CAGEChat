@@ -1,4 +1,10 @@
-GENERATOR_PROMPT_TEMPLATE = """ Responda a questão baseado no contexto e no histórico da conversa. Leve em consideração especialmente a última questão. 
+GENERATOR_PROMPT_TEMPLATE = """ 
+Responda a questão baseado no contexto e no histórico da conversa. Leve em consideração especialmente a última questão. Ao responder, não se esqueça de fornecer a fonte da resposta, conforme o padrão abaixo, conforme tipo de documento (informado em #)
+
+Padrão de fonte: 
+ [Fonte: "<nome_documento>" - tipo de documento: "<tipo_documento>" - página: "<pagina>"] # documentos em geral
+ [Fonte: "<nome_documento>" - tipo de documento: "<tipo_documento>" - título: "<título>"] # manuais
+ [Fonte: "<nome_documento>" - tipo de documento: "<tipo_documento>" - artigo: "<artigo>"] # leis
 
 Histórico: {chat_history}
 

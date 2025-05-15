@@ -20,7 +20,7 @@ memory = MemorySaver()
 
 # Building the graphs
 chat_workflow = chat_workflow_builder()
-chat_graph = chat_workflow.compile(checkpointer=memory)
+chat_graph = chat_workflow.compile(checkpointer=memory, )
 
 retrieval_workflow = retrieval_workflow_builder()
 retrieval_graph = retrieval_workflow.compile()

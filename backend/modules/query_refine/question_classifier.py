@@ -12,9 +12,12 @@ from langchain_core.messages import SystemMessage, HumanMessage
 from backend.modules.utils.schemas import AgentState, GradeQuestion
 from backend.modules.utils.llm import ChatLLM
 from backend.modules.utils.templates import QUESTION_CLASSIFIER_TEMPLATE
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 def question_classifier(state: AgentState) -> AgentState:
-    print("Entering question_classifier")
+    logging.info("Entering question_classifier")
     system_message = SystemMessage(
         content=QUESTION_CLASSIFIER_TEMPLATE 
     )
@@ -33,6 +36,6 @@ def question_classifier(state: AgentState) -> AgentState:
     result = grader_llm.invoke({})
     state['on_topic'] = result.score.strip()
     state['agent_think']= f"A questão é adequada para o contexto? {state['on_topic']}"
-    print(f"question_classifier: on topic = {state['on_topic']}")
+    logging.info(f"question_classifier: on topic = {state['on_topic']}")
 
     return state 

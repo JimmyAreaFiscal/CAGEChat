@@ -33,6 +33,10 @@ def question_decomposition(state: AgentState) -> List[str]:
     result = llm.invoke({"question": question})
     
     state['subquestions'] = result.subquestions
+    state['agent_think'] = "Avaliando a pergunta do usuário, pensei em dividi-la nas seguintes subperguntas para melhorar a qualidade do contexto que eu vou buscar:\n"
+
+    for i, subquestion in enumerate(state['subquestions']):
+        state['agent_think'] += f"{i+1}) {subquestion}\n"
     return state
 
 
@@ -46,7 +50,7 @@ async def subquestion_qa_retrieval(state: AgentState) -> AgentState:
 
     subquestions = state['subquestions']
     qa_context = [
-        retrieval_graph.ainvoke({"original_question": q})
+        retrieval_graph.ainvoke({"original_question": q},)
         for q in subquestions
     ]
     completed = await asyncio.gather(*qa_context)
@@ -55,7 +59,7 @@ async def subquestion_qa_retrieval(state: AgentState) -> AgentState:
         if qa.get('answer', None):
            final_qa_context.append(qa['answer']) 
     state['qa_context'] = final_qa_context
-
+    state['agent_think'] = "Respondi as perguntas que eu consegui baseado nos documentos que eu encontrei. Agora, vou repassar para o próximo node responder a pergunta principal."
     return state
 
 

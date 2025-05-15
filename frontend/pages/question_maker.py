@@ -5,7 +5,9 @@ from uuid import uuid4
 from typing import Dict, Iterator, List
 
 import streamlit as st
+import sys, os 
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 # ------------------ GLOBAL STYLES ------------------ #
 st.markdown(
     """

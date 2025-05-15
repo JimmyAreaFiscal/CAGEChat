@@ -44,6 +44,7 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
             {"question": HumanMessage(content=message)},
             version='v2',
             config=config,
+
         )
     
     final_agent = None 
@@ -53,7 +54,13 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
         
         name_agent = event['name']
 
-        
+        output = event['data'].get('output', {})
+        if output and isinstance(output, dict):
+            if output.get('tags', {}).get('avoid_spam', False):
+                continue
+
+        if output and name_agent == 'LangGraph':
+            continue
         
         if not final_agent and event_type == 'on_chain_start':  
             # Only streams tokens when it is the final node. Otherwise, return agent_thinking

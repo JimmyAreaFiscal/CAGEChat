@@ -19,6 +19,8 @@ def retrieval_workflow_builder() -> StateGraph:
     This is an attempt to use this subgraph for more than one time in the main workflow, in order to allow subqueries to be answered before the main question.
     
     """
+
+    
     retrieval_workflow = StateGraph(RetrievalState)
     retrieval_workflow.add_node("retrieve", retrieve)
     retrieval_workflow.add_node("retrieval_grader", retrieval_grader)
