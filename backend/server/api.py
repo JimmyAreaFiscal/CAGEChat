@@ -37,7 +37,8 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
             version='v2',
             config=config,
         )
-        yield f'data:{{"type": "checkpoint", "checkpoint_id": "{new_checkpoint_id}"}} \n\n'
+        payload = {"type": "checkpoint", "checkpoint_id": new_checkpoint_id}
+        yield f"data: {json.dumps(payload)}\n\n"
     else:
         config = {"configurable": {'thread_id': checkpoint_id}}
         events = chat_graph.astream_events(
@@ -72,15 +73,19 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
             name_agent = event['name']
 
             safe_content = msg.replace("'", "\\").replace("\n", "\\n")
-            string_to_yield = f"data: {{\"type\": \"thoughts\", \"agent\": \"{name_agent}\", \"content\": \"{safe_content}\"}} \n\n"
+
+            payload = {"type": "thoughts", "agent": name_agent, "content": safe_content}
+            
 
             if name_agent == 'retrieve':
 
                 docs_metadatas = f"{[doc.metadata for doc in event['data']['output']['documents']]}"
                 docs_metadatas = docs_metadatas.replace("\n", "\\n")
-                string_to_yield = f"data: {{\"type\": \"retrieval_result\", \"agent\": \"{name_agent}\", \"content\": \"{safe_content}\", \"retrieval_result\": \"{docs_metadatas}\"}} \n\n"
 
-            yield string_to_yield
+                payload = {"type": "thoughts", "agent": name_agent, "content": msg, 'retrieval_results': docs_metadatas}
+                
+
+            yield f"data: {json.dumps(payload)}\n\n"
 
         
             
@@ -88,7 +93,9 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
             
             chunk_content = serialise_ai_message_chunk(event['data']['chunk'])
             safe_content = chunk_content.replace("'", "\\").replace("\n", "\\n")
-            yield f"data: {{\"type\": \"final_answer\", \"agent\": \"{final_agent}\", \"content\": \"{safe_content}\"}} \n\n"
+
+            payload = {"type": "final_answer", "agent": name_agent, "content": safe_content}
+            yield f"data: {json.dumps(payload)}\n\n"
 
             
         # if event_type == "on_chat_model_stream":
@@ -171,9 +178,6 @@ def upload_file(file: UploadFile = File(...), metadata: str = Form({'tipo_docume
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
     
-
-
-
 
 @app.get('/get_all_questions_from_user/')
 def get_all_questions_from_user(user_id: str = Query(...)):

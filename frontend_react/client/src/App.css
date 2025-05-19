@@ -1,0 +1,326 @@
+.App {
+  text-align: center;
+  display: flex;
+  background-color: #282c34;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.sidemenu {
+  width: 260px;
+  padding: 10px;
+  background-color: #202123;
+}
+
+.side-menu-button {
+  padding: 12px; 
+  border: 1px solid white;
+  border-radius: 5px;
+  text-align: left;
+  transition: ease 0.25s all;
+}
+
+.side-menu-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.side-menu-button span {
+  padding-left: 6px;
+  padding-right: 12px;
+}
+
+.chatbox {
+  flex: 1;
+  background-color: #343541;
+  position: relative;
+}
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.chat-input-holder {
+  padding: 24px;
+  position: absolute;
+  bottom:0;
+  left:0; right:0;
+
+}
+
+.chat-input-textarea {
+  background-color: #40414f;
+  width: 90%;
+  border-radius: 5px; 
+  padding: 12px;
+  color: white;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  font-size: 1.10em;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+.chat-log {
+  text-align: left;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-left: 8rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.message-title {
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.chat-message.gpt {
+  background-color: #444654;
+  
+}
+
+
+.chat-message-center {
+  margin-right: auto;
+  width: auto;
+  max-width: 1200px;
+  padding: 12px;
+  padding-left: 140px;
+  padding-right: 24px;
+  gap: 0.75rem;
+  display: flex;
+  margin-left: 2rem;
+  
+}
+
+.avatar {
+  background: white;
+  border-radius: 50%;
+  margin-right: 1rem;
+  flex: 0 0 auto !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-image: url('./assets/CAGEChat.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+ 
+}
+
+.avatar.user {
+  background: #a00202;
+  background-image: url('./assets/User.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+
+  
+}
+
+.avatar.gpt {
+  background: #0da37f;
+  margin-right: 1rem;
+  background-image: url('./assets/CAGEChat.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+}
+
+.avatar.question-rewriter {
+  background: #e02f08;
+  background-image: url('./assets/CAGEChat.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+}
+
+.avatar.question-classifier {
+  background: #0220e1;
+  background-image: url('./assets/CAGEChat.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+}
+
+.avatar.question-decomposition {
+  background: #c7d80b;
+  background-image: url('./assets/CAGEChat.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+}
+
+.avatar.subquestion-qa-retrieval {
+  background: #5003d4;
+  background-image: url('./assets/CAGEChat.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+}
+
+
+
+
+.message { 
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: none !important;
+  width: auto !important;            /* por exemplo, no máximo 70% da largura do container */
+  word-wrap: break-word;     /* quebra linhas longas */
+  padding: 0.5rem 0.75rem;   /* um pouco de “acolchoamento” interno */
+  border-radius: 0.5rem;
+  word-wrap: normal !important;    /* não força quebra ao meio da palavra */
+  word-break: normal !important;   /* volta ao comportamento padrão */
+  white-space: pre-line;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* Pop-up 3D */
+.modal-3d {
+  background: #343541;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  max-width: 1200px;
+  width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  transform: perspective(800px) translateZ(0) translateY(-10px);
+  transition: transform 0.2s ease-out;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 100;
+}
+.modal-close {
+  position: absolute;
+  top: 0.5rem; right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* Inline “+” ao lado da resposta */
+.message-wrapper {
+  display: flex;
+  align-items: center;
+}
+.thoughts-button-inline {
+  margin-left: 0.5rem;
+  background-color: #0da37f;
+  border: none;
+  color: white;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.thoughts-button-inline:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.chat-message-center.thoughts{
+  margin-left: auto;
+  margin-right: auto;
+  width: auto !important;
+  max-width: none !important;
+  padding: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  gap: 0.75rem;
+
+}
+
+.message.thoughts { 
+  display: flex;
+  flex: 1;               /* cresce para preencher o container */
+  width: auto;           /* garante que não volte ao max-width antigo */
+  max-width: none;
+  padding-left: 40px;
+  padding-right: 40px;
+  word-wrap: break-word;
+  border-radius: 0.5rem;
+  /* faça justificado */
+  text-align: justify;
+  word-wrap: normal !important;    /* não força quebra ao meio da palavra */
+  word-break: normal !important;   /* volta ao comportamento padrão */
+  white-space: pre-line;
+}
+
+/* Pensamentos temporários */
+.chat-message-thought {
+  background-color: #5a5c65;
+}
+.chat-message.thought .avatar {
+  margin-right: 1rem;
+}
+
+
+.chat-message-temporary {
+  opacity: 0.7;
+}
+
+/* Botão “+” inline ao lado da mensagem final_answer */
+.thoughts-button-inline {
+  position: relative;
+  z-index: 100; /* acima da conversa */
+}
