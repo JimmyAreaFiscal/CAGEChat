@@ -10,8 +10,8 @@ load_dotenv()
 
 
 from langgraph.checkpoint.memory import MemorySaver
-from backend.modules.graphs.subgraph_builder import retrieval_workflow_builder
-from backend.modules.graphs.graph_builder import chat_workflow_builder, upload_documents_workflow_builder
+from modules.graphs.subgraph_builder import retrieval_workflow_builder
+from modules.graphs.graph_builder import chat_workflow_builder, upload_documents_workflow_builder
 
 memory = MemorySaver()
 

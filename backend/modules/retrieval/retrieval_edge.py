@@ -1,6 +1,6 @@
 import logging
 
-from backend.modules.utils.schemas import RetrievalState
+from modules.utils.schemas import RetrievalState
 
 logging.basicConfig(level=logging.INFO)
 

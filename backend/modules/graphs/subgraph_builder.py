@@ -5,9 +5,9 @@ This module is responsible for coding the builders for subgraphs
 """
 
 from langgraph.graph import StateGraph, END 
-from backend.modules.utils.schemas import RetrievalState
-from backend.modules.retrieval.retrieval_node import retrieval_grader, retrieve, refine_question, generate_retrieval_answer, cannot_answer_retrieval_task
-from backend.modules.retrieval.retrieval_edge import proceed_retrieval_router
+from modules.utils.schemas import RetrievalState
+from modules.retrieval.retrieval_node import retrieval_grader, retrieve, refine_question, generate_retrieval_answer, cannot_answer_retrieval_task
+from modules.retrieval.retrieval_edge import proceed_retrieval_router
 
 # Subgraph for Retrieval
 def retrieval_workflow_builder() -> StateGraph:

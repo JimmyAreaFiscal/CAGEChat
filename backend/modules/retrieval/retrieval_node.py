@@ -8,14 +8,14 @@ Then, the retrieval node is imported from the other modules.
 
 """
 
-from backend.modules.retrieval.retriever import retriever
-from backend.modules.utils.schemas import RetrievalState
+from modules.retrieval.retriever import retriever
+from modules.utils.schemas import RetrievalState
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate
-from backend.modules.utils.llm import ChatLLM 
-from backend.modules.utils.schemas import GradeDocument
-from backend.modules.utils.templates import GENERATOR_RETRIEVAL_ANSWER_PROMPT_TEMPLATE
-from backend.modules.utils.schemas import _avoid_spam
+from modules.utils.llm import ChatLLM 
+from modules.utils.schemas import GradeDocument
+from modules.utils.templates import GENERATOR_RETRIEVAL_ANSWER_PROMPT_TEMPLATE
+from modules.utils.schemas import _avoid_spam
 
 logging.basicConfig(level=logging.INFO)
 

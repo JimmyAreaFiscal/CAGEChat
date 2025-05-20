@@ -2,9 +2,9 @@ import os
 import yaml
 from langchain_core.prompts import ChatPromptTemplate 
 from langchain_core.messages import AIMessage 
-from backend.modules.utils.schemas import AgentState
-from backend.modules.utils.llm import ChatLLM
-from backend.modules.utils.templates import GENERATOR_PROMPT_TEMPLATE
+from modules.utils.schemas import AgentState
+from modules.utils.llm import ChatLLM
+from modules.utils.templates import GENERATOR_PROMPT_TEMPLATE
 import logging
 
 logging.basicConfig(level=logging.INFO)

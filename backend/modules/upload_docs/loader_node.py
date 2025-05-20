@@ -6,9 +6,9 @@ It uses the CustomLoader class to load the documents, and the vector_store modul
 
 """
 
-from backend.modules.upload_docs.loader import CustomLoader
-from backend.modules.vector_store.vector_store import vectordb
-from backend.modules.utils.schemas import InputDocument
+from modules.upload_docs.loader import CustomLoader
+from modules.vector_store.vector_store import vectordb
+from modules.utils.schemas import InputDocument
 import logging
 
 logging.basicConfig(level=logging.INFO)

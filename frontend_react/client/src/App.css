@@ -140,11 +140,7 @@
   flex: 0 0 auto !important;
   width: 40px !important;
   height: 40px !important;
-  background-image: url('./assets/CAGEChat.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #f0f0f0;
+  
 }
 
 .avatar.user {
@@ -161,47 +157,12 @@
 .avatar.gpt {
   background: #0da37f;
   margin-right: 1rem;
-  background-image: url('./assets/CAGEChat.png');
+  background-image: url('./assets/CAGEChat_Icon.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-color: #f0f0f0;
-}
 
-.avatar.question-rewriter {
-  background: #e02f08;
-  background-image: url('./assets/CAGEChat.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #f0f0f0;
-}
-
-.avatar.question-classifier {
-  background: #0220e1;
-  background-image: url('./assets/CAGEChat.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #f0f0f0;
-}
-
-.avatar.question-decomposition {
-  background: #c7d80b;
-  background-image: url('./assets/CAGEChat.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #f0f0f0;
-}
-
-.avatar.subquestion-qa-retrieval {
-  background: #5003d4;
-  background-image: url('./assets/CAGEChat.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #f0f0f0;
 }
 
 .message { 

@@ -6,10 +6,10 @@ Then, the vector store is imported from the other modules.
 
 """
 
-from backend.modules.utils.llm import EmbeddingLLM
+from modules.utils.llm import EmbeddingLLM
 from langchain_community.vectorstores import Chroma, FAISS, Milvus
 from dotenv import load_dotenv
-from backend.config import settings
+from config import settings
 
 
 load_dotenv()

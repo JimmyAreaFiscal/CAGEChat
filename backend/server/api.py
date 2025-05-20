@@ -6,9 +6,9 @@ import tempfile
 import os
 import json
 from langchain_core.messages import HumanMessage, AIMessageChunk
-from backend.modules.graphs.graph import chat_graph, upload_graph
-from backend.config import settings
-from backend.modules.database.database import QaADatabase
+from modules.graphs.graph import chat_graph, upload_graph
+from config import settings
+from modules.database.database import QaADatabase
 
 
 FINAL_NODES = settings.FINAL_NODES
