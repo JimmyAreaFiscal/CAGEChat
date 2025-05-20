@@ -9,9 +9,9 @@ On doing so, the system resumes the conversation context and the last question a
 
 from langchain_core.prompts import ChatPromptTemplate 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage 
-from backend.modules.utils.schemas import AgentState
-from backend.modules.utils.llm import ChatLLM
-from backend.modules.utils.templates import QUESTION_REWRITER_TEMPLATE
+from modules.utils.schemas import AgentState
+from modules.utils.llm import ChatLLM
+from modules.utils.templates import QUESTION_REWRITER_TEMPLATE
 
 def question_rewriter(state: AgentState) -> AgentState:
     """

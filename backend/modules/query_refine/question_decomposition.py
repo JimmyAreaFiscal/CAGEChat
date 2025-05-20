@@ -15,10 +15,10 @@ from typing import List
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
-from backend.modules.utils.templates import DECOMPOSITION_PROMPT_TEMPLATE
-from backend.modules.utils.schemas import DecomposedQuestion, AgentState
-from backend.modules.utils.llm import ChatLLM
-from backend.modules.graphs.subgraph_builder import retrieval_workflow_builder
+from modules.utils.templates import DECOMPOSITION_PROMPT_TEMPLATE
+from modules.utils.schemas import DecomposedQuestion, AgentState
+from modules.utils.llm import ChatLLM
+from modules.graphs.subgraph_builder import retrieval_workflow_builder
 import asyncio
 
 

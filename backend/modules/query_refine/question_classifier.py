@@ -9,9 +9,9 @@ For example, the question "Como posso me tornar um melhor atleta?" is not relate
 """
 from langchain_core.prompts import ChatPromptTemplate 
 from langchain_core.messages import SystemMessage, HumanMessage
-from backend.modules.utils.schemas import AgentState, GradeQuestion
-from backend.modules.utils.llm import ChatLLM
-from backend.modules.utils.templates import QUESTION_CLASSIFIER_TEMPLATE
+from modules.utils.schemas import AgentState, GradeQuestion
+from modules.utils.llm import ChatLLM
+from modules.utils.templates import QUESTION_CLASSIFIER_TEMPLATE
 import logging
 
 logging.basicConfig(level=logging.INFO)

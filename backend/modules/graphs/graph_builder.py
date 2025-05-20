@@ -15,15 +15,15 @@ In order to modularize it better, node codes should be placed on specific folder
 
 from langgraph.graph import StateGraph, END 
 
-from backend.modules.upload_docs.loader_node import upload_documents
-from backend.modules.utils.schemas import AgentState
-from backend.modules.answer_generation.answer_generator import generate_answer, off_topic_response, cannot_answer
-from backend.modules.query_refine.question_rewriter import question_rewriter
-from backend.modules.query_refine.question_classifier import question_classifier
-from backend.modules.query_refine.question_decomposition import question_decomposition, subquestion_qa_retrieval
-from backend.modules.query_refine.question_router import on_topic_router
-from backend.modules.answer_generation.answer_routers import proceed_to_answer_router
-from backend.modules.utils.schemas import InputDocument
+from modules.upload_docs.loader_node import upload_documents
+from modules.utils.schemas import AgentState
+from modules.answer_generation.answer_generator import generate_answer, off_topic_response, cannot_answer
+from modules.query_refine.question_rewriter import question_rewriter
+from modules.query_refine.question_classifier import question_classifier
+from modules.query_refine.question_decomposition import question_decomposition, subquestion_qa_retrieval
+from modules.query_refine.question_router import on_topic_router
+from modules.answer_generation.answer_routers import proceed_to_answer_router
+from modules.utils.schemas import InputDocument
 def chat_workflow_builder() -> StateGraph:
     """
     This workflow is responsible for the main workflow of the system, responsible for the answer generation.

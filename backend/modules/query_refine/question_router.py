@@ -4,7 +4,7 @@ This module is responsible for routing the question to the correct node.
 
 """
 
-from backend.modules.utils.schemas import AgentState
+from modules.utils.schemas import AgentState
 import logging
 
 logging.basicConfig(level=logging.INFO)

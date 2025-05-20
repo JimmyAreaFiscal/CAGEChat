@@ -1,6 +1,6 @@
 """
 
-This module is responsible for the configuration of the backend.
+This module is responsible for the configuration of the 
 
 It uses the pydantic_settings library to load the environment variables.
 
@@ -60,7 +60,7 @@ class Settings(BaseSettings):
         }
     )
 
-    DATABASE_URL: str = "sqlite:///./test.db"
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "sqlite:///./test.db")
 
     # @model_validator(mode="before")
     # @classmethod

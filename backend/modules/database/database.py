@@ -2,7 +2,7 @@ import sqlalchemy
 from sqlalchemy import create_engine, Column, String, Integer, DateTime, Text
 from sqlalchemy.orm import declarative_base, sessionmaker
 from datetime import datetime
-from backend.config import settings
+from config import settings
 
 Base = declarative_base()
 
@@ -16,6 +16,7 @@ class QuestionAndResponse(Base):
     page = Column(Integer, nullable=True)
     author = Column(String)
     subject = Column(String, nullable=True)
+
 
 class QaADatabase:
     def __init__(self):

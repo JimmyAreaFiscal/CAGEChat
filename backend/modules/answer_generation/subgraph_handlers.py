@@ -8,7 +8,7 @@ In order to be able to use subgraph's states, we need to create an adapter for t
 """
 
 
-from backend.modules.utils.schemas import AgentState, RetrievalState
+from modules.utils.schemas import AgentState, RetrievalState
 
 
 def retrieval_qa_adapter(state: AgentState) -> AgentState:

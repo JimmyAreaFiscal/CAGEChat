@@ -1,4 +1,4 @@
-from backend.modules.utils.schemas import AgentState
+from modules.utils.schemas import AgentState
 import logging
 
 logging.basicConfig(level=logging.INFO)

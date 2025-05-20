@@ -3,7 +3,7 @@ This module is responsible for creating the LLM models based on the config file.
 It is used by other modules by holding all LLM models in a single place.
 
 """
-from backend.config import settings
+from config import settings
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI 

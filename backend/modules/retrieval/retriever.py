@@ -8,8 +8,8 @@ Then, the retriever is imported from the other modules.
 """
 
 from dotenv import load_dotenv
-from backend.modules.vector_store.vector_store import vectordb
-from backend.config import settings
+from modules.vector_store.vector_store import vectordb
+from config import settings
 load_dotenv()
 
 SEARCH_TYPE = settings.SEARCH_TYPE
