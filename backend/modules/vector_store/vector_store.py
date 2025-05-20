@@ -7,8 +7,9 @@ Then, the vector store is imported from the other modules.
 """
 
 from modules.utils.llm import EmbeddingLLM
-from langchain_community.vectorstores import Chroma, FAISS, Milvus, Qdrant
-
+from langchain_community.vectorstores import Chroma, FAISS, Milvus
+from langchain_qdrant import QdrantVectorStore
+from qdrant_client.http.models import VectorParams, Distance
 from dotenv import load_dotenv
 from config import settings
 
@@ -44,7 +45,11 @@ elif VECTOR_STORE_TYPE == "qdrant":
         api_key=settings.VECTORSTORE_PERSIST_DIR["QDRANT_API_KEY"]
     )
 
-    vectordb = Qdrant(client=client, embedding_function=embeddings_func, index_to_docstore_id={})
+    # Verifique se o collection_name existe. Se não existir, crie uma nova coleção
+    if not client.collection_exists(collection_name="cagers-server-collection"):
+        client.create_collection(collection_name="cagers-server-collection", vectors_config=VectorParams(size=1536, distance=Distance.COSINE))
+
+    vectordb = QdrantVectorStore(client=client, embedding=embeddings_func, collection_name="cagers-server-collection")
 
 else:
     raise ValueError(f"Invalid vector store type: {VECTOR_STORE_TYPE}")
