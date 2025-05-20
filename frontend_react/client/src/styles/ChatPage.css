@@ -1,0 +1,134 @@
+/* ChatPage-specific styles moved from App.css */
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #23243a 0%, #343541 100%);
+  display: flex;
+  flex-direction: row;
+}
+
+.chatbox {
+  flex: 1;
+  background: linear-gradient(135deg, #23243a 0%, #343541 100%);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.chat-log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1rem;
+  padding-bottom: 90px;
+  overflow-y: auto;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.chat-log::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.chat-log {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.chat-input-holder {
+  padding: 24px;
+  background: linear-gradient(135deg, #23243a 0%, #343541 100%);
+  z-index: 2;
+}
+
+.chat-input-textarea {
+  background-color: #40414f;
+  width: 90%;
+  border-radius: 5px; 
+  padding: 12px;
+  color: white;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.25);
+  font-size: 1.10em;
+}
+
+.chat-message {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.chat-message.gpt {
+  background: linear-gradient(135deg, #2d3146 0%, #343541 100%);
+  max-width: 70%;
+  margin: 0.5rem 0;
+  padding: 1.1rem 1.4rem;
+  border-radius: 1.1rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+  display: inline-block;
+  word-break: break-word;
+  border: 1.5px solid #3b3c4a;
+  vertical-align: top;
+  align-self: flex-start;
+}
+
+.chat-message.user {
+  background: linear-gradient(135deg, #23243a 0%, #343541 100%);
+  max-width: 70%;
+  margin: 0.5rem 0 0.5rem auto; /* Align to right */
+  padding: 1.1rem 1.4rem;
+  border-radius: 1.1rem;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+  display: inline-block;
+  word-break: break-word;
+  border: 1.5px solid #3b3c4a;
+  color: white;
+  align-self: flex-end;
+}
+
+.avatar {
+  background: white;
+  border-radius: 50%;
+  margin-right: 1rem;
+  flex: 0 0 auto !important;
+  width: 40px !important;
+  height: 40px !important;
+  background-image: url('../assets/CAGEChat.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f0f0f0;
+}
+
+.message-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.thoughts-button-inline {
+  margin-left: 0.5rem;
+  background-color: #0da37f;
+  border: none;
+  color: white;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.thoughts-button-inline:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.chat-message.gpt .chat-message-center,
+.chat-message.user .chat-message-center {
+  margin-left: 0;
+  margin-right: 0;
+  flex-direction: row;
+} 
