@@ -29,8 +29,8 @@ google-api-core==2.24.2
 google-auth==2.40.1
 googleapis-common-protos==1.70.0
 chromadb==1.0.8
-qdrant_client==1.2.0
-langchain-qdrant
+qdrant_client==1.14.2
+langchain-qdrant==0.2.0
 # Optional, only if you use these vector stores:
 # faiss-cpu
 # pymilvus
