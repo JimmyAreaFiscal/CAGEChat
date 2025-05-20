@@ -179,6 +179,6 @@ def add_question(question: str = Form(...), answer: str = Form(...), document: s
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
+    port = int(os.environ.get("PORT", 8000))
     print(f"Listening on port {port}")
     uvicorn.run("server.api:app", host="0.0.0.0", port=port)
