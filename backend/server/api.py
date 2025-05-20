@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Query, UploadFile, File, Form
+from fastapi import FastAPI, Query, UploadFile, File, Form, HTTPException
 from fastapi.responses import StreamingResponse, JSONResponse
 from typing import Optional
 from uuid import uuid4
@@ -147,11 +147,15 @@ async def chat_stream(message: str = Query(...), checkpoint_id: Optional[str] = 
 
 
 @app.post('/upload_file/')
-def upload_file(file: UploadFile = File(...), metadata: str = Form({'tipo_documento': 'manuais'})):
+def upload_file(file: UploadFile = File(...), metadata: str = Form({'tipo_documento': 'manuais'}), password: str = Form(...)):
     """
-    POST endpoint for document insert using upload_graph. Accepts PDF/Word file and  metadata (as JSON string).
+    POST endpoint for document insert using upload_graph. Accepts PDF/Word file, metadata (as JSON string), and a password.
     """
     
+    # Check password
+    upload_password = os.getenv("UPLOAD_PASSWORD", "changeme")
+    if password != upload_password:
+        raise HTTPException(status_code=401, detail="Unauthorized: Invalid password.")
     try:
         # Save uploaded file to a temporary location
         with tempfile.NamedTemporaryFile(delete=False, suffix=os.path.splitext(file.filename)[-1]) as tmp:

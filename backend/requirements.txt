@@ -29,8 +29,7 @@ google-api-core==2.24.2
 google-auth==2.40.1
 googleapis-common-protos==1.70.0
 chromadb==1.0.8
-python-multipart==0.0.20
-networkx==3.4.2
+qdrant_client==1.2.0
 # Optional, only if you use these vector stores:
 # faiss-cpu
 # pymilvus
