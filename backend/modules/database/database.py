@@ -25,23 +25,14 @@ class QaADatabase:
         Base.metadata.create_all(self.engine)
         self.Session = sessionmaker(bind=self.engine)
 
-    def add_question(self, question : str, 
-                     answer : str, 
-                     document : str = None, 
-                     page : int = None, 
-                     author : str = None, 
-                     subject : str = None, 
-                     date_of_add : datetime = None):
+    def add_question(self, question: str, answer: str, document: str = None, author: str = None):
         session = self.Session()
         try:
             q = QuestionAndResponse(
                 question=question,
                 answer=answer,
-                date_of_add=date_of_add or datetime.utcnow(),
                 document=document,
-                page=page,
-                author=author,
-                subject=subject
+                author=author
             )
             session.add(q)
             session.commit()
@@ -50,7 +41,6 @@ class QaADatabase:
             raise e
         finally:
             session.close()
-
 
     def get_all_questions_from_user(self, user_name: str):
         session = self.Session()

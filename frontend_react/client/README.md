@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# CAGEChat Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to CAGEChat Frontend Repo!
 
-## Available Scripts
+Okay, you know... I got a really hard time trying to code this (even with Cursor, ChatGPT, Gemini, etc). I hate it, but it's necessary.
 
-In the project directory, you can run:
+So, in order to increase the chance of sucess, I've decided to invest a good time doing a REACT frontend client. Please enjoy it, and have mercy of me.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Overview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+CAGEChat is a web application designed to assist with legal norm consultations. 
+This frontend client is built with React and provide a way to users interact with the RAG System.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- **Chat Interface**: Communicate with an AI assistant specialized in legal norms
+- **Question Collector**: Contribute to the project by submitting legal questions and answers
+- **Conversation History**: Access previous chat sessions
+- **Responsive Design**: Works on desktop and mobile devices
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The frontend is organized as follows:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- `src/`
+  - `assets/`: Contains images and icons
+  - `components/`: Reusable React components
+  - `pages/`: Main application pages
+  - `styles/`: CSS files for styling
+  - `App.js`: Main application component
+  - `index.js`: Entry point
 
-### `npm run eject`
+## Key Components
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **ChatPage**: Main interface for interacting with the AI
+- **QuestionCollector**: Interface for contributing legal questions and answers
+- **Sidebar**: Navigation component for accessing different parts of the application
+- **AboutSection**: Information about the project and its purpose
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## API Integration
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+The frontend communicates with the backend through several API endpoints:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- `/chat_stream/`: Streaming endpoint for real-time chat responses
+- `/add_question/`: Endpoint for submitting new questions to the database
+- `/get_all_questions_from_user/`: Retrieves user-specific questions
 
-## Learn More
+## Getting Started
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Prerequisites
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Node.js (v14 or higher)
+- npm or yarn
 
-### Code Splitting
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone the repository
+2. Navigate to the frontend directory:
+   ```
+   cd frontend_react/client
+   ```
+3. Install dependencies:
+   ```
+   npm install
+   ```
+4. Start the development server:
+   ```
+   npm start
+   ```
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
