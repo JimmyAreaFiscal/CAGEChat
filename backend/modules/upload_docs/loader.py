@@ -29,25 +29,30 @@ class CustomLoader:
         self.metadata = metadata
         self.headers_to_split_on = []
         
-        if metadata.get('tipo_documento') == 'manuais':
+        if metadata.get('tipo_documento') in ['manual', 'guia', 'livro']:
             self.headers_to_split_on = [
-                ("#", "header1"),
-                ("##", "header2")
+                ("#", "Capítulo"),
+                ("##", "Subcapítulo"),
+                ("###", "Subsubcapítulo")
             ]
-        elif metadata.get('tipo_documento') == 'leis':
+        elif metadata.get('tipo_documento') in ['lei', 'instrução normativa', 'norma']:
             self.headers_to_split_on = [
-                ("art.", "article")
+                ("art.", "artigo"),
+                ("§", "parágrafo")
+                
             ]
-        elif metadata.get('tipo_documento') == 'jurisprudencia':
+        elif metadata.get('tipo_documento') in ['jurisprudência', 'parecer']:
             self.headers_to_split_on = [
-                ("EMENTA", "summary"),
-                ("ACÓRDÃO", "decision"),
-                ("VOTO", "vote")
+                ("EMENTA", "ementa"),
+                ("ACÓRDÃO", "acórdão"),
+                ("VOTO", "voto")
             ]
         else:
             # Default splitting for other document types
             self.headers_to_split_on = [
-                ("#", "section")
+                ("#", "capítulo"),
+                ("##", "subcapítulo"),
+                ("###", "subsubcapítulo")
             ]
 
     def load(self) -> List[Document]:

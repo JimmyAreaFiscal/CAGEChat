@@ -9,7 +9,7 @@ from langchain_core.messages import HumanMessage, AIMessageChunk
 from modules.graphs.graph import chat_graph, upload_graph
 from config import settings
 from modules.database.database import QaADatabase
-
+import uvicorn
 
 FINAL_NODES = settings.FINAL_NODES
 
@@ -97,34 +97,6 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
             payload = {"type": "final_answer", "agent": name_agent, "content": safe_content}
             yield f"data: {json.dumps(payload)}\n\n"
 
-            
-        # if event_type == "on_chat_model_stream":
-        #     chunk_content = serialise_ai_message_chunk(event['data']['chunk'])
-
-        #     safe_content = chunk_content.replace("'", "\\").replace("\n", "\\n")
-        #     yield f"data: {{\"type\": \"content\", \"content\": \"{safe_content}\"}} \n\n"
-
-        # elif event_type == "on_chat_model_end":
-        #     tool_calls = event["data"]["output"].tool_calls if hasattr(event["data"]["output"], "tool_calls") else []
-        #     search_calls = [call for call in tool_calls if call["name"] == "tavily_search_results_json"]
-
-        #     if search_calls:
-        #         search_query = search_calls[0]['args'].get('query')
-        #         safe_query = search_query.replace("'", "\\").replace("\n", "\\n")
-
-        #         yield f"data: {{\"type\": \"search_start\", \"query\": \"{safe_query}\"}} \n\n"
-        
-        # elif event_type == "on_tool_end":
-        #     output = event["data"]["output"]
-
-        #     if isinstance(output, list):
-        #         urls = []
-        #         for item in output:
-        #             if isinstance(item, dict) and 'url' in item:
-        #                 urls.append(item['url'])
-
-        #         urls_json = json.dumps(urls)
-        #         yield f"data: {{\"type\": \"search_results\", \"urls\": {urls_json}}} \n\n"
     yield f'data: {{"type": "end"}} \n\n'
 
 @app.get("/health")
@@ -208,3 +180,8 @@ def add_question(question: str = Form(...), answer: str = Form(...), document: s
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
 
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 10000))
+    print(f"Listening on port {port}")
+    uvicorn.run("server.api:app", host="0.0.0.0", port=port)

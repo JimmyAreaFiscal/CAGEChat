@@ -1,0 +1,18 @@
+{
+    "services": [
+      {
+        "name": "backend",
+        "source": "./backend",
+        "dockerfilePath": "./Dockerfile.backend",
+        "startCommand": "uvicorn main:app --host 0.0.0.0 --port 8000",
+        "envs": {}
+      },
+      {
+        "name": "frontend",
+        "source": "./frontend",
+        "dockerfilePath": "./Dockerfile.frontend",
+        "startCommand": "serve -s build -l 3000",
+        "envs": {}
+      }
+    ]
+  }
