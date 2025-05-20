@@ -20,3 +20,4 @@ EXPOSE 10000
 
 # Start FastAPI server
 CMD ["uvicorn", "server.api:app", "--host", "0.0.0.0", "--port", "10000"]
+

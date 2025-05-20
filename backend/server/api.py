@@ -99,6 +99,9 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
 
     yield f'data: {{"type": "end"}} \n\n'
 
+@app.get("/health")
+def read_health():
+   return {"status": "ok"}
 
 @app.get('/get_chat_history/')
 def get_chat_history(user_id: str = Query(...)):
