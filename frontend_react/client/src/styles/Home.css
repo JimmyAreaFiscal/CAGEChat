@@ -1,0 +1,77 @@
+/* Home page-specific styles */
+
+.home-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #23243a 0%, #343541 100%);
+}
+
+.home-card {
+  background: #23243a;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  border: 1.5px solid #3b3c4a;
+  padding: 3rem 2.5rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  color: #e5e7eb;
+}
+
+.home-title {
+  color: #60a5fa;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.home-desc {
+  color: #cbd5e1;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.home-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.home-btn {
+  display: block;
+  width: 100%;
+  padding: 0.9rem 0;
+  border-radius: 0.7rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.12);
+  transition: background 0.2s, box-shadow 0.2s;
+  border: none;
+}
+
+.home-btn-chat {
+  background: linear-gradient(90deg, #2563eb 60%, #6366f1 100%);
+}
+
+.home-btn-question {
+  background: linear-gradient(90deg, #f59e42 60%, #fbbf24 100%);
+  color: #23243a;
+  font-weight: 700;
+}
+
+.home-btn-about {
+  background: linear-gradient(90deg, #6366f1 60%, #60a5fa 100%);
+  color: #fff;
+  font-weight: 700;
+}
+
+.home-btn:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 16px rgba(59,130,246,0.18);
+  opacity: 0.95;
+} 

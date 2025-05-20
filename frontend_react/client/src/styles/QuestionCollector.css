@@ -1,0 +1,142 @@
+.qc-app {
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #23243a 0%, #343541 100%);
+}
+
+.qc-sidebar {
+  width: 260px;
+  background: linear-gradient(90deg, #2563eb 60%, #6366f1 100%);
+  border-right: 1.5px solid #3b3c4a;
+  padding: 2rem 1.2rem 2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.qc-sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #60a5fa;
+  margin-bottom: 1.5rem;
+}
+
+.qc-question-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.qc-question-btn {
+  background: #23243a;
+  color: #e5e7eb;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.qc-question-btn.selected, .qc-question-btn:hover {
+  background: linear-gradient(90deg, #2563eb 60%, #6366f1 100%);
+  color: #fff;
+}
+
+.qc-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0;
+  background: linear-gradient(135deg, #23243a 0%, #343541 100%);
+}
+
+.qc-form, .qc-about-card {
+  background: #23243a;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  border: 1.5px solid #3b3c4a;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  color: #e5e7eb;
+  text-align: center;
+}
+
+.qc-about-title {
+  color: #60a5fa;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.qc-about-desc {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+.qc-label {
+  font-weight: 600;
+  color: #cbd5e1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+.qc-input {
+  border: 1px solid #3b3c4a;
+  border-radius: 0.5rem;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  resize: vertical;
+  background: #343541;
+  color: #e5e7eb;
+  transition: border 0.2s;
+}
+.qc-input:focus {
+  border: 1.5px solid #60a5fa;
+  outline: none;
+}
+
+.qc-form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.qc-btn {
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.7rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.qc-btn-save {
+  background: linear-gradient(90deg, #2563eb 60%, #6366f1 100%);
+  color: #fff;
+}
+.qc-btn-save:hover {
+  filter: brightness(1.08);
+  box-shadow: 0 4px 16px rgba(59,130,246,0.18);
+  opacity: 0.95;
+}
+
+.qc-btn-erase {
+  background: #343541;
+  color: #e5e7eb;
+}
+.qc-btn-erase:hover {
+  background: #fbbf24;
+  color: #23243a;
+  font-weight: 700;
+} 
