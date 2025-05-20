@@ -60,6 +60,8 @@ class Settings(BaseSettings):
         }
     )
 
+    DATABASE_URL: str = "sqlite:///./test.db"
+
     # @model_validator(mode="before")
     # @classmethod
     # def _validate_values(cls, values: Dict[str, Any]) -> Dict[str, Any]:

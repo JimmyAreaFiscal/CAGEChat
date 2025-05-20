@@ -9,6 +9,11 @@
   background: linear-gradient(135deg, #23243a 0%, #343541 100%);
 }
 
+.home-page-logo {
+  width: 200px;
+  height: 200px;
+}
+
 .home-card {
   background: #23243a;
   border-radius: 1.5rem;

@@ -12,9 +12,7 @@ const Sidebar = ({ functionToCallForPreviousId, stringToShow="Novo Chat", listOf
   
   <aside className="sidemenu">
     <div className='side-menu-header'>
-      <img src={logo} alt="Cage Chat" />
-      <h1>CAGEChat</h1>
-      <p>Seu assistente de conhecimento</p>
+      <img src={logo} alt="Cage Chat" className='side-menu-header-logo'/>
     </div>
     
     <div className='sidemenu-tabs-container'>

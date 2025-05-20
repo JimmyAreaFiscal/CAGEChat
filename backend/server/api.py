@@ -189,15 +189,15 @@ def get_all_questions_from_user(user_id: str = Query(...)):
 
 
 @app.post('/add_question/')
-def add_question(question: str = Form(...), answer: str = Form(...), document: str = Form(None), page: int = Form(None), author: str = Form(None), subject: str = Form(None)):
+def add_question(question: str = Form(...), answer: str = Form(...), document: str = Form(None), author: str = Form(None)):
     """
     POST endpoint for adding a question and answer to the database.
+    Receives: question, answer, document (nullable), and author.
     """
     try:
         db = QaADatabase()
-        db.add_question(question, answer, document, page, author, subject)
+        db.add_question(question, answer, document, author)
         return JSONResponse(status_code=200, content={"status": "success"})
-    
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
 

@@ -15,6 +15,12 @@
   text-align: center;
 }
 
+.side-menu-header-logo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 0;
+}
+
 .side-menu-header h1 {
   color: #60a5fa;
   font-weight: 700;

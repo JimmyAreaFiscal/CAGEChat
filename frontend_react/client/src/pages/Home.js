@@ -6,7 +6,7 @@ import logo from '../assets/CAGEChat.png';
 const Home = () => (
   <div className="App home-page">
     <div className="home-card">
-      <img src={logo} alt="CAGEChat" className="home-logo" />
+      <img src={logo} alt="CAGEChat" className="home-page-logo" />
       <h1 className="home-title">Bem-vindo ao CAGEChat!</h1>
       <p className="home-desc">
         Seu assistente para consultas de normas jurídicas! 

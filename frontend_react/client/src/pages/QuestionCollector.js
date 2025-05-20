@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import AboutSection from '../components/AboutSection';
 import '../styles/QuestionCollector.css';
+import { addQuestion } from '../components/RequestQuestion';
 
 const dummyQuestions = [
   { id: 1, title: 'O que é habeas corpus?', resposta: 'Remédio constitucional para proteger a liberdade de locomoção.', fundamentacao: 'Art. 5º, LXVIII, CF' },
@@ -12,36 +13,51 @@ const QuestionCollector = () => {
   const [selectedId, setSelectedId] = useState(null);
   const [form, setForm] = useState({ questao: '', resposta: '', fundamentacao: '' });
   const [showForm, setShowForm] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSave(e) {
+  async function handleSave(e) {
     e.preventDefault();
-    setQuestions(prev => {
-      // If editing, update; if new, add
-      if (selectedId) {
-        return prev.map(q =>
-          q.id === selectedId
-            ? { ...q, title: form.questao, resposta: form.resposta, fundamentacao: form.fundamentacao }
-            : q
-        );
-      } else {
-        return [
-          ...prev,
-          {
-            id: prev.length ? Math.max(...prev.map(q => q.id)) + 1 : 1,
-            title: form.questao,
-            resposta: form.resposta,
-            fundamentacao: form.fundamentacao,
-          },
-        ];
-      }
-    });
-    setForm({ questao: '', resposta: '', fundamentacao: '' });
-    setSelectedId(null);
-    setShowForm(false);
+    setLoading(true);
+    setError(null);
+    try {
+      await addQuestion({
+        question: form.questao,
+        answer: form.resposta,
+        document: form.fundamentacao || null,
+        author: null, // Optionally add author logic here
+      });
+      setQuestions(prev => {
+        if (selectedId) {
+          return prev.map(q =>
+            q.id === selectedId
+              ? { ...q, title: form.questao, resposta: form.resposta, fundamentacao: form.fundamentacao }
+              : q
+          );
+        } else {
+          return [
+            ...prev,
+            {
+              id: prev.length ? Math.max(...prev.map(q => q.id)) + 1 : 1,
+              title: form.questao,
+              resposta: form.resposta,
+              fundamentacao: form.fundamentacao,
+            },
+          ];
+        }
+      });
+      setForm({ questao: '', resposta: '', fundamentacao: '' });
+      setSelectedId(null);
+      setShowForm(false);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   }
 
   function handleNewQuestion() {
@@ -108,9 +124,10 @@ const QuestionCollector = () => {
               />
             </label>
             <div className="qc-form-actions">
-              <button type="submit" className="qc-btn qc-btn-save">Salvar Questão</button>
+              <button type="submit" className="qc-btn qc-btn-save" disabled={loading}>{loading ? 'Salvando...' : 'Salvar Questão'}</button>
               <button type="button" className="qc-btn qc-btn-erase" onClick={() => setShowForm(false)}>Cancelar</button>
             </div>
+            {error && <div className="qc-error">{error}</div>}
           </form>
         ) : (
           <AboutSection />
