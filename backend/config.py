@@ -11,13 +11,25 @@ Cognita github repo: https://github.com/truefoundry/cognita
 """
 
 
+import json
 import os
 from typing import Any, Dict
 
 from pydantic import Field
 from pydantic_settings import BaseSettings
 from fastapi.middleware.cors import CORSMiddleware
+from typing import Callable
 
+
+
+def extract_dict_from_env(env_var: str, default_factory: Callable[[], Any] = lambda: {}) -> Dict[str, Any]:
+    """
+    Extract a dictionary from an environment variable
+    """
+    env_var_value = os.getenv(env_var, Field(default_factory=default_factory))
+    if env_var_value:
+        env_var_value = json.loads(env_var_value)
+    return env_var_value
 
 
 class Settings(BaseSettings):
@@ -27,10 +39,18 @@ class Settings(BaseSettings):
 
     # model_config = ConfigDict(extra="allow")
 
-    CHAT_MODEL_CONFIG : Dict[str, Any] = os.getenv("CHAT_MODEL_CONFIG", Field(default_factory=lambda: {"type": "openai", 'kwargs': {"model": "gpt-4o-mini", "temperature": 0, }}))
+    # Chat Model Configs 
+    REASONING_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("REASONING_CHAT_MODEL_CONFIG", lambda: {"type": "openai", 'kwargs': {"model": "gpt-4o-mini", "temperature": 0.2, }})
+
+    GENERAL_TASKS_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("GENERAL_TASKS_CHAT_MODEL_CONFIG", lambda: {"type": "openai", 'kwargs': {"model": "gpt-4o-mini", "temperature": 0.3, }})
+
+    CHAT_MODEL_CONFIG : Dict[str, Any] = {
+                                            "reasoning": REASONING_MODEL_CONFIG,
+                                            "general_tasks": GENERAL_TASKS_MODEL_CONFIG
+                                        }
     
 
-    EMBEDDING_MODEL_CONFIG : Dict[str, Any] = os.getenv("EMBEDDING_MODEL_CONFIG", Field(default_factory=lambda: {"type": "openai", 'kwargs': {"model": "text-embedding-3-small"}}))
+    EMBEDDING_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("EMBEDDING_MODEL_CONFIG", lambda: {"type": "openai", 'kwargs': {"model": "text-embedding-3-small"}})
 
     
     

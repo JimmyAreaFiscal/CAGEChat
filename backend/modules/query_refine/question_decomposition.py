@@ -17,7 +17,7 @@ from langchain_core.output_parsers import StrOutputParser
 
 from modules.utils.templates import DECOMPOSITION_PROMPT_TEMPLATE
 from modules.utils.schemas import DecomposedQuestion, AgentState
-from modules.utils.llm import ChatLLM
+from modules.utils.llm import ReasoningLLM
 from modules.graphs.subgraph_builder import retrieval_workflow_builder
 import asyncio
 
@@ -28,7 +28,7 @@ def question_decomposition(state: AgentState) -> List[str]:
     """
     question = state['rephrased_question']
     prompt = ChatPromptTemplate.from_template(DECOMPOSITION_PROMPT_TEMPLATE)
-    llm_with_structured_output = ChatLLM.with_structured_output(DecomposedQuestion)
+    llm_with_structured_output = ReasoningLLM.with_structured_output(DecomposedQuestion)
     llm = prompt | llm_with_structured_output
     result = llm.invoke({"question": question})
     

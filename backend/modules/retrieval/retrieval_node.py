@@ -12,7 +12,7 @@ from modules.retrieval.retriever import retriever
 from modules.utils.schemas import RetrievalState
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate
-from modules.utils.llm import ChatLLM 
+from modules.utils.llm import GeneralTasksLLM
 from modules.utils.schemas import GradeDocument
 from modules.utils.templates import GENERATOR_RETRIEVAL_ANSWER_PROMPT_TEMPLATE
 from modules.utils.schemas import _avoid_spam
@@ -55,7 +55,7 @@ def retrieval_grader(state: RetrievalState):
         Se os documentos não forem relevantes, responda com 'Não'. Se os documentos forem relevantes, responda com 'Sim'.
         """
     )
-    llm = ChatLLM
+    llm = GeneralTasksLLM
     structured_llm = llm.with_structured_output(GradeDocument)
 
     relevant_docs = []
@@ -106,7 +106,7 @@ def refine_question(state: RetrievalState):
     refine_prompt = ChatPromptTemplate.from_messages(
         [system_message, human_message]
     )
-    llm = ChatLLM
+    llm = GeneralTasksLLM
     response = llm.invoke(refine_prompt.format())
     refined_question = response.content.strip()
     logging.info(f"refine_question: Refined question: {refined_question}")
@@ -128,7 +128,7 @@ def generate_retrieval_answer(state: RetrievalState):
     question = state['retrieval_question']
     documents = state['documents']
 
-    llm = ChatLLM
+    llm = GeneralTasksLLM
     prompt = ChatPromptTemplate.from_template(GENERATOR_RETRIEVAL_ANSWER_PROMPT_TEMPLATE)
     rag_chain = prompt | llm 
     response = rag_chain.invoke(

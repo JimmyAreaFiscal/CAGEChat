@@ -9,19 +9,38 @@ from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI 
 from langchain_cohere import ChatCohere, CohereEmbeddings
 
-CHAT_MODEL_TO_USE = settings.CHAT_MODEL_CONFIG
+CHAT_MODELS_TO_USE = settings.CHAT_MODEL_CONFIG
 EMBEDDING_MODEL_TO_USE = settings.EMBEDDING_MODEL_CONFIG
 
 
-# Set the LLM model to use
-if CHAT_MODEL_TO_USE["type"] == "openai":
-    ChatLLM = ChatOpenAI(**CHAT_MODEL_TO_USE["kwargs"])
-elif CHAT_MODEL_TO_USE["type"] == "anthropic":
-    ChatLLM = ChatAnthropic(**CHAT_MODEL_TO_USE["kwargs"])
-elif CHAT_MODEL_TO_USE["type"] == "google":
-    ChatLLM = ChatGoogleGenerativeAI(**CHAT_MODEL_TO_USE["kwargs"])
-elif CHAT_MODEL_TO_USE["type"] == "cohere":
-    ChatLLM = ChatCohere(**CHAT_MODEL_TO_USE["kwargs"])
+# Reasoning LLM:
+
+if CHAT_MODELS_TO_USE['reasoning']['type'] == "openai":
+    ReasoningLLM = ChatOpenAI(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
+elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "anthropic":
+    ReasoningLLM = ChatAnthropic(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
+elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "google":
+    ReasoningLLM = ChatGoogleGenerativeAI(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
+elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "cohere":
+    ReasoningLLM = ChatCohere(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
+else:
+    raise ValueError(f"Invalid reasoning model type: {CHAT_MODELS_TO_USE['reasoning']['type']}")
+
+# General Tasks LLM:
+
+if CHAT_MODELS_TO_USE['general_tasks']['type'] == "openai":
+    GeneralTasksLLM = ChatOpenAI(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
+elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "anthropic":
+    GeneralTasksLLM = ChatAnthropic(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
+elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "google":
+    GeneralTasksLLM = ChatGoogleGenerativeAI(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
+elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "cohere":
+    GeneralTasksLLM = ChatCohere(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
+else:
+    raise ValueError(f"Invalid general tasks model type: {CHAT_MODELS_TO_USE['general_tasks']['type']}")
+
+
+
 
 
 # Set the embedding model to use

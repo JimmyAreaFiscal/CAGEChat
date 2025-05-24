@@ -3,7 +3,7 @@ import yaml
 from langchain_core.prompts import ChatPromptTemplate 
 from langchain_core.messages import AIMessage 
 from modules.utils.schemas import AgentState
-from modules.utils.llm import ChatLLM
+from modules.utils.llm import GeneralTasksLLM
 from modules.utils.templates import GENERATOR_PROMPT_TEMPLATE
 import logging
 
@@ -20,7 +20,7 @@ def generate_answer(state: AgentState):
     qa_context = state['qa_context']
     rephrased_question = state['rephrased_question']
 
-    llm = ChatLLM
+    llm = GeneralTasksLLM
     prompt = ChatPromptTemplate.from_template(GENERATOR_PROMPT_TEMPLATE)
     rag_chain = prompt | llm 
     response = rag_chain.invoke(

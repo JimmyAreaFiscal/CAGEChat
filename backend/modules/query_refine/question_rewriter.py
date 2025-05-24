@@ -10,7 +10,7 @@ On doing so, the system resumes the conversation context and the last question a
 from langchain_core.prompts import ChatPromptTemplate 
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage 
 from modules.utils.schemas import AgentState
-from modules.utils.llm import ChatLLM
+from modules.utils.llm import GeneralTasksLLM
 from modules.utils.templates import QUESTION_REWRITER_TEMPLATE
 
 def question_rewriter(state: AgentState) -> AgentState:
@@ -47,7 +47,7 @@ def question_rewriter(state: AgentState) -> AgentState:
         messages.append(HumanMessage(content=current_question))
         rephrase_prompt = ChatPromptTemplate.from_messages(messages)
         
-        llm = ChatLLM
+        llm = GeneralTasksLLM
         prompt = rephrase_prompt.format() 
         response = llm.invoke(prompt)
         better_question = response.content.strip() 
