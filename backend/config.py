@@ -22,13 +22,15 @@ from typing import Callable
 
 
 
-def extract_dict_from_env(env_var: str, default_factory: Callable[[], Any] = lambda: {}) -> Dict[str, Any]:
+def extract_dict_from_env(env_var: str, default_value: Dict[str, Any] = {}) -> Dict[str, Any]:
     """
     Extract a dictionary from an environment variable
     """
-    env_var_value = os.getenv(env_var, Field(default_factory=default_factory))
+    env_var_value = os.getenv(env_var)
     if env_var_value:
         env_var_value = json.loads(env_var_value)
+    else:
+        env_var_value = default_value
     return env_var_value
 
 
@@ -40,9 +42,9 @@ class Settings(BaseSettings):
     # model_config = ConfigDict(extra="allow")
 
     # Chat Model Configs 
-    REASONING_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("REASONING_CHAT_MODEL_CONFIG", lambda: {"type": "openai", 'kwargs': {"model": "gpt-4o-mini", "temperature": 0.2, }})
+    REASONING_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("REASONING_CHAT_MODEL_CONFIG", {"type": "openai", 'kwargs': {"model": "gpt-4.1-2025-04-14"}})
 
-    GENERAL_TASKS_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("GENERAL_TASKS_CHAT_MODEL_CONFIG", lambda: {"type": "openai", 'kwargs': {"model": "gpt-4o-mini", "temperature": 0.3, }})
+    GENERAL_TASKS_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("GENERAL_TASKS_CHAT_MODEL_CONFIG", {"type": "openai", 'kwargs': {"model": "gpt-4.1-nano-2025-04-14"}})
 
     CHAT_MODEL_CONFIG : Dict[str, Any] = {
                                             "reasoning": REASONING_MODEL_CONFIG,
@@ -50,7 +52,7 @@ class Settings(BaseSettings):
                                         }
     
 
-    EMBEDDING_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("EMBEDDING_MODEL_CONFIG", lambda: {"type": "openai", 'kwargs': {"model": "text-embedding-3-small"}})
+    EMBEDDING_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("EMBEDDING_MODEL_CONFIG", {"type": "openai", 'kwargs': {"model": "text-embedding-3-small"}})
 
     
     
