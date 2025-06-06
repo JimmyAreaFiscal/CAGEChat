@@ -34,7 +34,7 @@ Se a questão não estiver relacionada a nenhum desses tópicos, responda com 'N
         """
 
 DECOMPOSITION_PROMPT_TEMPLATE = """
-Você é um analista da CAGE-RS. Sua tarefa é decompor a questão do usuário em um conjunto de subquestões.
+Você é um analista da CAGE-RS. Sua tarefa é decompor a questão do usuário em um conjunto de no máximo 3subquestões.
 
 As subquestões devem ser independentes e separadas por linhas (newlines).
 

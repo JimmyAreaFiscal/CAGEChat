@@ -30,6 +30,7 @@ def serialise_ai_message_chunk(chunk):
 
 async def generate_chat_responses(message: str, thread_id: Optional[str] = None, checkpoint_id: Optional[str] = None):
     is_new_conversation = thread_id is None
+    
     if is_new_conversation:
         new_thread_id = str(uuid4())
         config = {"configurable": {'thread_id': new_thread_id}}
@@ -41,7 +42,9 @@ async def generate_chat_responses(message: str, thread_id: Optional[str] = None,
         )
         payload = {"type": "thread", "thread_id": new_thread_id}
         yield f"data: {json.dumps(payload)}\n\n"
+    
     else:
+
         config = {"configurable": {'thread_id': thread_id}}
         if checkpoint_id:
             config["configurable"]["checkpoint_id"] = checkpoint_id
@@ -58,21 +61,19 @@ async def generate_chat_responses(message: str, thread_id: Optional[str] = None,
         event_type = event['event']
         
         name_agent = event['name']
-
+        final_agent = event['name'] in FINAL_NODES
         output = event['data'].get('output', {})
         if output and isinstance(output, dict):
             if output.get('tags', {}).get('avoid_spam', False):
                 continue
 
-        if output and name_agent == 'LangGraph':
+        elif output and name_agent == 'LangGraph':
             continue
         
-        if not final_agent and event_type == 'on_chain_start':  
+        # elif not final_agent and event_type == 'on_chain_start':  
             # Only streams tokens when it is the final node. Otherwise, return agent_thinking
-            if event['name'] in FINAL_NODES:
-                final_agent = event['name']
 
-        if not final_agent and event_type == 'on_chain_end' and isinstance(event['data']['output'], dict) and 'agent_think' in event['data']['output'].keys():
+        elif not final_agent and event_type == 'on_chain_end' and isinstance(event['data']['output'], dict) and 'agent_think' in event['data']['output'].keys():
             msg = event['data']['output']['agent_think']
             name_agent = event['name']
 
@@ -93,12 +94,22 @@ async def generate_chat_responses(message: str, thread_id: Optional[str] = None,
 
         
             
-        if final_agent and event_type == 'on_chat_model_stream':
+        elif final_agent and event_type == 'on_chat_model_stream':
             
             chunk_content = serialise_ai_message_chunk(event['data']['chunk'])
             safe_content = chunk_content.replace("'", "\\").replace("\n", "\\n")
 
-            payload = {"type": "final_answer", "agent": name_agent, "content": safe_content}
+            payload = {"type": "final_answer", "agent": name_agent, "content": safe_content, "streaming": True}
+            yield f"data: {json.dumps(payload)}\n\n"
+
+        elif final_agent and event_type == 'on_chain_stream':
+            msg = event['data']['chunk']['messages'][-1].content
+            name_agent = event['name']
+
+            safe_content = msg.replace("'", "\\").replace("\n", "\\n")
+
+            payload = {"type": "final_answer", "agent": name_agent, "content": safe_content, "streaming": False}
+            
             yield f"data: {json.dumps(payload)}\n\n"
 
     yield f'data: {{"type": "end"}} \n\n'
@@ -148,9 +159,8 @@ async def delete_chat(thread_id: str = Form(...)):
     """
     DELETE endpoint for deleting a chat.
     """
-    DB_URI = settings.DatabaseSettings.DATABASE_URL
-    memory = AsyncPostgresSaver.from_conn_string(DB_URI)
-    await memory.delete_thread(thread_id)
+    with memory:
+        await memory.delete_thread(thread_id)
     return JSONResponse(status_code=200, content={"status": "success", "thread_id": thread_id})
     
 
