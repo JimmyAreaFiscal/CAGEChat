@@ -53,11 +53,18 @@ async def subquestion_qa_retrieval(state: AgentState) -> AgentState:
         retrieval_graph.ainvoke({"original_question": q},)
         for q in subquestions
     ]
+    
+    state['retrieved_documents'] = []
     completed = await asyncio.gather(*qa_context)
     final_qa_context = []
     for qa in completed:
         if qa.get('answer', None):
-           final_qa_context.append(qa['answer']) 
+            final_qa_context.append(qa['answer']) 
+            
+            # Add the documents only if the retrieval subgraph could answer the question
+            if qa.get('documents', None):
+                state['retrieved_documents'].extend(qa['documents'])
+                
     state['qa_context'] = final_qa_context
     state['agent_think'] = "Respondi as perguntas que eu consegui baseado nos documentos que eu encontrei. Agora, vou repassar para o próximo node responder a pergunta principal."
     return state

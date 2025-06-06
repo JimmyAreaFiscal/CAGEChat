@@ -17,23 +17,23 @@ from config import settings
 load_dotenv()
 
 
-VECTOR_STORE_TYPE = settings.VECTOR_STORE_TYPE
+VECTOR_STORE_TYPE = settings.VectorStoreSettings.VECTOR_STORE_TYPE
 
 embeddings_func = EmbeddingLLM
 
 if VECTOR_STORE_TYPE == "chroma":
-    CHROMA_DIR = settings.VECTORSTORE_PERSIST_DIR
+    CHROMA_DIR = settings.VectorStoreSettings.VECTORSTORE_PERSIST_DIR
     vectordb = Chroma(
                 embedding_function=embeddings_func,
                 persist_directory=CHROMA_DIR
             )
 
 elif VECTOR_STORE_TYPE == "faiss":
-    FAISS_DIR = settings.VECTORSTORE_PERSIST_DIR
+    FAISS_DIR = settings.VectorStoreSettings.VECTORSTORE_PERSIST_DIR
     vectordb = FAISS(embedding_function=embeddings_func, index_to_docstore_id={})
 
 elif VECTOR_STORE_TYPE == "milvus":
-    MILVUS_DIR = settings.VECTORSTORE_PERSIST_DIR
+    MILVUS_DIR = settings.VectorStoreSettings.VECTORSTORE_PERSIST_DIR
     vectordb = Milvus(embedding_function=embeddings_func, index_to_docstore_id={})
 
 # Adicione Qdrant 
@@ -41,8 +41,8 @@ elif VECTOR_STORE_TYPE == "qdrant":
     from qdrant_client import QdrantClient
 
     client = QdrantClient(
-        url=settings.VECTORSTORE_PERSIST_DIR["QDRANT_URL"],
-        api_key=settings.VECTORSTORE_PERSIST_DIR["QDRANT_API_KEY"]
+        url=settings.VectorStoreSettings.VECTORSTORE_PERSIST_DIR["QDRANT_URL"],
+        api_key=settings.VectorStoreSettings.VECTORSTORE_PERSIST_DIR["QDRANT_API_KEY"]
     )
 
     # Verifique se o collection_name existe. Se não existir, crie uma nova coleção

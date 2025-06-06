@@ -9,8 +9,8 @@ from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI 
 from langchain_cohere import ChatCohere, CohereEmbeddings
 
-CHAT_MODELS_TO_USE = settings.CHAT_MODEL_CONFIG
-EMBEDDING_MODEL_TO_USE = settings.EMBEDDING_MODEL_CONFIG
+CHAT_MODELS_TO_USE = settings.ModelSettings.CHAT_MODEL_CONFIG
+EMBEDDING_MODEL_TO_USE = settings.ModelSettings.EMBEDDING_MODEL_CONFIG
 
 
 # Reasoning LLM:

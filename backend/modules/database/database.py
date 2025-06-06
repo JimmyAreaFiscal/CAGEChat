@@ -22,7 +22,7 @@ class QaADatabase:
     def __init__(self):
         # settings.DATABASE_URL deve ser uma string de conexão SQLAlchemy, ex: "sqlite:///./test.db"
 
-        self.engine = create_engine(settings.DATABASE_URL)
+        self.engine = create_engine(settings.DatabaseSettings.DATABASE_URL)
         Base.metadata.create_all(self.engine)
         self.Session = sessionmaker(bind=self.engine)
 

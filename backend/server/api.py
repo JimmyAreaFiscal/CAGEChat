@@ -6,17 +6,18 @@ import tempfile
 import os
 import json
 from langchain_core.messages import HumanMessage, AIMessageChunk
-from modules.graphs.graph import chat_graph, upload_graph
+from modules.graphs.graph import chat_graph, upload_graph, memory
+
 from config import settings
 from modules.database.database import QaADatabase
 import uvicorn
 
-FINAL_NODES = settings.FINAL_NODES
+FINAL_NODES = settings.GraphSettings.FINAL_NODES
 
 app = FastAPI()
 
 app.add_middleware(
-    **settings.CORS_CONFIG
+    **settings.ApiSettings.CORS_CONFIG
 )
 
 def serialise_ai_message_chunk(chunk):
@@ -27,20 +28,23 @@ def serialise_ai_message_chunk(chunk):
             f'Object of type {type(chunk).__name__} is not correctly formatted for serialisation'
         ) 
 
-async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = None):
-    is_new_conversation = checkpoint_id is None
+async def generate_chat_responses(message: str, thread_id: Optional[str] = None, checkpoint_id: Optional[str] = None):
+    is_new_conversation = thread_id is None
     if is_new_conversation:
-        new_checkpoint_id = str(uuid4())
-        config = {"configurable": {'thread_id': new_checkpoint_id}}
+        new_thread_id = str(uuid4())
+        config = {"configurable": {'thread_id': new_thread_id}}
+        
         events = chat_graph.astream_events(
             {"question": HumanMessage(content=message)},
             version='v2',
             config=config,
         )
-        payload = {"type": "checkpoint", "checkpoint_id": new_checkpoint_id}
+        payload = {"type": "thread", "thread_id": new_thread_id}
         yield f"data: {json.dumps(payload)}\n\n"
     else:
-        config = {"configurable": {'thread_id': checkpoint_id}}
+        config = {"configurable": {'thread_id': thread_id}}
+        if checkpoint_id:
+            config["configurable"]["checkpoint_id"] = checkpoint_id
         events = chat_graph.astream_events(
             {"question": HumanMessage(content=message)},
             version='v2',
@@ -100,14 +104,36 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
     yield f'data: {{"type": "end"}} \n\n'
 
 
-@app.get('/get_chat_history/')
-def get_chat_history(user_id: str = Query(...)):
+async def get_single_chat_response(message: str):
     """
-    GET endpoint for getting the chat history.
+    This function is responsible for getting a single chat response.
     """
-    raise NotImplementedError("This endpoint is not implemented yet.")
+
+    thread_id = str(uuid4())
+    config = {"configurable": {'thread_id': thread_id}}
+    response = await chat_graph.ainvoke(
+        {"question": HumanMessage(content=message)},
+        config=config
+    )
+
+    DB_URI = settings.DatabaseSettings.DATABASE_URL
+    with memory:
+
+        # Delete the checkpoint from the MemorySaver
+        await memory.adelete_thread(thread_id)
     
-@app.get('/chat_stream/')
+    return response
+
+
+async def get_last_checkpoint_id(thread_id: str):
+
+    DB_URI = settings.DatabaseSettings.DATABASE_URL 
+    with memory:
+        history = await memory.get_tuples(thread_id)
+        return history[-1][0]
+
+
+@app.get('/chat/chat_stream/')
 async def chat_stream(message: str = Query(...), checkpoint_id: Optional[str] = Query(None)):
     """
     GET endpoint for answer generation using chat_graph. Streams responses.
@@ -116,6 +142,31 @@ async def chat_stream(message: str = Query(...), checkpoint_id: Optional[str] = 
         generate_chat_responses(message, checkpoint_id),
         media_type='text/event-stream',
     )
+
+@app.delete('/chat/delete_chat/')
+async def delete_chat(thread_id: str = Form(...)):
+    """
+    DELETE endpoint for deleting a chat.
+    """
+    DB_URI = settings.DatabaseSettings.DATABASE_URL
+    memory = AsyncPostgresSaver.from_conn_string(DB_URI)
+    await memory.delete_thread(thread_id)
+    return JSONResponse(status_code=200, content={"status": "success", "thread_id": thread_id})
+    
+
+
+@app.get('/test/single_chat/')
+async def test_chat(message: str = Query(...)):
+    """
+    GET endpoint for testing the chat. This returns a single chat response, without streaming.
+    Also, it returns in the SDK format, with the documents and the answer. 
+    """
+
+    response = await get_single_chat_response(message)
+    return JSONResponse(status_code=200, content={"answer": response['answer'], "documents": response['retrieved_documents']})
+
+
+
 
 
 @app.post('/upload_file/')

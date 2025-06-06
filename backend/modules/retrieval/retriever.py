@@ -12,8 +12,8 @@ from modules.vector_store.vector_store import vectordb
 from config import settings
 load_dotenv()
 
-SEARCH_TYPE = settings.SEARCH_TYPE
-SEARCH_KWARGS = settings.SEARCH_KWARGS
+SEARCH_TYPE = settings.SearchSettings.SEARCH_TYPE
+SEARCH_KWARGS = settings.SearchSettings.SEARCH_KWARGS
 
 
 
