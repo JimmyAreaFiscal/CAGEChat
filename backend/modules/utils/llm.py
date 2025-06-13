@@ -3,7 +3,7 @@ This module is responsible for creating the LLM models based on the config file.
 It is used by other modules by holding all LLM models in a single place.
 
 """
-from config import settings
+from config import Settings, settings
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI 
@@ -14,38 +14,40 @@ EMBEDDING_MODEL_TO_USE = settings.ModelSettings.EMBEDDING_MODEL_CONFIG
 
 
 # Reasoning LLM:
-
-if CHAT_MODELS_TO_USE['reasoning']['type'] == "openai":
-    ReasoningLLM = ChatOpenAI(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
-elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "anthropic":
-    ReasoningLLM = ChatAnthropic(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
-elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "google":
-    ReasoningLLM = ChatGoogleGenerativeAI(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
-elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "cohere":
-    ReasoningLLM = ChatCohere(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
-else:
-    raise ValueError(f"Invalid reasoning model type: {CHAT_MODELS_TO_USE['reasoning']['type']}")
+def ReasoningLLM(config: Settings = settings):
+    if CHAT_MODELS_TO_USE['reasoning']['type'] == "openai":
+        reasoning_model = ChatOpenAI(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
+    elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "anthropic":
+        reasoning_model = ChatAnthropic(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
+    elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "google":
+        reasoning_model = ChatGoogleGenerativeAI(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
+    elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "cohere":
+        reasoning_model = ChatCohere(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
+    else:
+        raise ValueError(f"Invalid reasoning model type: {CHAT_MODELS_TO_USE['reasoning']['type']}")
+    return reasoning_model
 
 # General Tasks LLM:
-
-if CHAT_MODELS_TO_USE['general_tasks']['type'] == "openai":
-    GeneralTasksLLM = ChatOpenAI(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
-elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "anthropic":
-    GeneralTasksLLM = ChatAnthropic(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
-elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "google":
-    GeneralTasksLLM = ChatGoogleGenerativeAI(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
-elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "cohere":
-    GeneralTasksLLM = ChatCohere(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
-else:
-    raise ValueError(f"Invalid general tasks model type: {CHAT_MODELS_TO_USE['general_tasks']['type']}")
-
-
-
-
+def GeneralTasksLLM(config: Settings = settings):
+    if CHAT_MODELS_TO_USE['general_tasks']['type'] == "openai":
+        general_tasks_model = ChatOpenAI(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
+    elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "anthropic":
+        general_tasks_model = ChatAnthropic(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
+    elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "google":
+        general_tasks_model = ChatGoogleGenerativeAI(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
+    elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "cohere":
+        general_tasks_model = ChatCohere(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
+    else:
+        raise ValueError(f"Invalid general tasks model type: {CHAT_MODELS_TO_USE['general_tasks']['type']}")
+    return general_tasks_model
 
 # Set the embedding model to use
-if EMBEDDING_MODEL_TO_USE["type"] == "openai":
-    EmbeddingLLM = OpenAIEmbeddings(**EMBEDDING_MODEL_TO_USE["kwargs"])
-elif EMBEDDING_MODEL_TO_USE["type"] == "cohere":
-    EmbeddingLLM = CohereEmbeddings(**EMBEDDING_MODEL_TO_USE["kwargs"])
+def EmbeddingLLM(config: Settings = settings):
+    if EMBEDDING_MODEL_TO_USE["type"] == "openai":
+        embedding_model = OpenAIEmbeddings(**EMBEDDING_MODEL_TO_USE["kwargs"])
+    elif EMBEDDING_MODEL_TO_USE["type"] == "cohere":
+        embedding_model = CohereEmbeddings(**EMBEDDING_MODEL_TO_USE["kwargs"])
+    else:
+        raise ValueError(f"Invalid embedding model type: {EMBEDDING_MODEL_TO_USE['type']}")
+    return embedding_model
 

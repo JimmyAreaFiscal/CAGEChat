@@ -15,6 +15,7 @@ from typing import List
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
+from config import Settings, settings
 from modules.utils.templates import DECOMPOSITION_PROMPT_TEMPLATE
 from modules.utils.schemas import DecomposedQuestion, AgentState
 from modules.utils.llm import ReasoningLLM
@@ -22,13 +23,13 @@ from modules.graphs.subgraph_builder import retrieval_workflow_builder
 import asyncio
 
 
-def question_decomposition(state: AgentState) -> List[str]:
+def question_decomposition(state: AgentState, config: Settings = settings) -> List[str]:
     """
     Decompose the question into a list of subqueries related. 
     """
     question = state['rephrased_question']
     prompt = ChatPromptTemplate.from_template(DECOMPOSITION_PROMPT_TEMPLATE)
-    llm_with_structured_output = ReasoningLLM.with_structured_output(DecomposedQuestion)
+    llm_with_structured_output = ReasoningLLM(config).with_structured_output(DecomposedQuestion)
     llm = prompt | llm_with_structured_output
     result = llm.invoke({"question": question})
     
@@ -40,17 +41,17 @@ def question_decomposition(state: AgentState) -> List[str]:
     return state
 
 
-async def subquestion_qa_retrieval(state: AgentState) -> AgentState:
+async def subquestion_qa_retrieval(state: AgentState, config: Settings = settings) -> AgentState:
     """
     This function is responsible for answering the subquestions using the RAG subgraph.
     """
 
-    retrieval_workflow = retrieval_workflow_builder()
+    retrieval_workflow = retrieval_workflow_builder(config)
     retrieval_graph = retrieval_workflow.compile()
 
     subquestions = state['subquestions']
     qa_context = [
-        retrieval_graph.ainvoke({"original_question": q},)
+        retrieval_graph.ainvoke({"original_question": q})
         for q in subquestions
     ]
     

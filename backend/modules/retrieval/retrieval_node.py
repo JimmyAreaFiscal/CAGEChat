@@ -8,7 +8,7 @@ Then, the retrieval node is imported from the other modules.
 
 """
 
-from modules.retrieval.retriever import retriever
+from modules.retrieval.retriever import Retriever
 from modules.utils.schemas import RetrievalState
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from langchain_core.prompts import ChatPromptTemplate
@@ -16,10 +16,10 @@ from modules.utils.llm import GeneralTasksLLM
 from modules.utils.schemas import GradeDocument
 from modules.utils.templates import GENERATOR_RETRIEVAL_ANSWER_PROMPT_TEMPLATE
 from modules.utils.schemas import _avoid_spam
-
+from config import Settings, settings
 logging.basicConfig(level=logging.INFO)
 
-def retrieve(state: RetrievalState):
+def retrieve(state: RetrievalState, config: Settings = settings):
     """
     This function is responsible for retrieving documents from the vector store.
 
@@ -35,7 +35,8 @@ def retrieve(state: RetrievalState):
     if not retrieval_question: 
         state['retrieval_question'] = state['original_question']
         retrieval_question = state['original_question']
-        
+
+    retriever = Retriever(config)
     documents = retriever.invoke(state['retrieval_question'])
     logging.info(f"retrieve: Found {len(documents)} documents")
     state['documents'] = documents
@@ -46,7 +47,7 @@ def retrieve(state: RetrievalState):
     return state 
 
 
-def retrieval_grader(state: RetrievalState):
+def retrieval_grader(state: RetrievalState, config: Settings = settings):
     logging.info("Entering retrieval_grader")
     system_message = SystemMessage(
         content=""" Você é um avaliador que determina se os documentos são relevantes para a questão do usuário.
@@ -55,7 +56,7 @@ def retrieval_grader(state: RetrievalState):
         Se os documentos não forem relevantes, responda com 'Não'. Se os documentos forem relevantes, responda com 'Sim'.
         """
     )
-    llm = GeneralTasksLLM
+    llm = GeneralTasksLLM(config)
     structured_llm = llm.with_structured_output(GradeDocument)
 
     relevant_docs = []
@@ -82,7 +83,7 @@ def retrieval_grader(state: RetrievalState):
     return state 
 
 
-def refine_question(state: RetrievalState):
+def refine_question(state: RetrievalState, config: Settings = settings):
     """
     This function is responsible for refining the question in order to improve the retrieval.
     """
@@ -106,7 +107,7 @@ def refine_question(state: RetrievalState):
     refine_prompt = ChatPromptTemplate.from_messages(
         [system_message, human_message]
     )
-    llm = GeneralTasksLLM
+    llm = GeneralTasksLLM(config)
     response = llm.invoke(refine_prompt.format())
     refined_question = response.content.strip()
     logging.info(f"refine_question: Refined question: {refined_question}")
@@ -118,7 +119,7 @@ def refine_question(state: RetrievalState):
     return state 
 
 
-def generate_retrieval_answer(state: RetrievalState):
+def generate_retrieval_answer(state: RetrievalState, config: Settings = settings):
     """ 
     This node is responsible for generating a response after receiving the documents and the retrieval question from the RAG model.
     """
@@ -128,7 +129,7 @@ def generate_retrieval_answer(state: RetrievalState):
     question = state['retrieval_question']
     documents = state['documents']
 
-    llm = GeneralTasksLLM
+    llm = GeneralTasksLLM(config)
     prompt = ChatPromptTemplate.from_template(GENERATOR_RETRIEVAL_ANSWER_PROMPT_TEMPLATE)
     rag_chain = prompt | llm 
     response = rag_chain.invoke(
@@ -150,7 +151,7 @@ def generate_retrieval_answer(state: RetrievalState):
     return state 
 
 
-def cannot_answer_retrieval_task(state: RetrievalState):
+def cannot_answer_retrieval_task(state: RetrievalState, config: Settings = settings):
     """ 
     This node is responsible for generating a response when the RAG model does not find any relevant documents.
     """

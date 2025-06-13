@@ -8,18 +8,21 @@ Then, the retriever is imported from the other modules.
 """
 
 from dotenv import load_dotenv
-from modules.vector_store.vector_store import vectordb
-from config import settings
+from modules.vector_store.vector_store import VectorStore
+from config import settings, Settings
 load_dotenv()
 
-SEARCH_TYPE = settings.SearchSettings.SEARCH_TYPE
-SEARCH_KWARGS = settings.SearchSettings.SEARCH_KWARGS
 
 
 
-retriever = vectordb.as_retriever(
-    search_type=SEARCH_TYPE, 
-    search_kwargs=SEARCH_KWARGS)
+def Retriever(config: Settings = settings):
+    SEARCH_TYPE = settings.SearchSettings.SEARCH_TYPE
+    SEARCH_KWARGS = settings.SearchSettings.SEARCH_KWARGS
+    retriever = VectorStore(config).as_retriever(
+        search_type=SEARCH_TYPE, 
+        search_kwargs=SEARCH_KWARGS)
+
+    return retriever
 
 
 

@@ -9,6 +9,7 @@ For example, the question "Como posso me tornar um melhor atleta?" is not relate
 """
 from langchain_core.prompts import ChatPromptTemplate 
 from langchain_core.messages import SystemMessage, HumanMessage
+from config import Settings, settings
 from modules.utils.schemas import AgentState, GradeQuestion
 from modules.utils.llm import GeneralTasksLLM
 from modules.utils.templates import QUESTION_CLASSIFIER_TEMPLATE
@@ -16,7 +17,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-def question_classifier(state: AgentState) -> AgentState:
+def question_classifier(state: AgentState, config: Settings = settings) -> AgentState:
     logging.info("Entering question_classifier")
     system_message = SystemMessage(
         content=QUESTION_CLASSIFIER_TEMPLATE 
@@ -29,7 +30,7 @@ def question_classifier(state: AgentState) -> AgentState:
         [system_message, human_message]
     )
 
-    llm = GeneralTasksLLM
+    llm = GeneralTasksLLM(config)
     structured_llm = llm.with_structured_output(GradeQuestion)
     
     grader_llm = grade_prompt | structured_llm 

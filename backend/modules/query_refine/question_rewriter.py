@@ -12,8 +12,9 @@ from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 from modules.utils.schemas import AgentState
 from modules.utils.llm import GeneralTasksLLM
 from modules.utils.templates import QUESTION_REWRITER_TEMPLATE
+from config import Settings, settings
 
-def question_rewriter(state: AgentState) -> AgentState:
+def question_rewriter(state: AgentState, config: Settings = settings) -> AgentState:
     """
     This function is responsible for rewriting the question to allow the system to use the historical conversations.
     """
@@ -47,7 +48,7 @@ def question_rewriter(state: AgentState) -> AgentState:
         messages.append(HumanMessage(content=current_question))
         rephrase_prompt = ChatPromptTemplate.from_messages(messages)
         
-        llm = GeneralTasksLLM
+        llm = GeneralTasksLLM(config)
         prompt = rephrase_prompt.format() 
         response = llm.invoke(prompt)
         better_question = response.content.strip() 

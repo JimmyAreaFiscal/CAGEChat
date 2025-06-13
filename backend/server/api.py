@@ -8,7 +8,7 @@ import json
 from langchain_core.messages import HumanMessage, AIMessageChunk
 from modules.graphs.graph import chat_graph, upload_graph, memory
 
-from config import settings
+from config import Settings, settings
 from modules.database.database import QaADatabase
 import uvicorn
 
@@ -113,6 +113,7 @@ async def generate_chat_responses(message: str, thread_id: Optional[str] = None,
             yield f"data: {json.dumps(payload)}\n\n"
 
     yield f'data: {{"type": "end"}} \n\n'
+
 
 
 async def get_single_chat_response(message: str):

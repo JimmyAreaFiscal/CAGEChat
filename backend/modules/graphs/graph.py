@@ -12,33 +12,21 @@ load_dotenv()
 from langgraph.checkpoint.memory import InMemorySaver
 from modules.graphs.subgraph_builder import retrieval_workflow_builder
 from modules.graphs.graph_builder import chat_workflow_builder, upload_documents_workflow_builder
-from config import settings
+from config import Settings, settings
 
-
-DB_URI = settings.DatabaseSettings.DATABASE_URL
-
-# Use the latest LangGraph PostgresSaver API (as of 2024-06)
-# You do NOT need to create a psycopg Connection or pass connection_kwargs.
-# Instead, use PostgresSaver.from_conn_string and pass the database URL directly.
-
-# Remove connection_kwargs and Connection usage entirely.
-# Example:
-# memory = PostgresSaver.from_conn_string(DB_URI)
-
-# (The rest of the code should use `memory` as the checkpointer.)
 
 memory = InMemorySaver()
 
 
 # Building the graphs
-chat_workflow = chat_workflow_builder()
+chat_workflow = chat_workflow_builder(settings)
 chat_graph = chat_workflow.compile(checkpointer=memory)
 
-retrieval_workflow = retrieval_workflow_builder()
+retrieval_workflow = retrieval_workflow_builder(settings)
 retrieval_graph = retrieval_workflow.compile()
 
 
 # Document upload workflow
-upload_workflow = upload_documents_workflow_builder()
+upload_workflow = upload_documents_workflow_builder(settings)
 upload_graph = upload_workflow.compile()
 

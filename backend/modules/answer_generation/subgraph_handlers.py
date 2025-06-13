@@ -9,9 +9,9 @@ In order to be able to use subgraph's states, we need to create an adapter for t
 
 
 from modules.utils.schemas import AgentState, RetrievalState
+from config import Settings, settings
 
-
-def retrieval_qa_adapter(state: AgentState) -> AgentState:
+def retrieval_qa_adapter(state: AgentState, config: Settings = settings) -> AgentState:
     """
     This function is responsible for adapting the main workflow state to the retrieval workflow state, using the Retrieval
 
