@@ -1,32 +1,32 @@
 [{
     "question": "Quais são as macrofunções da CAGE-RS?",
-    "ground_truth": "Contabilidade, controladoria, auditoria e integridade",
+    "reference": "Contabilidade, controladoria, auditoria e integridade",
     "document": {"name": "Manual do Gestor Público", "page": 6 }
 },
 
 {
     "question": "Quais são as Divisões da CAGE-RS?",
-    "ground_truth": "Gabinete,  Conselho Superior, Divisão de Controle da Administração Direta, Divisão de Controle da Administração Indireta, Divisão de Estudos e Orientação, Divisão de Informação e de Normatização Contábil, Divisão de Tecnologia da Informação, Divisão de Informações Estratégicas", 
+    "reference": "Gabinete,  Conselho Superior, Divisão de Controle da Administração Direta, Divisão de Controle da Administração Indireta, Divisão de Estudos e Orientação, Divisão de Informação e de Normatização Contábil, Divisão de Tecnologia da Informação, Divisão de Informações Estratégicas", 
     "document": {"name": "Manual do Gestor Público", "page": 9 }
 
 },
 
 {
     "question": "Quais são as funções do Gabinete?",
-    "ground_truth": "Representação institucional da CAGE-RS, oferecendo os direcionadores estratégicos aos seus órgãos de execução, além de apoiar as divisões com a centralização de atividades administrativas comuns",
+    "reference": "Representação institucional da CAGE-RS, oferecendo os direcionadores estratégicos aos seus órgãos de execução, além de apoiar as divisões com a centralização de atividades administrativas comuns",
     "document": {"name": "Manual do Gestor Público", "page": 9 }
 },
 
 {
     "question": "Quais são as funções do Conselho Superior?",
-    "ground_truth": "Possui função normativa, deliberativa e de orientação interna, competindo pronunciar-se sobe o desempenho de integrrantes da carreira de auditor do Estado em estágio probatório; sobre o exercício de Auditores do Estado e servidores do Órgão em funções externas; sobre alterações na estrutura do órgão; além de expedir provimentos visando à simplificação e ao aprimoramento dos serviços da CAGE, entre outras competências de relevo.",
+    "reference": "Possui função normativa, deliberativa e de orientação interna, competindo pronunciar-se sobe o desempenho de integrrantes da carreira de auditor do Estado em estágio probatório; sobre o exercício de Auditores do Estado e servidores do Órgão em funções externas; sobre alterações na estrutura do órgão; além de expedir provimentos visando à simplificação e ao aprimoramento dos serviços da CAGE, entre outras competências de relevo.",
     "document": {"name": "Manual do Gestor Público", "page": 10 }
 },
 
 
     {
       "question": "Quem disponibiliza a 5ª edição do Manual de Orientação do Gestor Público?",
-      "ground_truth": "A Contadoria e Auditoria-Geral do Estado – CAGE – disponibiliza a 5ª edição do Manual de Orientação do Gestor Público.",
+      "reference": "A Contadoria e Auditoria-Geral do Estado – CAGE – disponibiliza a 5ª edição do Manual de Orientação do Gestor Público.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": "Introdução",
@@ -35,7 +35,7 @@
     },
     {
       "question": "A 5ª edição do Manual de Orientação do Gestor Público foi elaborada por um único servidor?",
-      "ground_truth": "Não, a 5ª edição do Manual é o resultado do trabalho colaborativo de inúmeros servidores deste Órgão.",
+      "reference": "Não, a 5ª edição do Manual é o resultado do trabalho colaborativo de inúmeros servidores deste Órgão.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": "Introdução",
@@ -44,7 +44,7 @@
     },
     {
       "question": "Como a CAGE aprimorou a 5ª edição do Manual de Orientação do Gestor Público?",
-      "ground_truth": "A CAGE realizou uma pesquisa junto aos gestores e servidores públicos, e com as informações colhidas, estabeleceu diretrizes para o aprimoramento, como a inclusão de novos capítulos, inserção de tópicos, aprofundamento da abordagem e indicação de fontes jurisprudenciais.",
+      "reference": "A CAGE realizou uma pesquisa junto aos gestores e servidores públicos, e com as informações colhidas, estabeleceu diretrizes para o aprimoramento, como a inclusão de novos capítulos, inserção de tópicos, aprofundamento da abordagem e indicação de fontes jurisprudenciais.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": "Introdução",
@@ -53,7 +53,7 @@
     },
     {
       "question": "Qual o principal benefício esperado com o aprimoramento da 5ª edição do Manual?",
-      "ground_truth": "O principal benefício esperado é tornar o Manual um instrumento ainda mais eficiente em seus propósitos, fornecendo um conteúdo útil a quem desempenha a função de gerir a coisa pública.",
+      "reference": "O principal benefício esperado é tornar o Manual um instrumento ainda mais eficiente em seus propósitos, fornecendo um conteúdo útil a quem desempenha a função de gerir a coisa pública.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": "Introdução",
@@ -62,7 +62,7 @@
     },
     {
       "question": "O gestor público responde por atos de gestão praticados em administrações anteriores?",
-      "ground_truth": "Não, a autoridade máxima do órgão ou da entidade é responsável por todos os atos de sua gestão a partir de sua designação, e não responde pelos atos de gestão praticados em administrações anteriores.",
+      "reference": "Não, a autoridade máxima do órgão ou da entidade é responsável por todos os atos de sua gestão a partir de sua designação, e não responde pelos atos de gestão praticados em administrações anteriores.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 38,
@@ -71,7 +71,7 @@
     },
     {
       "question": "A responsabilidade do gestor público na condição de ordenador de despesa se inicia antes de sua designação?",
-      "ground_truth": "Não, a responsabilidade do gestor se inicia a partir de sua designação (eleição ou nomeação).",
+      "reference": "Não, a responsabilidade do gestor se inicia a partir de sua designação (eleição ou nomeação).",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 38,
@@ -80,7 +80,7 @@
     },
     {
       "question": "Quais são as principais áreas de gestão pelas quais a autoridade máxima de um órgão ou entidade pública é responsável a partir de sua designação?",
-      "ground_truth": "A autoridade máxima é responsável, a partir de sua designação, pela gestão orçamentária, gestão financeira, gestão patrimonial, gestão operacional e gestão administrativa.",
+      "reference": "A autoridade máxima é responsável, a partir de sua designação, pela gestão orçamentária, gestão financeira, gestão patrimonial, gestão operacional e gestão administrativa.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 38,
@@ -89,7 +89,7 @@
     },
     {
       "question": "Quais princípios aplicáveis à Administração Pública devem ser obrigatoriamente observados pelo gestor em sua gestão?",
-      "ground_truth": "A gestão do gestor público deverá observar, obrigatoriamente, os princípios da legalidade, da economicidade, da moralidade, da eficiência e da motivação.",
+      "reference": "A gestão do gestor público deverá observar, obrigatoriamente, os princípios da legalidade, da economicidade, da moralidade, da eficiência e da motivação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 38,
@@ -98,7 +98,7 @@
     },
     {
       "question": "É possível a permuta de bens imóveis dominicais do Estado por área construída?",
-      "ground_truth": "Sim, é possível tal permuta conforme parecer exarado pela Procuradoria-Geral do Estado.",
+      "reference": "Sim, é possível tal permuta conforme parecer exarado pela Procuradoria-Geral do Estado.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 129,
@@ -107,7 +107,7 @@
     },
     {
       "question": "A Lei Estadual nº 14.954/2016, que trata do Programa de Aproveitamento e Gestão dos Imóveis, foi considerada inconstitucional pela PGE?",
-      "ground_truth": "Não, o Parecer nº 18.838/21 da Procuradoria-Geral do Estado não vislumbrou vícios de constitucionalidade na Lei Estadual nº 14.954/2016.",
+      "reference": "Não, o Parecer nº 18.838/21 da Procuradoria-Geral do Estado não vislumbrou vícios de constitucionalidade na Lei Estadual nº 14.954/2016.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 129,
@@ -116,7 +116,7 @@
     },
     {
       "question": "Qual programa estadual permite a permuta de bens imóveis dominicais do Estado por meio de permuta por área construída, conforme o parecer da PGE?",
-      "ground_truth": "O Programa de Aproveitamento e Gestão dos Imóveis no âmbito do Estado do Rio Grande do Sul, criado pela Lei Estadual nº 14.954/2016.",
+      "reference": "O Programa de Aproveitamento e Gestão dos Imóveis no âmbito do Estado do Rio Grande do Sul, criado pela Lei Estadual nº 14.954/2016.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 129,
@@ -125,7 +125,7 @@
     },
     {
       "question": "Em que data o Parecer nº 18.838/21 da Procuradoria-Geral do Estado, que trata da permuta de bens imóveis do Estado, foi publicado?",
-      "ground_truth": "O Parecer nº 18.838/21 da Procuradoria-Geral do Estado foi publicado em 07/07/2021.",
+      "reference": "O Parecer nº 18.838/21 da Procuradoria-Geral do Estado foi publicado em 07/07/2021.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 129,
@@ -134,7 +134,7 @@
     },
     {
       "question": "Os procedimentos de inventário na Administração Pública Direta são estabelecidos por qual órgão?",
-      "ground_truth": "Os procedimentos de inventário na Administração Pública Direta são estabelecidos pela CAGE.",
+      "reference": "Os procedimentos de inventário na Administração Pública Direta são estabelecidos pela CAGE.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 12,
@@ -143,7 +143,7 @@
     },
     {
       "question": "Para ressarcimento ao erário em se tratando de bens, a reparação mediante pagamento deve considerar o preço de mercado à época do efetivo recolhimento?",
-      "ground_truth": "Sim, considera-se como integral ressarcimento a reparação mediante pagamento da importância equivalente aos preços de mercado, à época do efetivo recolhimento.",
+      "reference": "Sim, considera-se como integral ressarcimento a reparação mediante pagamento da importância equivalente aos preços de mercado, à época do efetivo recolhimento.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 14,
@@ -152,7 +152,7 @@
     },
     {
       "question": "Que informações devem constar na ata de inventário ao final do levantamento físico-financeiro de bens?",
-      "ground_truth": "Na ata de inventário, devem ser anotadas e descritas quaisquer divergências entre as quantidades físicas contadas com as quantidades registradas no sistema de controle patrimonial, bem como todas as demais ocorrências que forem julgadas relevantes.",
+      "reference": "Na ata de inventário, devem ser anotadas e descritas quaisquer divergências entre as quantidades físicas contadas com as quantidades registradas no sistema de controle patrimonial, bem como todas as demais ocorrências que forem julgadas relevantes.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 13,
@@ -161,7 +161,7 @@
     },
     {
       "question": "Como o preço de mercado para fins de ressarcimento de bens ao erário deve ser calculado, conforme as normas?",
-      "ground_truth": "Para o cálculo da importância equivalente ao preço de mercado, deve ser realizada pesquisa de preços junto a estabelecimentos que comercializam o bem similar ou equivalente. É recomendável que a pesquisa abranja, no mínimo, três estabelecimentos comerciais, e o preço de mercado deve corresponder à média dos preços praticados.",
+      "reference": "Para o cálculo da importância equivalente ao preço de mercado, deve ser realizada pesquisa de preços junto a estabelecimentos que comercializam o bem similar ou equivalente. É recomendável que a pesquisa abranja, no mínimo, três estabelecimentos comerciais, e o preço de mercado deve corresponder à média dos preços praticados.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 14,
@@ -170,7 +170,7 @@
     },
     {
       "question": "O ato administrativo a ser praticado pelo Governador do Estado, envolvendo duas ou mais Secretarias, requer a manifestação de todos os órgãos e entidades relacionados ao tema?",
-      "ground_truth": "Sim, no caso de o ato administrativo envolver duas ou mais Secretarias, deverá haver manifestação de todos os órgãos e as entidades que têm relação com o tema.",
+      "reference": "Sim, no caso de o ato administrativo envolver duas ou mais Secretarias, deverá haver manifestação de todos os órgãos e as entidades que têm relação com o tema.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 17,
@@ -179,7 +179,7 @@
     },
     {
       "question": "Para atos administrativos propostos ao Governador do Estado, a análise jurídica prévia do órgão proponente é dispensável?",
-      "ground_truth": "Não, ainda é necessária prévia análise jurídica e técnica pelo órgão proponente.",
+      "reference": "Não, ainda é necessária prévia análise jurídica e técnica pelo órgão proponente.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 17,
@@ -188,7 +188,7 @@
     },
     {
       "question": "Segundo Maria Sylvia Zanella Di Pietro, como pode ser conceituado o regime jurídico administrativo?",
-      "ground_truth": "Pode-se conceituar o regime jurídico administrativo como o “conjunto das prerrogativas e restrições a que está sujeita a Administração e que não se encontram nas relações entre particulares”.",
+      "reference": "Pode-se conceituar o regime jurídico administrativo como o “conjunto das prerrogativas e restrições a que está sujeita a Administração e que não se encontram nas relações entre particulares”.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 11,
@@ -197,7 +197,7 @@
     },
     {
       "question": "De acordo com o Manual de Boas Práticas da Secretaria da Casa Civil, quais informações devem constar no processo administrativo eletrônico para atos propostos ao Governador, e por qual meio?",
-      "ground_truth": "O objeto do ato a ser publicado e a sua finalidade deverão vir devidamente informados no processo administrativo eletrônico, de acordo com o rito estabelecido, em uma Nota Técnica, tornando possível identificar o contexto e os motivos para a edição do ato.",
+      "reference": "O objeto do ato a ser publicado e a sua finalidade deverão vir devidamente informados no processo administrativo eletrônico, de acordo com o rito estabelecido, em uma Nota Técnica, tornando possível identificar o contexto e os motivos para a edição do ato.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 17,
@@ -206,7 +206,7 @@
     },
     {
       "question": "No processo administrativo, o ônus de apresentação das provas cabe à Administração Pública?",
-      "ground_truth": "Não, o ônus de apresentação das provas cabe sempre ao interessado.",
+      "reference": "Não, o ônus de apresentação das provas cabe sempre ao interessado.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 18,
@@ -215,7 +215,7 @@
     },
     {
       "question": "É permitida a utilização de provas obtidas de forma ilícita no processo administrativo?",
-      "ground_truth": "Não, a Lei admite a utilização de diversos meios de prova, excluindo apenas aquelas obtidas de forma ilícita.",
+      "reference": "Não, a Lei admite a utilização de diversos meios de prova, excluindo apenas aquelas obtidas de forma ilícita.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 18,
@@ -224,7 +224,7 @@
     },
     {
       "question": "Quais meios de prova são admitidos no processo administrativo, segundo a lei, com exceção das obtidas ilicitamente?",
-      "ground_truth": "São admitidos meios de prova como juntar documentos e pareceres, requerer diligências e perícias, bem como aduzir alegações referentes à matéria objeto do processo.",
+      "reference": "São admitidos meios de prova como juntar documentos e pareceres, requerer diligências e perícias, bem como aduzir alegações referentes à matéria objeto do processo.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 18,
@@ -233,7 +233,7 @@
     },
     {
       "question": "Como pode ser realizada a oitiva de outros órgãos ou entidades administrativas para produção de acervo probatório em um processo?",
-      "ground_truth": "Para a produção de acervo probatório, é possível a audiência de outros órgãos ou entidades administrativas, que poderá ser realizada em reunião conjunta, com a participação de titulares ou representantes dos órgãos competentes, lavrando-se a respectiva ata, a ser juntada aos autos.",
+      "reference": "Para a produção de acervo probatório, é possível a audiência de outros órgãos ou entidades administrativas, que poderá ser realizada em reunião conjunta, com a participação de titulares ou representantes dos órgãos competentes, lavrando-se a respectiva ata, a ser juntada aos autos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 18,
@@ -242,7 +242,7 @@
     },
     {
       "question": "O planejamento na gestão pública deve contemplar os objetivos do órgão ou entidade?",
-      "ground_truth": "Sim, o planejamento relaciona-se com as ações tendentes a contemplar os objetivos do órgão/entidade.",
+      "reference": "Sim, o planejamento relaciona-se com as ações tendentes a contemplar os objetivos do órgão/entidade.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 19,
@@ -251,7 +251,7 @@
     },
     {
       "question": "Uma gestão sem o uso do planejamento tende a atingir proativamente novos objetivos institucionais?",
-      "ground_truth": "Não, sem o uso do planejamento, a gestão tenderá a atingir tão-somente os objetivos institucionais já consagrados, atendendo reativamente as demandas.",
+      "reference": "Não, sem o uso do planejamento, a gestão tenderá a atingir tão-somente os objetivos institucionais já consagrados, atendendo reativamente as demandas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 19,
@@ -260,7 +260,7 @@
     },
     {
       "question": "Qual a relação entre planejamento e gestão por projetos na administração pública?",
-      "ground_truth": "Visto ser o planejamento um instrumento utilizado para melhor atingir os resultados da organização, a cultura do planejamento, quando consolidada, permitirá ao gestor conduzir o órgão/entidade a uma gestão por projetos.",
+      "reference": "Visto ser o planejamento um instrumento utilizado para melhor atingir os resultados da organização, a cultura do planejamento, quando consolidada, permitirá ao gestor conduzir o órgão/entidade a uma gestão por projetos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 19,
@@ -269,7 +269,7 @@
     },
     {
       "question": "De que forma o planejamento auxilia o gestor a atingir os fins da organização?",
-      "ground_truth": "O planejamento serve como ferramenta conceitual para atingir os fins da organização, permitindo um método proativo que se antecipa aos problemas e dificuldades.",
+      "reference": "O planejamento serve como ferramenta conceitual para atingir os fins da organização, permitindo um método proativo que se antecipa aos problemas e dificuldades.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 19,
@@ -278,7 +278,7 @@
     },
     {
       "question": "O planejamento, para ser eficaz, deve ser registrado e acessível a todos os interessados?",
-      "ground_truth": "Sim, é indispensável que o planejamento seja sistemático, tenha metodologia conhecida, seja registrado e acessível a todos os interessados.",
+      "reference": "Sim, é indispensável que o planejamento seja sistemático, tenha metodologia conhecida, seja registrado e acessível a todos os interessados.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 20,
@@ -287,7 +287,7 @@
     },
     {
       "question": "É indispensável o cuidado na elaboração do cronograma de realização do planejamento para evitar prioridades além do tempo disponível?",
-      "ground_truth": "Sim, também é indispensável o cuidado na elaboração do cronograma de realização, evitando que sejam estabelecidas prioridades além do tempo disponível para realizá-las.",
+      "reference": "Sim, também é indispensável o cuidado na elaboração do cronograma de realização, evitando que sejam estabelecidas prioridades além do tempo disponível para realizá-las.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 20,
@@ -296,7 +296,7 @@
     },
     {
       "question": "Quais tipos de recursos devem ser levados em conta ao estabelecer metas no planejamento?",
-      "ground_truth": "O estabelecimento de metas requer que sejam levados em conta os meios para sua realização, especialmente os referentes a recursos humanos, financeiros, materiais e tecnológicos.",
+      "reference": "O estabelecimento de metas requer que sejam levados em conta os meios para sua realização, especialmente os referentes a recursos humanos, financeiros, materiais e tecnológicos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 20,
@@ -305,7 +305,7 @@
     },
     {
       "question": "Além de investir tempo e recursos, o que é indispensável para a eficácia do planejamento e para evitar frustrações?",
-      "ground_truth": "É indispensável o levantamento e o registro dos elementos limitadores para a realização das ações e o alcance das metas, evitando frustrações por dificuldades não adequadamente identificadas.",
+      "reference": "É indispensável o levantamento e o registro dos elementos limitadores para a realização das ações e o alcance das metas, evitando frustrações por dificuldades não adequadamente identificadas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 21,
@@ -314,7 +314,7 @@
     },
     {
       "question": "Metas sem quantitativos possuem apenas data prevista para conclusão?",
-      "ground_truth": "Sim, metas sem quantitativos possuem apenas data prevista para conclusão.",
+      "reference": "Sim, metas sem quantitativos possuem apenas data prevista para conclusão.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 26,
@@ -323,7 +323,7 @@
     },
     {
       "question": "O conjunto das metas e ações deve, necessariamente, representar a organização?",
-      "ground_truth": "Sim, o conjunto das metas e ações deve, necessariamente, representar a organização, sendo possível conhecê-la por meio de sua leitura.",
+      "reference": "Sim, o conjunto das metas e ações deve, necessariamente, representar a organização, sendo possível conhecê-la por meio de sua leitura.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 24,
@@ -332,7 +332,7 @@
     },
     {
       "question": "Quais são as exigências para uma apropriada definição de metas, conforme apresentado?",
-      "ground_truth": "Para uma apropriada definição de metas, as exigências são: descrição adequada; indicador quantitativo; prazo de realização; indicação do responsável ou dos responsáveis; ações vinculadas; objetivos estratégicos a serem atendidos.",
+      "reference": "Para uma apropriada definição de metas, as exigências são: descrição adequada; indicador quantitativo; prazo de realização; indicação do responsável ou dos responsáveis; ações vinculadas; objetivos estratégicos a serem atendidos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 25,
@@ -341,7 +341,7 @@
     },
     {
       "question": "Qual a principal diferença entre indicadores de resultado e quantitativos de metas na Administração Pública, e por que é sugerido separá-los?",
-      "ground_truth": "Indicadores de resultados indicam uma mudança de realidade como consequência de diversas ações realizadas e não são obtidos diretamente, sendo difíceis de conceber/calcular/medir. Quantitativos de metas estão associados a uma quantidade a ser alcançada. Sugere-se separá-los porque, na Administração Pública, os resultados alcançados não ocorrem de forma direta e proporcional ao alcance das metas.",
+      "reference": "Indicadores de resultados indicam uma mudança de realidade como consequência de diversas ações realizadas e não são obtidos diretamente, sendo difíceis de conceber/calcular/medir. Quantitativos de metas estão associados a uma quantidade a ser alcançada. Sugere-se separá-los porque, na Administração Pública, os resultados alcançados não ocorrem de forma direta e proporcional ao alcance das metas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 24,
@@ -350,7 +350,7 @@
     },
     {
       "question": "É obrigatória a correspondência de uma ação para atingir somente uma meta?",
-      "ground_truth": "Não, uma ação pode contribuir para atingir várias metas, assim como uma meta pode requerer várias ações para ser alcançada. Não é obrigatória a correspondência uma por uma.",
+      "reference": "Não, uma ação pode contribuir para atingir várias metas, assim como uma meta pode requerer várias ações para ser alcançada. Não é obrigatória a correspondência uma por uma.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 27,
@@ -359,7 +359,7 @@
     },
     {
       "question": "Todas as ações a serem desenvolvidas por um órgão ou entidade precisam ter uma estimativa de custo?",
-      "ground_truth": "Sim, todas as ações a serem desenvolvidas pelo órgão/entidade precisarão ter uma estimativa de custo.",
+      "reference": "Sim, todas as ações a serem desenvolvidas pelo órgão/entidade precisarão ter uma estimativa de custo.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 28,
@@ -368,7 +368,7 @@
     },
     {
       "question": "Quais são as exigências para uma adequada definição de ação?",
-      "ground_truth": "Para uma adequada definição de ação, as exigências são: descrição apropriada; prazo de realização; custo da ação; cronograma financeiro; indicação do responsável ou dos responsáveis; vinculação à meta.",
+      "reference": "Para uma adequada definição de ação, as exigências são: descrição apropriada; prazo de realização; custo da ação; cronograma financeiro; indicação do responsável ou dos responsáveis; vinculação à meta.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 28,
@@ -377,7 +377,7 @@
     },
     {
       "question": "Por que é recomendado estabelecer um número restrito de ações por meta, embora não se deva limitar o detalhamento necessário?",
-      "ground_truth": "É recomendado estabelecer um número restrito de ações por meta porque essas requererão muitas etapas, o que poderá tornar o acompanhamento do planejamento um pouco árduo e burocrático.",
+      "reference": "É recomendado estabelecer um número restrito de ações por meta porque essas requererão muitas etapas, o que poderá tornar o acompanhamento do planejamento um pouco árduo e burocrático.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 30,
@@ -386,7 +386,7 @@
     },
     {
       "question": "As etapas de planejamento seguem a mesma linha das ações?",
-      "ground_truth": "Sim, as etapas seguem a mesma linha das ações.",
+      "reference": "Sim, as etapas seguem a mesma linha das ações.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 31,
@@ -395,7 +395,7 @@
     },
     {
       "question": "O detalhamento das etapas permite ter domínio sobre o andamento das atividades?",
-      "ground_truth": "Sim, o detalhamento das etapas permite que se perceba que poderá haver domínio sobre o andamento das atividades, desde que devidamente registradas e comparadas com o previsto.",
+      "reference": "Sim, o detalhamento das etapas permite que se perceba que poderá haver domínio sobre o andamento das atividades, desde que devidamente registradas e comparadas com o previsto.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 32,
@@ -404,7 +404,7 @@
     },
     {
       "question": "O que as etapas devem descrever em relação às ações?",
-      "ground_truth": "As etapas devem descrever todos os passos importantes para a consecução da ação.",
+      "reference": "As etapas devem descrever todos os passos importantes para a consecução da ação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 31,
@@ -413,7 +413,7 @@
     },
     {
       "question": "Por que registrar e comparar o andamento das etapas com o previsto é considerado um poderoso instrumento gerencial?",
-      "ground_truth": "Porque, desde que devidamente registradas e comparadas com o previsto, as etapas detalhadas permitem que se perceba que poderá haver domínio sobre o andamento das atividades, o que se torna um poderoso instrumento gerencial.",
+      "reference": "Porque, desde que devidamente registradas e comparadas com o previsto, as etapas detalhadas permitem que se perceba que poderá haver domínio sobre o andamento das atividades, o que se torna um poderoso instrumento gerencial.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 32,
@@ -422,7 +422,7 @@
     },
     {
       "question": "A definição da Missão e da Visão é um procedimento sugerido para o planejamento quadrienal?",
-      "ground_truth": "Sim, a definição da Missão e da Visão é um dos procedimentos mínimos sugeridos para o planejamento quadrienal.",
+      "reference": "Sim, a definição da Missão e da Visão é um dos procedimentos mínimos sugeridos para o planejamento quadrienal.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 32,
@@ -431,7 +431,7 @@
     },
     {
       "question": "O Plano Plurianual (PPA) deve ser elaborado no primeiro quadrimestre do primeiro ano de mandato?",
-      "ground_truth": "Não, o Plano Plurianual (PPA) deve ser elaborado entre maio e junho do primeiro ano de mandato.",
+      "reference": "Não, o Plano Plurianual (PPA) deve ser elaborado entre maio e junho do primeiro ano de mandato.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 33,
@@ -440,7 +440,7 @@
     },
     {
       "question": "Quais elementos devem ser definidos no planejamento quadrienal, conforme os procedimentos mínimos sugeridos?",
-      "ground_truth": "No planejamento quadrienal, devem ser definidos a Missão e a Visão, os propósitos e objetivos estratégicos, e os projetos que atenderão aos objetivos.",
+      "reference": "No planejamento quadrienal, devem ser definidos a Missão e a Visão, os propósitos e objetivos estratégicos, e os projetos que atenderão aos objetivos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 32,
@@ -449,7 +449,7 @@
     },
     {
       "question": "Em qual período e com base em que o planejamento anual operacional deve ser elaborado?",
-      "ground_truth": "O planejamento anual operacional deve ser elaborado em junho e julho para o ano seguinte, com base na definição das metas para o ano seguinte, definição das ações necessárias para o alcance das metas, e apuração do custo e demais meios para a realização das ações.",
+      "reference": "O planejamento anual operacional deve ser elaborado em junho e julho para o ano seguinte, com base na definição das metas para o ano seguinte, definição das ações necessárias para o alcance das metas, e apuração do custo e demais meios para a realização das ações.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 33,
@@ -458,7 +458,7 @@
     },
     {
       "question": "A Teoria da Agência estuda a relação entre um agente e um principal no âmbito organizacional?",
-      "ground_truth": "Sim, a Teoria da Agência consiste no estudo da relação entre um agente e um principal, existente no âmbito organizacional.",
+      "reference": "Sim, a Teoria da Agência consiste no estudo da relação entre um agente e um principal, existente no âmbito organizacional.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 35,
@@ -467,7 +467,7 @@
     },
     {
       "question": "A transparência ativa ocorre quando o fornecimento de dados pela organização se dá mediante solicitação do interessado?",
-      "ground_truth": "Não, na transparência ativa a organização disponibiliza dados de ofício, e na transparência passiva o fornecimento se dá mediante solicitação do interessado.",
+      "reference": "Não, na transparência ativa a organização disponibiliza dados de ofício, e na transparência passiva o fornecimento se dá mediante solicitação do interessado.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 38,
@@ -476,7 +476,7 @@
     },
     {
       "question": "Qual a função da governança em relação à alta administração, conforme descrito?",
-      "ground_truth": "A governança exerce a supervisão da alta administração deliberando sobre questões críticas, projetos estratégicos, definição de políticas organizacionais, aquisições e alienações relevantes, contratações, parcerias e convênios.",
+      "reference": "A governança exerce a supervisão da alta administração deliberando sobre questões críticas, projetos estratégicos, definição de políticas organizacionais, aquisições e alienações relevantes, contratações, parcerias e convênios.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 36,
@@ -485,7 +485,7 @@
     },
     {
       "question": "Quais são as duas formas de transparência mencionadas e como elas se diferenciam?",
-      "ground_truth": "As duas formas de transparência são a ativa e a passiva. Na transparência ativa, a organização disponibiliza dados de ofício. Na transparência passiva, o fornecimento de dados se dá mediante solicitação do interessado.",
+      "reference": "As duas formas de transparência são a ativa e a passiva. Na transparência ativa, a organização disponibiliza dados de ofício. Na transparência passiva, o fornecimento de dados se dá mediante solicitação do interessado.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 38,
@@ -494,7 +494,7 @@
     },
     {
       "question": "A análise de perfil e riscos é uma etapa fundamental na criação de um Programa de Integridade?",
-      "ground_truth": "Sim, a análise de perfil e dos riscos é etapa das mais fundamentais na criação de um Programa de Integridade.",
+      "reference": "Sim, a análise de perfil e dos riscos é etapa das mais fundamentais na criação de um Programa de Integridade.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 43,
@@ -503,7 +503,7 @@
     },
     {
       "question": "O Sistema de Controle de Programas de Integridade (SCPI) é implementado e gerido pela CGU?",
-      "ground_truth": "Não, o SCPI será implementado e gerido pela CAGE.",
+      "reference": "Não, o SCPI será implementado e gerido pela CAGE.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 42,
@@ -512,7 +512,7 @@
     },
     {
       "question": "Quais eixos uma matriz de risco deve conter para auxiliar na definição de riscos a serem tratados em um Programa de Integridade e seu nível de prioridade?",
-      "ground_truth": "Uma matriz de risco deve conter dois eixos: probabilidade de o risco acontecer e impacto caso este risco se materialize. Essas duas variáveis auxiliam na definição de quais riscos devem ser tratados no Programa de Integridade e com qual nível de prioridade.",
+      "reference": "Uma matriz de risco deve conter dois eixos: probabilidade de o risco acontecer e impacto caso este risco se materialize. Essas duas variáveis auxiliam na definição de quais riscos devem ser tratados no Programa de Integridade e com qual nível de prioridade.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 44,
@@ -521,7 +521,7 @@
     },
     {
       "question": "Quais são alguns exemplos de regras e instrumentos de um Programa de Integridade, além da análise periódica de riscos, conforme o Decreto Estadual nº 55.631/2021?",
-      "ground_truth": "Alguns exemplos são: padrões de conduta, código de ética e políticas de integridade estendidas a terceiros; registros contábeis que reflitam de forma completa e precisa as transações; e controles internos que assegurem a pronta elaboração e confiabilidade de relatórios financeiros.",
+      "reference": "Alguns exemplos são: padrões de conduta, código de ética e políticas de integridade estendidas a terceiros; registros contábeis que reflitam de forma completa e precisa as transações; e controles internos que assegurem a pronta elaboração e confiabilidade de relatórios financeiros.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 46,
@@ -530,7 +530,7 @@
     },
     {
       "question": "No Procedimento Administrativo de Responsabilização (PAR), a pessoa jurídica acusada tem 30 dias úteis para apresentar defesa após a intimação?",
-      "ground_truth": "Sim, a Comissão intima a pessoa jurídica acusada para, no prazo de 30 (trinta) dias úteis, apresentar defesa.",
+      "reference": "Sim, a Comissão intima a pessoa jurídica acusada para, no prazo de 30 (trinta) dias úteis, apresentar defesa.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 39,
@@ -539,7 +539,7 @@
     },
     {
       "question": "O relatório final da Comissão Processante no PAR deve ser elaborado em até 180 dias corridos da publicação da portaria de instauração?",
-      "ground_truth": "Não, o relatório final deve ser elaborado em até 180 (cento e oitenta) dias úteis contados da publicação da portaria de instauração do PAR, sendo passíveis de prorrogação.",
+      "reference": "Não, o relatório final deve ser elaborado em até 180 (cento e oitenta) dias úteis contados da publicação da portaria de instauração do PAR, sendo passíveis de prorrogação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 40,
@@ -548,7 +548,7 @@
     },
     {
       "question": "Quais informações a pessoa jurídica acusada deve apresentar à Comissão Processante no prazo de 30 dias úteis após a intimação, conforme o PAR?",
-      "ground_truth": "A pessoa jurídica acusada deve apresentar defesa, especificar provas que pretende produzir e fornecer as informações devidas sobre seu Programa de Integridade, se o possuir e desejar obter redução da multa.",
+      "reference": "A pessoa jurídica acusada deve apresentar defesa, especificar provas que pretende produzir e fornecer as informações devidas sobre seu Programa de Integridade, se o possuir e desejar obter redução da multa.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 39,
@@ -557,7 +557,7 @@
     },
     {
       "question": "O que o relatório final da Comissão Processante no PAR deve conter, em suma?",
-      "ground_truth": "No relatório, em suma, deve-se narrar as provas colhidas e os elementos de defesa apresentados, bem como emitir uma recomendação objetiva de julgamento quanto à responsabilização ou não da pessoa jurídica acusada e as sanções a serem aplicadas.",
+      "reference": "No relatório, em suma, deve-se narrar as provas colhidas e os elementos de defesa apresentados, bem como emitir uma recomendação objetiva de julgamento quanto à responsabilização ou não da pessoa jurídica acusada e as sanções a serem aplicadas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 40,
@@ -566,7 +566,7 @@
     },
     {
       "question": "A não consumação da infração pela pessoa jurídica resulta em um acréscimo na alíquota da multa?",
-      "ground_truth": "Sim, a não consumação da infração é um fator de acréscimo na alíquota da multa.",
+      "reference": "Sim, a não consumação da infração é um fator de acréscimo na alíquota da multa.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 41,
@@ -575,7 +575,7 @@
     },
     {
       "question": "A colaboração da pessoa jurídica com a investigação pode gerar uma subtração na alíquota da multa?",
-      "ground_truth": "Sim, a colaboração da pessoa jurídica com a investigação ou apuração do ato lesivo é um fator de subtração na alíquota da multa.",
+      "reference": "Sim, a colaboração da pessoa jurídica com a investigação ou apuração do ato lesivo é um fator de subtração na alíquota da multa.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 41,
@@ -584,7 +584,7 @@
     },
     {
       "question": "Quais fatores de acréscimo na alíquota da multa são mencionados no Decreto Estadual nº 55.631/2020?",
-      "ground_truth": "Os fatores de acréscimo na alíquota da multa são a não consumação da infração (1%) e o comprovado ressarcimento dos danos causados pela pessoa jurídica (1,5%).",
+      "reference": "Os fatores de acréscimo na alíquota da multa são a não consumação da infração (1%) e o comprovado ressarcimento dos danos causados pela pessoa jurídica (1,5%).",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 41,
@@ -593,7 +593,7 @@
     },
     {
       "question": "Qual a variação percentual de subtração na alíquota da multa pela comprovação de aplicação de um programa de integridade pela pessoa jurídica, conforme o Decreto Estadual nº 55.631/2020?",
-      "ground_truth": "A variação percentual de subtração na alíquota da multa pela comprovação de aplicação de um programa de integridade pela pessoa jurídica é de 1% a 4%.",
+      "reference": "A variação percentual de subtração na alíquota da multa pela comprovação de aplicação de um programa de integridade pela pessoa jurídica é de 1% a 4%.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 41,
@@ -602,7 +602,7 @@
     },
     {
       "question": "No CAGE Gerencial, um \"objeto\" pode ser um gráfico de barras ou uma tabela?",
-      "ground_truth": "Sim, um objeto do CAGE Gerencial pode ser um gráfico de barras, um mapa político com escalas de cor, ou mesmo uma simples tabela.",
+      "reference": "Sim, um objeto do CAGE Gerencial pode ser um gráfico de barras, um mapa político com escalas de cor, ou mesmo uma simples tabela.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 49,
@@ -611,7 +611,7 @@
     },
     {
       "question": "O usuário do CAGE Gerencial pode exportar dados em forma de planilha eletrônica?",
-      "ground_truth": "Sim, caso o usuário precise utilizar os dados exibidos em um objeto, ele pode exportá-los em forma de planilha eletrônica.",
+      "reference": "Sim, caso o usuário precise utilizar os dados exibidos em um objeto, ele pode exportá-los em forma de planilha eletrônica.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 50,
@@ -620,7 +620,7 @@
     },
     {
       "question": "Quais são algumas das funcionalidades disponíveis para o usuário no CAGE Gerencial?",
-      "ground_truth": "Algumas das funcionalidades disponíveis são Filtros, que permitem analisar informações pertinentes reduzindo os dados exibidos, Favoritos, para salvar filtros aplicados e refazer consultas posteriormente, e Exportação de dados em forma de planilha eletrônica.",
+      "reference": "Algumas das funcionalidades disponíveis são Filtros, que permitem analisar informações pertinentes reduzindo os dados exibidos, Favoritos, para salvar filtros aplicados e refazer consultas posteriormente, e Exportação de dados em forma de planilha eletrônica.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 49,
@@ -629,7 +629,7 @@
     },
     {
       "question": "Além de treinar encarregados, quais outras ações são necessárias em relação à gestão de dados pessoais e fluxo de informações em sistemas?",
-      "ground_truth": "É preciso realizar mapeamentos e relatórios de impactos, mapear o fluxo de dados dos sistemas, avaliar mudanças em procedimentos, elaborar planos de contingência, fazer auditorias, resolver incidentes com agilidade, e seguir políticas de manutenção e descarte periódico dos dados.",
+      "reference": "É preciso realizar mapeamentos e relatórios de impactos, mapear o fluxo de dados dos sistemas, avaliar mudanças em procedimentos, elaborar planos de contingência, fazer auditorias, resolver incidentes com agilidade, e seguir políticas de manutenção e descarte periódico dos dados.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 48,
@@ -638,7 +638,7 @@
     },
     {
       "question": "O processo de contas ordinárias de gestão deve conter demonstrações contábeis do órgão ou entidade?",
-      "ground_truth": "Sim, o processo de contas ordinárias deverá conter diversos documentos relativos ao exercício sob exame, como as demonstrações contábeis do órgão ou entidade.",
+      "reference": "Sim, o processo de contas ordinárias deverá conter diversos documentos relativos ao exercício sob exame, como as demonstrações contábeis do órgão ou entidade.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 51,
@@ -647,7 +647,7 @@
     },
     {
       "question": "A instauração de um processo de tomada de contas especial requer prévia apuração dos fatos ou omissões que resultaram em prejuízo ao erário?",
-      "ground_truth": "Sim, a instauração do processo de tomada de contas especial será precedida de ampla apuração dos fatos ou omissões que resultarem em prejuízo ao erário ou ao meio ambiente.",
+      "reference": "Sim, a instauração do processo de tomada de contas especial será precedida de ampla apuração dos fatos ou omissões que resultarem em prejuízo ao erário ou ao meio ambiente.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 52,
@@ -656,7 +656,7 @@
     },
     {
       "question": "Quais documentos são exemplos de documentação exigida para o processo de contas ordinárias de gestão, conforme a Resolução TCE nº 1.132/2020?",
-      "ground_truth": "São exemplos de documentação exigida: o relatório minucioso do administrador sobre suas contas, as demonstrações contábeis do órgão ou entidade, e o relatório e parecer da Contadoria e Auditoria-Geral do Estado.",
+      "reference": "São exemplos de documentação exigida: o relatório minucioso do administrador sobre suas contas, as demonstrações contábeis do órgão ou entidade, e o relatório e parecer da Contadoria e Auditoria-Geral do Estado.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 51,
@@ -665,7 +665,7 @@
     },
     {
       "question": "Como o administrador deve proceder ao ser cientificado pela CAGE sobre um apontamento no relatório de contas de sua gestão?",
-      "ground_truth": "O administrador deve reavaliar a situação, adotando providências imediatas para sanar as irregularidades, ou pedir o reexame da matéria em outra instância da própria CAGE. Se a discordância persistir, deve instruir o processo com as justificativas cabíveis para embasar sua defesa perante o TCE.",
+      "reference": "O administrador deve reavaliar a situação, adotando providências imediatas para sanar as irregularidades, ou pedir o reexame da matéria em outra instância da própria CAGE. Se a discordância persistir, deve instruir o processo com as justificativas cabíveis para embasar sua defesa perante o TCE.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 54,
@@ -674,7 +674,7 @@
     },
     {
       "question": "O CAGE Gerencial permite acompanhar os registros lançados mensalmente no sistema RHE?",
-      "ground_truth": "Sim, os registros lançados mês a mês no RHE também poderão ser acompanhados no CG com variados enfoques.",
+      "reference": "Sim, os registros lançados mês a mês no RHE também poderão ser acompanhados no CG com variados enfoques.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 58,
@@ -683,7 +683,7 @@
     },
     {
       "question": "Sistemas informatizados estaduais que contêm informações para apuração de custos devem ser adaptados à Estrutura Hierárquica de Centros de Custos (EHCC)?",
-      "ground_truth": "Sim, os sistemas informatizados em desenvolvimento ou já implantados pelos órgãos e entidades estaduais, que contiverem informações que possam vir a ser utilizadas na apuração de custos, deverão ser adequados à Estrutura Hierárquica de Centros de Custos.",
+      "reference": "Sim, os sistemas informatizados em desenvolvimento ou já implantados pelos órgãos e entidades estaduais, que contiverem informações que possam vir a ser utilizadas na apuração de custos, deverão ser adequados à Estrutura Hierárquica de Centros de Custos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 60,
@@ -692,7 +692,7 @@
     },
     {
       "question": "Quais são algumas das responsabilidades dos gestores de unidade ou membros dos Grupos Setoriais de Custos (GSC) em relação aos sistemas de informação de custos?",
-      "ground_truth": "Algumas responsabilidades incluem: prestar informações sobre custos ao Órgão Central, elaborar estudos para propor melhorias nos processos e sistemas, efetuar ou demandar manutenção nos sistemas integrados, subsidiar os gestores com informações de custos e validar os dados de custos.",
+      "reference": "Algumas responsabilidades incluem: prestar informações sobre custos ao Órgão Central, elaborar estudos para propor melhorias nos processos e sistemas, efetuar ou demandar manutenção nos sistemas integrados, subsidiar os gestores com informações de custos e validar os dados de custos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 57,
@@ -701,7 +701,7 @@
     },
     {
       "question": "Qual a diferença entre o acompanhamento dos dados informados no sistema CST e o atestado, empenhado, liquidado e pago na execução orçamentária e financeira, conforme visualizado no CAGE Gerencial?",
-      "ground_truth": "No acompanhamento via CG, o exame é apenas registral; ele permite examinar o que foi *informado* do contrato no módulo CST, mas não o que foi atestado (nem o empenhado, liquidado e pago) na execução orçamentária e financeira.",
+      "reference": "No acompanhamento via CG, o exame é apenas registral; ele permite examinar o que foi *informado* do contrato no módulo CST, mas não o que foi atestado (nem o empenhado, liquidado e pago) na execução orçamentária e financeira.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 59,
@@ -710,7 +710,7 @@
     },
     {
       "question": "Os órgãos e entidades da Administração Pública Estadual devem emitir um relatório anual de custos?",
-      "ground_truth": "Sim, conforme Instrução Normativa CAGE 01/2014, os órgãos e entidades da Administração Pública Estadual deverão emitir um relatório anual indicando os resultados obtidos quanto à economia de recursos e/ou aumento de produtividade.",
+      "reference": "Sim, conforme Instrução Normativa CAGE 01/2014, os órgãos e entidades da Administração Pública Estadual deverão emitir um relatório anual indicando os resultados obtidos quanto à economia de recursos e/ou aumento de produtividade.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 60,
@@ -719,7 +719,7 @@
     },
     {
       "question": "O relatório anual de custos deve ser publicado no Portal da Transparência/RS?",
-      "ground_truth": "Sim, o relatório deve ser disponibilizado no Portal da Transparência/RS no máximo em 60 dias, contados da data do encerramento do exercício financeiro e/ou da gestão.",
+      "reference": "Sim, o relatório deve ser disponibilizado no Portal da Transparência/RS no máximo em 60 dias, contados da data do encerramento do exercício financeiro e/ou da gestão.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 61,
@@ -728,7 +728,7 @@
     },
     {
       "question": "Qual o prazo para publicação do relatório anual de custos no Portal da Transparência/RS após o encerramento do exercício financeiro ou da gestão?",
-      "ground_truth": "O prazo para publicação do relatório anual de custos no Portal da Transparência/RS é de no máximo 60 dias, contados da data do encerramento do exercício financeiro e/ou da gestão.",
+      "reference": "O prazo para publicação do relatório anual de custos no Portal da Transparência/RS é de no máximo 60 dias, contados da data do encerramento do exercício financeiro e/ou da gestão.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 61,
@@ -737,7 +737,7 @@
     },
     {
       "question": "Quando uma unidade governamental é considerada implantada em relação ao sistema Custos/RS, conforme a Instrução Normativa CAGE 01/2014?",
-      "ground_truth": "Considera-se implantado na unidade governamental quando esta possui uma EHCC ativa; GSC designado e instruído; e, por logicidade, utiliza algum sistema integrado.",
+      "reference": "Considera-se implantado na unidade governamental quando esta possui uma EHCC ativa; GSC designado e instruído; e, por logicidade, utiliza algum sistema integrado.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 61,
@@ -746,7 +746,7 @@
     },
     {
       "question": "É possível fazer ajustes nos consumos registrados diretamente no CAGE Gerencial?",
-      "ground_truth": "Não, o CG foi projetado para acessar as bases de dados dos sistemas de origem, e qualquer alteração deve ser feita nos sistemas de origem.",
+      "reference": "Não, o CG foi projetado para acessar as bases de dados dos sistemas de origem, e qualquer alteração deve ser feita nos sistemas de origem.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 268,
@@ -755,7 +755,7 @@
     },
     {
       "question": "A Divisão de Informações Estratégicas (DIE) da CAGE disponibiliza auxílios para ajustes na EHCC?",
-      "ground_truth": "Sim, a Divisão de Informações Estratégicas da CAGE disponibiliza diversos auxílios (manuais, vídeos explicativos e apresentações).",
+      "reference": "Sim, a Divisão de Informações Estratégicas da CAGE disponibiliza diversos auxílios (manuais, vídeos explicativos e apresentações).",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 269,
@@ -764,7 +764,7 @@
     },
     {
       "question": "Por que os ajustes nos consumos registrados no CAGE Gerencial devem ser feitos nos sistemas de origem?",
-      "ground_truth": "Porque o CG foi projetado para acessar as bases de dados dos sistemas de origem e apresentar as informações, refletindo automaticamente as modificações feitas na origem quando permitidas.",
+      "reference": "Porque o CG foi projetado para acessar as bases de dados dos sistemas de origem e apresentar as informações, refletindo automaticamente as modificações feitas na origem quando permitidas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 268,
@@ -773,7 +773,7 @@
     },
     {
       "question": "Como um ajuste na Estrutura Hierárquica de Centros de Custos (EHCC) de uma Unidade deve ser encaminhado?",
-      "ground_truth": "Este encaminhamento é feito exclusivamente pelos integrantes do GSC por meio do sistema, no módulo Estrutura Hierárquica Centro Custo → Proposta Estrutura.",
+      "reference": "Este encaminhamento é feito exclusivamente pelos integrantes do GSC por meio do sistema, no módulo Estrutura Hierárquica Centro Custo → Proposta Estrutura.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 269,
@@ -782,7 +782,7 @@
     },
     {
       "question": "O projeto de Lei Orçamentária Anual deve ser elaborado de forma compatível com o Plano Plurianual (PPA)?",
-      "ground_truth": "Sim, o projeto de Lei Orçamentária Anual para União, Estados, Distrito Federal e Municípios deverá ser elaborado de forma compatível com o PPA.",
+      "reference": "Sim, o projeto de Lei Orçamentária Anual para União, Estados, Distrito Federal e Municípios deverá ser elaborado de forma compatível com o PPA.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 76,
@@ -791,7 +791,7 @@
     },
     {
       "question": "A LOA deve conter, em anexo, o demonstrativo da compatibilização do orçamento com os objetivos e metas definidos no Anexo de Metas Fiscais da LDO?",
-      "ground_truth": "Sim, a LOA deverá conter, em anexo, o demonstrativo da compatibilização do orçamento com os objetivos e metas definidos no Anexo de Metas Fiscais da LDO.",
+      "reference": "Sim, a LOA deverá conter, em anexo, o demonstrativo da compatibilização do orçamento com os objetivos e metas definidos no Anexo de Metas Fiscais da LDO.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 76,
@@ -800,7 +800,7 @@
     },
     {
       "question": "Quais informações relevantes devem ser mantidas atualizadas pelo Gestor, especialmente aquelas que servirão de base para a quantificação dos produtos na proposta orçamentária?",
-      "ground_truth": "É importante que o Gestor mantenha atualizadas as informações financeiras, estatísticas, de custos unitários e outras relativas ao órgão ou à entidade que administra, em especial as que servirão de base para a quantificação dos produtos na proposta orçamentária.",
+      "reference": "É importante que o Gestor mantenha atualizadas as informações financeiras, estatísticas, de custos unitários e outras relativas ao órgão ou à entidade que administra, em especial as que servirão de base para a quantificação dos produtos na proposta orçamentária.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 69,
@@ -809,7 +809,7 @@
     },
     {
       "question": "Como a execução financeira do PPA se relaciona com a execução orçamentária dos exercícios abrangidos pela LOA?",
-      "ground_truth": "A execução financeira do PPA resulta do somatório das execuções orçamentárias dos exercícios por ele abrangidos.",
+      "reference": "A execução financeira do PPA resulta do somatório das execuções orçamentárias dos exercícios por ele abrangidos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 66,
@@ -818,7 +818,7 @@
     },
     {
       "question": "As obrigações prováveis ou possíveis decorrentes de contingências administrativas ou judiciais devem ser informadas para registro contábil da provisão ou passivo contingente?",
-      "ground_truth": "Sim, se ocorrerem eventos que representem obrigações ou possíveis obrigações decorrentes de contingências administrativas ou judiciais, a situação deve ser informada para registro contábil da provisão ou do passivo contingente.",
+      "reference": "Sim, se ocorrerem eventos que representem obrigações ou possíveis obrigações decorrentes de contingências administrativas ou judiciais, a situação deve ser informada para registro contábil da provisão ou do passivo contingente.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 73,
@@ -827,7 +827,7 @@
     },
     {
       "question": "As verificações periódicas para elaboração das Demonstrações Contábeis devem ser feitas pelo menos uma vez ao ano?",
-      "ground_truth": "Sim, as verificações listadas devem ser efetuadas no mínimo 1 (uma) vez ao ano, com vistas à elaboração das Demonstrações Contábeis e Notas Explicativas.",
+      "reference": "Sim, as verificações listadas devem ser efetuadas no mínimo 1 (uma) vez ao ano, com vistas à elaboração das Demonstrações Contábeis e Notas Explicativas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 72,
@@ -836,7 +836,7 @@
     },
     {
       "question": "Quais são algumas das informações solicitadas anualmente pela CAGE aos órgãos e entidades em relação a provisões e passivos contingentes?",
-      "ground_truth": "Anualmente a CAGE encaminha ofício solicitando as informações sobre as provisões e passivos contingentes de cada órgão ou entidade.",
+      "reference": "Anualmente a CAGE encaminha ofício solicitando as informações sobre as provisões e passivos contingentes de cada órgão ou entidade.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 71,
@@ -845,7 +845,7 @@
     },
     {
       "question": "O que o gestor deve fazer antes de autorizar o seguimento de um processo para aquisição de materiais ou serviços de caráter discricionário?",
-      "ground_truth": "Antes de autorizar o seguimento do processo, o gestor deve certificar-se de que estão presentes os pressupostos mencionados no início deste capítulo.",
+      "reference": "Antes de autorizar o seguimento do processo, o gestor deve certificar-se de que estão presentes os pressupostos mencionados no início deste capítulo.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 75,
@@ -854,7 +854,7 @@
     },
     {
       "question": "A Alta Administração do órgão ou entidade é responsável pela governança das contratações?",
-      "ground_truth": "Sim, a Alta Administração do órgão ou entidade é responsável pela governança das contratações.",
+      "reference": "Sim, a Alta Administração do órgão ou entidade é responsável pela governança das contratações.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 79,
@@ -863,7 +863,7 @@
     },
     {
       "question": "O agente de contratação responde solidariamente pelos atos praticados pela equipe de apoio?",
-      "ground_truth": "Não, o agente de contratação responderá individualmente pelos atos que praticar, salvo se induzido a erro por tal equipe.",
+      "reference": "Não, o agente de contratação responderá individualmente pelos atos que praticar, salvo se induzido a erro por tal equipe.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 80,
@@ -872,7 +872,7 @@
     },
     {
       "question": "Quais são as principais responsabilidades da Alta Administração em relação à governança das contratações?",
-      "ground_truth": "As responsabilidades da Alta Administração incluem implementar processos e estruturas para avaliar, direcionar e monitorar os processos licitatórios e contratos, buscando alcançar objetivos legais, promover integridade, assegurar alinhamento ao planejamento e leis orçamentárias, e promover eficiência, efetividade e eficácia nas contratações.",
+      "reference": "As responsabilidades da Alta Administração incluem implementar processos e estruturas para avaliar, direcionar e monitorar os processos licitatórios e contratos, buscando alcançar objetivos legais, promover integridade, assegurar alinhamento ao planejamento e leis orçamentárias, e promover eficiência, efetividade e eficácia nas contratações.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 79,
@@ -881,7 +881,7 @@
     },
     {
       "question": "Qual a função da comissão de contratação e quantos membros ela deve ter no mínimo?",
-      "ground_truth": "A comissão de contratação tem a função de receber, examinar e julgar documentos relativos às licitações e aos procedimentos auxiliares, e deve ser formada por, no mínimo, 3 (três) membros.",
+      "reference": "A comissão de contratação tem a função de receber, examinar e julgar documentos relativos às licitações e aos procedimentos auxiliares, e deve ser formada por, no mínimo, 3 (três) membros.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 81,
@@ -890,7 +890,7 @@
     },
     {
       "question": "O princípio do planejamento nas licitações busca evitar o desperdício de recursos públicos?",
-      "ground_truth": "Sim, o planejamento adequado busca evitar o desperdício dos escassos recursos públicos no âmbito das contratações governamentais.",
+      "reference": "Sim, o planejamento adequado busca evitar o desperdício dos escassos recursos públicos no âmbito das contratações governamentais.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 82,
@@ -899,7 +899,7 @@
     },
     {
       "question": "O princípio do julgamento objetivo permite ao agente público escolher a proposta vencedora segundo suas preferências pessoais?",
-      "ground_truth": "Não, o julgamento objetivo significa julgar de acordo com critérios previamente definidos e nos termos específicos das propostas, vedando-se ao agente público a possibilidade de escolher segundo preferências pessoais.",
+      "reference": "Não, o julgamento objetivo significa julgar de acordo com critérios previamente definidos e nos termos específicos das propostas, vedando-se ao agente público a possibilidade de escolher segundo preferências pessoais.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 83,
@@ -908,7 +908,7 @@
     },
     {
       "question": "Quais são os dois aspectos do planejamento que devem ser entendidos no âmbito das contratações governamentais?",
-      "ground_truth": "O planejamento deve ser entendido sob dois aspectos: um planejamento geral das contratações e um planejamento específico de cada uma das contratações.",
+      "reference": "O planejamento deve ser entendido sob dois aspectos: um planejamento geral das contratações e um planejamento específico de cada uma das contratações.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 82,
@@ -917,7 +917,7 @@
     },
     {
       "question": "O que o princípio da competitividade busca garantir no processo licitatório e o que é vedado ao agente público em relação a ele?",
-      "ground_truth": "O princípio da competitividade insere-se na concepção de que a disputa justa entre os interessados proporcionará melhores resultados à Administração. É vedado ao agente público admitir, prever, incluir ou tolerar situações que comprometam, restrinjam ou frustrem o caráter competitivo do processo licitatório.",
+      "reference": "O princípio da competitividade insere-se na concepção de que a disputa justa entre os interessados proporcionará melhores resultados à Administração. É vedado ao agente público admitir, prever, incluir ou tolerar situações que comprometam, restrinjam ou frustrem o caráter competitivo do processo licitatório.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 84,
@@ -926,7 +926,7 @@
     },
     {
       "question": "Em contratações onde o objeto só pode ser fornecido por produtor exclusivo, o agente público deve verificar a veracidade da documentação comprobatória?",
-      "ground_truth": "Sim, é dever do agente público responsável pela contratação a adoção das providências necessárias para confirmar a veracidade da documentação comprobatória da condição de exclusividade.",
+      "reference": "Sim, é dever do agente público responsável pela contratação a adoção das providências necessárias para confirmar a veracidade da documentação comprobatória da condição de exclusividade.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 85,
@@ -935,7 +935,7 @@
     },
     {
       "question": "Em caso de fornecedor exclusivo, o administrador deve sempre privilegiar a contratação direta, mesmo que haja interessados em outras localidades?",
-      "ground_truth": "Não, quando o administrador entender que haverá interessados em participar do certame, ainda que suas sedes estejam situadas em localidades diversas, deverá privilegiar a realização do certame.",
+      "reference": "Não, quando o administrador entender que haverá interessados em participar do certame, ainda que suas sedes estejam situadas em localidades diversas, deverá privilegiar a realização do certame.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 85,
@@ -944,7 +944,7 @@
     },
     {
       "question": "Qual é o dever do agente público responsável pela contratação quando o objeto só pode ser fornecido por produtor, empresa ou representante comercial exclusivo?",
-      "ground_truth": "É dever do agente público responsável pela contratação a adoção das providências necessárias para confirmar a veracidade da documentação comprobatória da condição de exclusividade.",
+      "reference": "É dever do agente público responsável pela contratação a adoção das providências necessárias para confirmar a veracidade da documentação comprobatória da condição de exclusividade.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 85,
@@ -953,7 +953,7 @@
     },
     {
       "question": "O que deve prevalecer, segundo a doutrina, na questão da abrangência territorial para verificar a existência de fornecedor exclusivo?",
-      "ground_truth": "A solução da questão requer a aplicação dos princípios da obrigatoriedade da licitação e da razoabilidade, privilegiando-se a realização do certame quando houver interessados.",
+      "reference": "A solução da questão requer a aplicação dos princípios da obrigatoriedade da licitação e da razoabilidade, privilegiando-se a realização do certame quando houver interessados.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 85,
@@ -962,7 +962,7 @@
     },
     {
       "question": "O processo de contratação direta deve ser instruído com parecer jurídico que demonstre o atendimento dos requisitos exigidos?",
-      "ground_truth": "Sim, o processo de contratação direta deve ser instruído com parecer jurídico e pareceres técnicos, se for o caso, que demonstrem o atendimento dos requisitos exigidos.",
+      "reference": "Sim, o processo de contratação direta deve ser instruído com parecer jurídico e pareceres técnicos, se for o caso, que demonstrem o atendimento dos requisitos exigidos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 86,
@@ -971,7 +971,7 @@
     },
     {
       "question": "A contratação por dispensa ou inexigibilidade de licitação deve ser realizada somente quando for efetivamente necessária?",
-      "ground_truth": "Sim, deve-se realizar a contratação direta, devidamente motivada e fundamentada na lei, somente quando for efetivamente necessária, pois a regra é a licitação.",
+      "reference": "Sim, deve-se realizar a contratação direta, devidamente motivada e fundamentada na lei, somente quando for efetivamente necessária, pois a regra é a licitação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 115,
@@ -980,7 +980,7 @@
     },
     {
       "question": "Quais documentos devem instruir um processo de contratação direta por dispensa ou inexigibilidade de licitação?",
-      "ground_truth": "Um processo de contratação direta deve ser instruído com documento de formalização de demanda, estudo técnico preliminar (se for o caso), análise de riscos, termo de referência, projeto básico ou executivo (se for o caso), estimativa de despesa com valores de mercado, parecer jurídico/técnicos (se for o caso) e demonstração da compatibilidade dos recursos orçamentários.",
+      "reference": "Um processo de contratação direta deve ser instruído com documento de formalização de demanda, estudo técnico preliminar (se for o caso), análise de riscos, termo de referência, projeto básico ou executivo (se for o caso), estimativa de despesa com valores de mercado, parecer jurídico/técnicos (se for o caso) e demonstração da compatibilidade dos recursos orçamentários.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 86,
@@ -989,7 +989,7 @@
     },
     {
       "question": "Quais cautelas devem ser adotadas na contratação direta por urgência ou emergência para evitar caracterizar falta de planejamento ou desídia?",
-      "ground_truth": "Adotar as cautelas necessárias para não caracterizar falta de planejamento, desídia pela não tomada de decisão no momento oportuno ou pela prática de atos a que tenha concorrido por dolo ou culpa.",
+      "reference": "Adotar as cautelas necessárias para não caracterizar falta de planejamento, desídia pela não tomada de decisão no momento oportuno ou pela prática de atos a que tenha concorrido por dolo ou culpa.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 116,
@@ -998,7 +998,7 @@
     },
     {
       "question": "No critério de julgamento por menor preço, os custos indiretos podem ser considerados para definir o menor dispêndio?",
-      "ground_truth": "Sim, os custos indiretos necessários a despesas com manutenção, utilização, reposição, depreciação e impacto ambiental do objeto licitado, entre outros fatores vinculados ao seu ciclo de vida, poderão ser considerados para a definição do menor dispêndio, sempre que objetivamente mensuráveis.",
+      "reference": "Sim, os custos indiretos necessários a despesas com manutenção, utilização, reposição, depreciação e impacto ambiental do objeto licitado, entre outros fatores vinculados ao seu ciclo de vida, poderão ser considerados para a definição do menor dispêndio, sempre que objetivamente mensuráveis.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 87,
@@ -1007,7 +1007,7 @@
     },
     {
       "question": "O critério de julgamento por maior retorno econômico é utilizado exclusivamente para a celebração de contrato de eficiência?",
-      "ground_truth": "Sim, o critério de julgamento maior retorno econômico deve ser utilizado exclusivamente para a celebração de contrato de eficiência.",
+      "reference": "Sim, o critério de julgamento maior retorno econômico deve ser utilizado exclusivamente para a celebração de contrato de eficiência.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 89,
@@ -1016,7 +1016,7 @@
     },
     {
       "question": "Descreva as duas etapas de avaliação das propostas no critério de julgamento por técnica e preço.",
-      "ground_truth": "O critério de técnica e preço demanda a avaliação das propostas em duas etapas: primeiro avaliam-se e ponderam-se as propostas técnicas (com valoração máxima de 70%), e posteriormente avaliam-se as propostas de preço.",
+      "reference": "O critério de técnica e preço demanda a avaliação das propostas em duas etapas: primeiro avaliam-se e ponderam-se as propostas técnicas (com valoração máxima de 70%), e posteriormente avaliam-se as propostas de preço.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 88,
@@ -1025,7 +1025,7 @@
     },
     {
       "question": "Em quais modalidades de licitação o critério de julgamento por técnica e preço pode ser adotado e em quais é inapropriado?",
-      "ground_truth": "O critério de técnica e preço pode ser adotado na modalidade concorrência, sendo inapropriado para pregão, concurso e leilão.",
+      "reference": "O critério de técnica e preço pode ser adotado na modalidade concorrência, sendo inapropriado para pregão, concurso e leilão.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 88,
@@ -1034,7 +1034,7 @@
     },
     {
       "question": "A escolha da modalidade de licitação é definida em função do valor estimado para a contratação?",
-      "ground_truth": "Não, não há mais a escolha da modalidade em função do valor estimado para a contratação, ou seja, a escolha da modalidade é definida materialmente, pela natureza do objeto.",
+      "reference": "Não, não há mais a escolha da modalidade em função do valor estimado para a contratação, ou seja, a escolha da modalidade é definida materialmente, pela natureza do objeto.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 90,
@@ -1043,7 +1043,7 @@
     },
     {
       "question": "O critério de julgamento maior lance é utilizado na modalidade pregão?",
-      "ground_truth": "Não, o critério de julgamento maior lance é cabível tão somente para licitações nas modalidades leilão.",
+      "reference": "Não, o critério de julgamento maior lance é cabível tão somente para licitações nas modalidades leilão.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 89,
@@ -1052,7 +1052,7 @@
     },
     {
       "question": "Em quais casos a modalidade Diálogo Competitivo é adequada e quais incertezas ela visa resolver para a Administração Pública?",
-      "ground_truth": "É a modalidade adequada para os casos em que a Administração está com sua necessidade delimitada, mas há incerteza sobre a definição do objeto a ser contratado, envolvendo inovação tecnológica ou técnica, impossibilidade de necessidade satisfeita sem adaptação de soluções de mercado, ou impossibilidade de specs técnicas precisas.",
+      "reference": "É a modalidade adequada para os casos em que a Administração está com sua necessidade delimitada, mas há incerteza sobre a definição do objeto a ser contratado, envolvendo inovação tecnológica ou técnica, impossibilidade de necessidade satisfeita sem adaptação de soluções de mercado, ou impossibilidade de specs técnicas precisas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 92,
@@ -1061,7 +1061,7 @@
     },
     {
       "question": "Quais são as três fases do procedimento da modalidade diálogo competitivo, conforme descrito?",
-      "ground_truth": "Seu procedimento envolve três fases: i) publicação do edital e fase de pré-seleção de licitantes; ii) fase de diálogo com os licitantes pré-selecionados; e iii) publicação do edital da fase competitiva.",
+      "reference": "Seu procedimento envolve três fases: i) publicação do edital e fase de pré-seleção de licitantes; ii) fase de diálogo com os licitantes pré-selecionados; e iii) publicação do edital da fase competitiva.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 93,
@@ -1070,7 +1070,7 @@
     },
     {
       "question": "O procedimento licitatório compreende sete fases distintas?",
-      "ground_truth": "Sim, o procedimento licitatório compreende sete fases distintas.",
+      "reference": "Sim, o procedimento licitatório compreende sete fases distintas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 95,
@@ -1079,7 +1079,7 @@
     },
     {
       "question": "A fase de homologação é a primeira fase do procedimento licitatório?",
-      "ground_truth": "Não, a fase de homologação é a sétima e última fase do procedimento licitatório.",
+      "reference": "Não, a fase de homologação é a sétima e última fase do procedimento licitatório.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 95,
@@ -1088,7 +1088,7 @@
     },
     {
       "question": "Quais são as sete fases distintas que compreendem o procedimento licitatório?",
-      "ground_truth": "As sete fases são: preparatória, de divulgação do edital, de apresentação de propostas e lances, de julgamento, de habilitação, recursal, e de homologação.",
+      "reference": "As sete fases são: preparatória, de divulgação do edital, de apresentação de propostas e lances, de julgamento, de habilitação, recursal, e de homologação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 95,
@@ -1097,7 +1097,7 @@
     },
     {
       "question": "Por que a fase preparatória do procedimento licitatório é mais diretamente interessante para o gestor público, conforme o manual?",
-      "ground_truth": "A fase preparatória interessa mais diretamente ao gestor público pelo fato de que as demais fases, conhecidas como fases externas, ficam a cargo dos órgãos encarregados de realizar o procedimento.",
+      "reference": "A fase preparatória interessa mais diretamente ao gestor público pelo fato de que as demais fases, conhecidas como fases externas, ficam a cargo dos órgãos encarregados de realizar o procedimento.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 95,
@@ -1106,7 +1106,7 @@
     },
     {
       "question": "A fase preparatória do processo licitatório é caracterizada pelo planejamento?",
-      "ground_truth": "Sim, a fase preparatória (fase interna) do processo licitatório é caracterizada pelo planejamento.",
+      "reference": "Sim, a fase preparatória (fase interna) do processo licitatório é caracterizada pelo planejamento.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 96,
@@ -1115,7 +1115,7 @@
     },
     {
       "question": "O Estudo Técnico Preliminar (ETP) deve evidenciar o problema a ser resolvido e sua melhor solução?",
-      "ground_truth": "Sim, o Estudo Técnico Preliminar (ETP) deverá evidenciar o problema a ser resolvido e a sua melhor solução.",
+      "reference": "Sim, o Estudo Técnico Preliminar (ETP) deverá evidenciar o problema a ser resolvido e a sua melhor solução.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 100,
@@ -1124,7 +1124,7 @@
     },
     {
       "question": "Quais são alguns dos elementos mínimos que o Estudo Técnico Preliminar (ETP) de uma contratação deve conter?",
-      "ground_truth": "Elementos mínimos incluem: descrição da necessidade da contratação, estimativas das quantidades, estimativa do valor da contratação, justificativas para o parcelamento ou não, e posicionamento conclusivo sobre a adequação da contratação.",
+      "reference": "Elementos mínimos incluem: descrição da necessidade da contratação, estimativas das quantidades, estimativa do valor da contratação, justificativas para o parcelamento ou não, e posicionamento conclusivo sobre a adequação da contratação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 100,
@@ -1133,7 +1133,7 @@
     },
     {
       "question": "O que acontece com o processo licitatório após a conclusão da fase preparatória e qual a finalidade desse passo?",
-      "ground_truth": "Ao final da fase preparatória, o processo licitatório seguirá para o órgão de assessoramento jurídico da Administração, que realizará controle prévio de legalidade mediante análise jurídica, apreciando todos os elementos indispensáveis à contratação.",
+      "reference": "Ao final da fase preparatória, o processo licitatório seguirá para o órgão de assessoramento jurídico da Administração, que realizará controle prévio de legalidade mediante análise jurídica, apreciando todos os elementos indispensáveis à contratação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 104,
@@ -1142,7 +1142,7 @@
     },
     {
       "question": "As propostas que apresentarem preços inexequíveis na fase de julgamento de uma licitação serão desclassificadas?",
-      "ground_truth": "Sim, serão desclassificadas as propostas que apresentarem preços inexequíveis.",
+      "reference": "Sim, serão desclassificadas as propostas que apresentarem preços inexequíveis.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 105,
@@ -1151,7 +1151,7 @@
     },
     {
       "question": "Em caso de empate entre duas ou mais propostas, a avaliação do desempenho contratual prévio dos licitantes é o primeiro critério de desempate utilizado?",
-      "ground_truth": "Não, o primeiro critério de desempate é a disputa final.",
+      "reference": "Não, o primeiro critério de desempate é a disputa final.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 106,
@@ -1160,7 +1160,7 @@
     },
     {
       "question": "Quais são algumas das razões para desclassificação de propostas na fase de julgamento de uma licitação?",
-      "ground_truth": "Algumas razões incluem: contiverem vícios insanáveis, não obedecerem às especificações técnicas do edital, apresentarem preços inexequíveis ou acima do orçamento estimado, não tiverem sua exequibilidade demonstrada (quando exigido), ou apresentarem desconformidade com outras exigências insanáveis do edital.",
+      "reference": "Algumas razões incluem: contiverem vícios insanáveis, não obedecerem às especificações técnicas do edital, apresentarem preços inexequíveis ou acima do orçamento estimado, não tiverem sua exequibilidade demonstrada (quando exigido), ou apresentarem desconformidade com outras exigências insanáveis do edital.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 105,
@@ -1169,7 +1169,7 @@
     },
     {
       "question": "Liste os critérios de desempate utilizados em caso de igualdade entre duas ou mais propostas, na ordem em que devem ser aplicados.",
-      "ground_truth": "Os critérios de desempate, nesta ordem, são: disputa final, avaliação do desempenho contratual prévio, desenvolvimento de ações de equidade entre homens e mulheres, e sorteio (se previsto no edital).",
+      "reference": "Os critérios de desempate, nesta ordem, são: disputa final, avaliação do desempenho contratual prévio, desenvolvimento de ações de equidade entre homens e mulheres, e sorteio (se previsto no edital).",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 106,
@@ -1178,7 +1178,7 @@
     },
     {
       "question": "A habilitação é a fase da licitação em que se verifica a capacidade do licitante de realizar o objeto?",
-      "ground_truth": "Sim, a habilitação é a fase da licitação em que se verifica o conjunto de informações e documentos necessários e suficientes para demonstrar a capacidade do licitante de realizar o objeto da licitação.",
+      "reference": "Sim, a habilitação é a fase da licitação em que se verifica o conjunto de informações e documentos necessários e suficientes para demonstrar a capacidade do licitante de realizar o objeto da licitação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 107,
@@ -1187,7 +1187,7 @@
     },
     {
       "question": "Os documentos relativos à regularidade fiscal são exigidos de todos os licitantes na fase de habilitação?",
-      "ground_truth": "Não, os documentos relativos à regularidade fiscal, em qualquer caso, serão exigidos somente em momento posterior ao julgamento das propostas, e apenas do licitante mais bem classificado.",
+      "reference": "Não, os documentos relativos à regularidade fiscal, em qualquer caso, serão exigidos somente em momento posterior ao julgamento das propostas, e apenas do licitante mais bem classificado.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 107,
@@ -1196,7 +1196,7 @@
     },
     {
       "question": "Quais são as áreas de capacidade que a fase de habilitação busca verificar no licitante?",
-      "ground_truth": "A fase de habilitação busca verificar a capacidade jurídica, técnica, fiscal, social, trabalhista e econômico-financeira do licitante.",
+      "reference": "A fase de habilitação busca verificar a capacidade jurídica, técnica, fiscal, social, trabalhista e econômico-financeira do licitante.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 107,
@@ -1205,7 +1205,7 @@
     },
     {
       "question": "Em quais situações é permitida a apresentação de novos documentos ou a substituição de documentos na fase de habilitação, após a entrega inicial?",
-      "ground_truth": "Não será permitida a substituição ou apresentação de novos documentos após a entrega, salvo em sede de diligência, para complementação de informações sobre documentos já apresentados ou para atualização de documentos cuja validade expirou após a data de recebimento das propostas.",
+      "reference": "Não será permitida a substituição ou apresentação de novos documentos após a entrega, salvo em sede de diligência, para complementação de informações sobre documentos já apresentados ou para atualização de documentos cuja validade expirou após a data de recebimento das propostas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 108,
@@ -1214,7 +1214,7 @@
     },
     {
       "question": "Os recursos em matéria de licitação são instrumentos para manifestar inconformidade com decisões administrativas?",
-      "ground_truth": "Sim, os recursos, em matéria de licitação, são os instrumentos destinados à manifestação de inconformidade com as decisões administrativas tomadas no curso do procedimento licitatório.",
+      "reference": "Sim, os recursos, em matéria de licitação, são os instrumentos destinados à manifestação de inconformidade com as decisões administrativas tomadas no curso do procedimento licitatório.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 109,
@@ -1223,7 +1223,7 @@
     },
     {
       "question": "O prazo para interpor recurso contra o julgamento das propostas é de 10 dias úteis?",
-      "ground_truth": "Não, o prazo para interpor recurso, incluindo contra o julgamento das propostas ou ato de habilitação/inabilitação, é de 3 (três) dias úteis, contado da data de intimação ou de lavratura da ata.",
+      "reference": "Não, o prazo para interpor recurso, incluindo contra o julgamento das propostas ou ato de habilitação/inabilitação, é de 3 (três) dias úteis, contado da data de intimação ou de lavratura da ata.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 110,
@@ -1232,7 +1232,7 @@
     },
     {
       "question": "Quais são os instrumentos disponíveis na esfera administrativa para obter o reexame de decisões tomadas no curso do procedimento licitatório?",
-      "ground_truth": "O reexame pode ser obtido, na esfera administrativa, por meio de recurso, pedido de reconsideração ou impugnação.",
+      "reference": "O reexame pode ser obtido, na esfera administrativa, por meio de recurso, pedido de reconsideração ou impugnação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 109,
@@ -1241,7 +1241,7 @@
     },
     {
       "question": "Qual o procedimento e o prazo para interpor recurso quando ele se refere ao ato de julgamento das propostas ou de habilitação/inabilitação de um licitante?",
-      "ground_truth": "A intenção de recorrer deve ser manifestada imediatamente, sob pena de preclusão. O prazo de 3 (três) dias úteis para apresentação das razões recursais será iniciado na data de intimação ou lavratura da ata, e a apreciação dar-se-á em fase única.",
+      "reference": "A intenção de recorrer deve ser manifestada imediatamente, sob pena de preclusão. O prazo de 3 (três) dias úteis para apresentação das razões recursais será iniciado na data de intimação ou lavratura da ata, e a apreciação dar-se-á em fase única.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 110,
@@ -1250,7 +1250,7 @@
     },
     {
       "question": "O contrato resultante de licitação deve incluir o objeto e seus elementos característicos?",
-      "ground_truth": "Sim, são cláusulas essenciais do contrato o objeto e seus elementos característicos.",
+      "reference": "Sim, são cláusulas essenciais do contrato o objeto e seus elementos característicos.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 113,
@@ -1259,7 +1259,7 @@
     },
     {
       "question": "É essencial que o contrato especifique o crédito pelo qual correrá a despesa?",
-      "ground_truth": "Sim, é essencial que o contrato especifique o crédito pelo qual correrá a despesa, com a indicação da classificação funcional programática e da categoria econômica.",
+      "reference": "Sim, é essencial que o contrato especifique o crédito pelo qual correrá a despesa, com a indicação da classificação funcional programática e da categoria econômica.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 114,
@@ -1268,7 +1268,7 @@
     },
     {
       "question": "Quais elementos relacionados a prazos devem ser incluídos no contrato resultante de uma licitação?",
-      "ground_truth": "Elementos relacionados a prazos a serem incluídos são: prazos de início das etapas de execução, conclusão, entrega, observação e recebimento definitivo (quando for o caso); prazo para resposta ao pedido de repactuação de preços (quando for o caso); e prazo para resposta ao pedido de restabelecimento do equilíbrio econômico-financeiro (quando for o caso).",
+      "reference": "Elementos relacionados a prazos a serem incluídos são: prazos de início das etapas de execução, conclusão, entrega, observação e recebimento definitivo (quando for o caso); prazo para resposta ao pedido de repactuação de preços (quando for o caso); e prazo para resposta ao pedido de restabelecimento do equilíbrio econômico-financeiro (quando for o caso).",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 114,
@@ -1277,7 +1277,7 @@
     },
     {
       "question": "Além do preço e condições de pagamento, quais critérios relacionados a valores e atualizações devem constar no contrato?",
-      "ground_truth": "Devem constar os critérios, a data-base e a periodicidade do reajustamento de preços e os critérios de atualização monetária entre a data do adimplemento das obrigações e a do efetivo pagamento.",
+      "reference": "Devem constar os critérios, a data-base e a periodicidade do reajustamento de preços e os critérios de atualização monetária entre a data do adimplemento das obrigações e a do efetivo pagamento.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 113,
@@ -1286,7 +1286,7 @@
     },
     {
       "question": "A consulta ao CFIL/RS deve ser efetuada previamente à assinatura dos contratos?",
-      "ground_truth": "Sim, a consulta ao CFIL/RS deve ser efetuada também previamente à assinatura dos contratos, bem como nos casos de dispensa ou de inexigibilidade de licitação.",
+      "reference": "Sim, a consulta ao CFIL/RS deve ser efetuada também previamente à assinatura dos contratos, bem como nos casos de dispensa ou de inexigibilidade de licitação.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 117,
@@ -1295,7 +1295,7 @@
     },
     {
       "question": "A retirada de pendências de Municípios e órgãos municipais no Cadastro Informativo – CADIN/RS compete ao servidor que efetuou a inclusão?",
-      "ground_truth": "Não, a retirada/baixa é feita somente pelo Contador Seccional.",
+      "reference": "Não, a retirada/baixa é feita somente pelo Contador Seccional.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 172,
@@ -1304,7 +1304,7 @@
     },
     {
       "question": "Quais são as formas eletrônicas de consulta ao CFIL/RS, conforme o manual?",
-      "ground_truth": "A consulta ao CFIL/RS poderá ser realizada por meio eletrônico, através do sistema FPE/AFE ou do sítio www.sefaz.rs.gov.br.",
+      "reference": "A consulta ao CFIL/RS poderá ser realizada por meio eletrônico, através do sistema FPE/AFE ou do sítio www.sefaz.rs.gov.br.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 117,
@@ -1313,7 +1313,7 @@
     },
     {
       "question": "O que o servidor responsável pelo exame de um processo deve fazer ao tomar ciência de que existe um registro no CFIL/RS relacionado a ele?",
-      "ground_truth": "Quando houver registro no CFIL/RS, o servidor deverá abster-se de dar prosseguimento ao expediente, comunicando o fato à pessoa física ou jurídica responsável pela pendência, entregando-lhe o original do comprovante da consulta mediante recibo e anexando cópia ao respectivo processo.",
+      "reference": "Quando houver registro no CFIL/RS, o servidor deverá abster-se de dar prosseguimento ao expediente, comunicando o fato à pessoa física ou jurídica responsável pela pendência, entregando-lhe o original do comprovante da consulta mediante recibo e anexando cópia ao respectivo processo.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 119,
@@ -1322,7 +1322,7 @@
     },
     {
       "question": "Para a concessão de adiantamento de numerário, é necessária a expedição da requisição de adiantamento?",
-      "ground_truth": "Sim, para a concessão do adiantamento de numerário, é necessária a expedição, pelo ordenador de despesa, da requisição de adiantamento de numerário.",
+      "reference": "Sim, para a concessão do adiantamento de numerário, é necessária a expedição, pelo ordenador de despesa, da requisição de adiantamento de numerário.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 120,
@@ -1331,7 +1331,7 @@
     },
     {
       "question": "A requisição de adiantamento de numerário deve conter o nome e matrícula do servidor a quem o adiantamento deve ser feito?",
-      "ground_truth": "Sim, a requisição de adiantamento de numerário deverá conter o nome, matrícula, cargo, função, remuneração do cargo e/ou função, repartição, número do CPF e endereços residencial e profissional do servidor a quem deve ser feito o adiantamento.",
+      "reference": "Sim, a requisição de adiantamento de numerário deverá conter o nome, matrícula, cargo, função, remuneração do cargo e/ou função, repartição, número do CPF e endereços residencial e profissional do servidor a quem deve ser feito o adiantamento.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 120,
@@ -1340,7 +1340,7 @@
     },
     {
       "question": "Quem deve expedir a requisição de adiantamento de numerário para sua concessão?",
-      "ground_truth": "A requisição de adiantamento de numerário deve ser expedida pelo ordenador de despesa.",
+      "reference": "A requisição de adiantamento de numerário deve ser expedida pelo ordenador de despesa.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 120,
@@ -1349,7 +1349,7 @@
     },
     {
       "question": "Quais informações sobre o servidor devem constar na requisição de adiantamento de numerário?",
-      "ground_truth": "A requisição de adiantamento deve conter o nome, matrícula, cargo, função, remuneração do cargo e/ou função, repartição, número do CPF e endereços residencial e profissional do servidor.",
+      "reference": "A requisição de adiantamento deve conter o nome, matrícula, cargo, função, remuneração do cargo e/ou função, repartição, número do CPF e endereços residencial e profissional do servidor.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 120,
@@ -1358,7 +1358,7 @@
     },
     {
       "question": "A legislação sobre substituição tributária e retenções na fonte pagadora é considerada simples?",
-      "ground_truth": "Não, a legislação sobre a substituição tributária e as retenções de tributos na fonte pagadora é bastante extensa e complexa.",
+      "reference": "Não, a legislação sobre a substituição tributária e as retenções de tributos na fonte pagadora é bastante extensa e complexa.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 122,
@@ -1367,7 +1367,7 @@
     },
     {
       "question": "O contratante de serviços de Pessoa Física ou MEI deve incluir as informações na SEFIP/GFIP?",
-      "ground_truth": "Sim, o contratante deve incluir na SEFIP/GFIP as informações referentes aos serviços de Pessoa Física e MEI.",
+      "reference": "Sim, o contratante deve incluir na SEFIP/GFIP as informações referentes aos serviços de Pessoa Física e MEI.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 124,
@@ -1376,7 +1376,7 @@
     },
     {
       "question": "Que informações sobre serviços de Pessoa Física e MEI o contratante deve incluir na SEFIP/GFIP?",
-      "ground_truth": "O contratante deve incluir na SEFIP/GFIP as informações referentes aos serviços de Pessoa Física e MEI.",
+      "reference": "O contratante deve incluir na SEFIP/GFIP as informações referentes aos serviços de Pessoa Física e MEI.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 124,
@@ -1385,7 +1385,7 @@
     },
     {
       "question": "Qual o fluxo de informações para a Obrigação Acessória de serviços de Pessoa Física e MEI no âmbito da Administração Direta do RS, envolvendo CAGE e DPP/TE?",
-      "ground_truth": "No âmbito da Administração Direta do RS, a DTI/CAGE extrai os arquivos-base e envia para a DPP/TE, que os consolida com os arquivos de Folha de Pessoal do sistema RHE, enviando-os aos órgãos independentes e autônomos ou efetuando a transmissão para as Secretarias.",
+      "reference": "No âmbito da Administração Direta do RS, a DTI/CAGE extrai os arquivos-base e envia para a DPP/TE, que os consolida com os arquivos de Folha de Pessoal do sistema RHE, enviando-os aos órgãos independentes e autônomos ou efetuando a transmissão para as Secretarias.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 124,
@@ -1394,7 +1394,7 @@
     },
     {
       "question": "A Habilitação é uma etapa anterior à celebração de convênios com a Administração Pública Estadual?",
-      "ground_truth": "Sim, a Habilitação é uma etapa anterior à celebração de convênios com a Administração Pública Estadual.",
+      "reference": "Sim, a Habilitação é uma etapa anterior à celebração de convênios com a Administração Pública Estadual.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 125,
@@ -1403,7 +1403,7 @@
     },
     {
       "question": "É possível corrigir uma prestação de contas de convênio após sua apresentação inicial?",
-      "ground_truth": "Sim, se for necessário, poderá haver a juntada de documentos ou de informações complementares ao processo de prestação de contas.",
+      "reference": "Sim, se for necessário, poderá haver a juntada de documentos ou de informações complementares ao processo de prestação de contas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 131,
@@ -1412,7 +1412,7 @@
     },
     {
       "question": "Como se formaliza um convênio, conforme o capítulo V da IN CAGE nº 06/16?",
-      "ground_truth": "O convênio será formalizado por meio de um instrumento denominado Termo de Convênio, cujas cláusulas, condições, estrutura e conteúdo deverão observar as disposições constantes do art. 15 da IN supracitada.",
+      "reference": "O convênio será formalizado por meio de um instrumento denominado Termo de Convênio, cujas cláusulas, condições, estrutura e conteúdo deverão observar as disposições constantes do art. 15 da IN supracitada.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 130,
@@ -1421,7 +1421,7 @@
     },
     {
       "question": "Quais informações sobre despesas devem constar nos documentos comprobatórios emitidos pelos partícipes do convênio na execução?",
-      "ground_truth": "Os documentos comprobatórios das despesas realizadas devem ser emitidos em nome da entidade partícipe, com identificação do número e do nome do convênio.",
+      "reference": "Os documentos comprobatórios das despesas realizadas devem ser emitidos em nome da entidade partícipe, com identificação do número e do nome do convênio.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 128,
@@ -1430,7 +1430,7 @@
     },
     {
       "question": "Um bom planejamento é fundamental para garantir que as demais fases da parceria ocorram sem problemas?",
-      "ground_truth": "Sim, um bom planejamento é fundamental para garantir que as demais fases da parceria ocorram sem problemas.",
+      "reference": "Sim, um bom planejamento é fundamental para garantir que as demais fases da parceria ocorram sem problemas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 133,
@@ -1439,7 +1439,7 @@
     },
     {
       "question": "A alteração de vigência de uma parceria, formalizada em termo aditivo, configura alteração de objeto da parceria?",
-      "ground_truth": "Não, a alteração de vigência de uma parceria não configura alteração de objeto da parceria.",
+      "reference": "Não, a alteração de vigência de uma parceria não configura alteração de objeto da parceria.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 138,
@@ -1448,7 +1448,7 @@
     },
     {
       "question": "Por que é fundamental que o planejamento eficaz de um chamamento público responda a necessidades diagnosticadas na realidade?",
-      "ground_truth": "É fundamental que o planejamento eficaz de chamamento público responda a necessidades diagnosticadas na realidade - foco de políticas públicas e programas - para que a parceria responda a essas necessidades, tornando mais viável explicitar de maneira clara os objetivos e o modelo de intervenção idealizado no edital.",
+      "reference": "É fundamental que o planejamento eficaz de chamamento público responda a necessidades diagnosticadas na realidade - foco de políticas públicas e programas - para que a parceria responda a essas necessidades, tornando mais viável explicitar de maneira clara os objetivos e o modelo de intervenção idealizado no edital.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 134,
@@ -1457,7 +1457,7 @@
     },
     {
       "question": "Quais são alguns dos principais elementos de decisão que subsidiam a elaboração da minuta de edital de chamamento público?",
-      "ground_truth": "Incluem tipo de parceria, objeto da parceria, valor de referência/teto estimado, datas/prazos/condições de apresentação de propostas, caráter do edital, exigências de acessibilidade, prazo de validade do resultado, necessidade de contrapartida, possibilidade de atuação em rede/captação de recursos, uso/titularidade de bens públicos e experiência mínima da OSC.",
+      "reference": "Incluem tipo de parceria, objeto da parceria, valor de referência/teto estimado, datas/prazos/condições de apresentação de propostas, caráter do edital, exigências de acessibilidade, prazo de validade do resultado, necessidade de contrapartida, possibilidade de atuação em rede/captação de recursos, uso/titularidade de bens públicos e experiência mínima da OSC.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 135,
@@ -1466,7 +1466,7 @@
     },
     {
       "question": "O Roteiro de Elaboração de Proposta serve para contextualizar as OSCs proponentes acerca da parceria?",
-      "ground_truth": "Sim, o Roteiro de Elaboração da Proposta pode conter texto de apresentação que serve para contextualizar as OSCs proponentes acerca da parceria.",
+      "reference": "Sim, o Roteiro de Elaboração da Proposta pode conter texto de apresentação que serve para contextualizar as OSCs proponentes acerca da parceria.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 139,
@@ -1475,7 +1475,7 @@
     },
     {
       "question": "É recomendado que o nível de detalhamento exigido na proposta, na fase de chamamento público, seja superior ao exigido no Plano de Trabalho?",
-      "ground_truth": "Não, é recomendado que o nível de detalhamento exigido no edital quanto aos elementos mínimos da proposta, na fase de chamamento público, seja inferior ao nível de detalhamento que será exigido no Plano de Trabalho.",
+      "reference": "Não, é recomendado que o nível de detalhamento exigido no edital quanto aos elementos mínimos da proposta, na fase de chamamento público, seja inferior ao nível de detalhamento que será exigido no Plano de Trabalho.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 138,
@@ -1484,7 +1484,7 @@
     },
     {
       "question": "Quais elementos relacionados às ações podem ser recomendados para detalhamento na proposta das OSCs?",
-      "ground_truth": "Pode-se recomendar que sejam pormenorizados na proposta: resumo descritivo de cada ação; público-alvo e/ou expectativa de beneficiários alcançados; metodologia e perfil da equipe de trabalho; e duração das ações.",
+      "reference": "Pode-se recomendar que sejam pormenorizados na proposta: resumo descritivo de cada ação; público-alvo e/ou expectativa de beneficiários alcançados; metodologia e perfil da equipe de trabalho; e duração das ações.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 140,
@@ -1493,7 +1493,7 @@
     },
     {
       "question": "Além do detalhamento das ações, que outros elementos básicos de avaliação podem ser exigidos das propostas das OSCs, conforme o roteiro?",
-      "ground_truth": "De acordo com as peculiaridades do caso, pode-se avaliar a conveniência de exigir das propostas delimitação prévia de elementos básicos de avaliação, requerendo: indicação de parâmetro quantitativo ou qualitativo dos resultados; meta(s) relacionada(s) a cada ação; indicador(es) de aferição da(s) meta(s); e benefícios trazidos ao público-alvo.",
+      "reference": "De acordo com as peculiaridades do caso, pode-se avaliar a conveniência de exigir das propostas delimitação prévia de elementos básicos de avaliação, requerendo: indicação de parâmetro quantitativo ou qualitativo dos resultados; meta(s) relacionada(s) a cada ação; indicador(es) de aferição da(s) meta(s); e benefícios trazidos ao público-alvo.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 140,
@@ -1502,7 +1502,7 @@
     },
     {
       "question": "Os critérios de seleção em chamamentos públicos devem garantir a observância de princípios como isonomia e legalidade?",
-      "ground_truth": "Sim, os critérios de seleção devem ser estabelecidos, garantindo a observância de princípios, tais como isonomia, legalidade, impessoalidade, moralidade e igualdade.",
+      "reference": "Sim, os critérios de seleção devem ser estabelecidos, garantindo a observância de princípios, tais como isonomia, legalidade, impessoalidade, moralidade e igualdade.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 142,
@@ -1511,7 +1511,7 @@
     },
     {
       "question": "É recomendado definir uma régua de pontuação com apenas uma nota para os parâmetros de aferição dos critérios de seleção?",
-      "ground_truth": "Não, recomenda-se definir uma régua de no mínimo três e no máximo cinco notas para os parâmetros de aferição de notas.",
+      "reference": "Não, recomenda-se definir uma régua de no mínimo três e no máximo cinco notas para os parâmetros de aferição de notas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 144,
@@ -1520,7 +1520,7 @@
     },
     {
       "question": "Quais elementos devem ser indicados pelos critérios de seleção no edital de chamamento público?",
-      "ground_truth": "Devem indicar a dinâmica de avaliação, parâmetros de pontuação, métodos de cálculo, critérios de desempate, regras de desclassificação e, se for o caso, as diferentes fases do processo de avaliação das propostas.",
+      "reference": "Devem indicar a dinâmica de avaliação, parâmetros de pontuação, métodos de cálculo, critérios de desempate, regras de desclassificação e, se for o caso, as diferentes fases do processo de avaliação das propostas.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 142,
@@ -1529,7 +1529,7 @@
     },
     {
       "question": "Liste alguns dos critérios de desempate que podem ser pensados de maneira escalonada para casos de igualdade na pontuação, conforme o manual.",
-      "ground_truth": "Podem ser pensados como critérios de desempate: valor da nota em determinados critérios da seleção; maior tempo de constituição da OSC; ou, como última solução, sorteio.",
+      "reference": "Podem ser pensados como critérios de desempate: valor da nota em determinados critérios da seleção; maior tempo de constituição da OSC; ou, como última solução, sorteio.",
       "document": {
         "name": "Manual de Orientacao do Gestor Publico 5ed 2022.pdf",
         "page": 146,

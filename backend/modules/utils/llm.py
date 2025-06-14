@@ -9,12 +9,11 @@ from langchain_anthropic import ChatAnthropic
 from langchain_google_genai import ChatGoogleGenerativeAI 
 from langchain_cohere import ChatCohere, CohereEmbeddings
 
-CHAT_MODELS_TO_USE = settings.ModelSettings.CHAT_MODEL_CONFIG
-EMBEDDING_MODEL_TO_USE = settings.ModelSettings.EMBEDDING_MODEL_CONFIG
 
 
 # Reasoning LLM:
 def ReasoningLLM(config: Settings = settings):
+    CHAT_MODELS_TO_USE = config.ModelSettings.CHAT_MODEL_CONFIG
     if CHAT_MODELS_TO_USE['reasoning']['type'] == "openai":
         reasoning_model = ChatOpenAI(**CHAT_MODELS_TO_USE["reasoning"]["kwargs"])
     elif CHAT_MODELS_TO_USE["reasoning"]["type"] == "anthropic":
@@ -29,6 +28,7 @@ def ReasoningLLM(config: Settings = settings):
 
 # General Tasks LLM:
 def GeneralTasksLLM(config: Settings = settings):
+    CHAT_MODELS_TO_USE = config.ModelSettings.CHAT_MODEL_CONFIG
     if CHAT_MODELS_TO_USE['general_tasks']['type'] == "openai":
         general_tasks_model = ChatOpenAI(**CHAT_MODELS_TO_USE["general_tasks"]["kwargs"])
     elif CHAT_MODELS_TO_USE["general_tasks"]["type"] == "anthropic":
@@ -41,8 +41,22 @@ def GeneralTasksLLM(config: Settings = settings):
         raise ValueError(f"Invalid general tasks model type: {CHAT_MODELS_TO_USE['general_tasks']['type']}")
     return general_tasks_model
 
+
+# Evaluator LLM:
+def EvaluatorLLM(config: Settings = settings):
+    EVALUATOR_MODEL_TO_USE = config.ModelSettings.EVALUATOR_MODEL_CONFIG
+
+    if EVALUATOR_MODEL_TO_USE['type'] == "openai":
+        evaluator_model = ChatOpenAI(**EVALUATOR_MODEL_TO_USE["kwargs"])
+    elif EVALUATOR_MODEL_TO_USE["type"] == "anthropic":
+        evaluator_model = ChatAnthropic(**EVALUATOR_MODEL_TO_USE["kwargs"])
+    else:
+        raise ValueError(f"Invalid evaluator model type: {EVALUATOR_MODEL_TO_USE['type']}")
+    return evaluator_model
+
 # Set the embedding model to use
 def EmbeddingLLM(config: Settings = settings):
+    EMBEDDING_MODEL_TO_USE = config.ModelSettings.EMBEDDING_MODEL_CONFIG
     if EMBEDDING_MODEL_TO_USE["type"] == "openai":
         embedding_model = OpenAIEmbeddings(**EMBEDDING_MODEL_TO_USE["kwargs"])
     elif EMBEDDING_MODEL_TO_USE["type"] == "cohere":

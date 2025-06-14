@@ -155,6 +155,15 @@ async def chat_stream(message: str = Query(...), checkpoint_id: Optional[str] = 
         media_type='text/event-stream',
     )
 
+
+@app.get('/chat/get_documents/')
+async def get_documents(thread_id: str = Query(...)):
+    """
+    GET endpoint for getting the documents from the object storage.
+    """
+    return JSONResponse(status_code=500, content={"error": "Not implemented"})
+
+
 @app.delete('/chat/delete_chat/')
 async def delete_chat(thread_id: str = Form(...)):
     """
@@ -165,7 +174,6 @@ async def delete_chat(thread_id: str = Form(...)):
     return JSONResponse(status_code=200, content={"status": "success", "thread_id": thread_id})
     
 
-
 @app.get('/test/single_chat/')
 async def test_chat(message: str = Query(...)):
     """
@@ -175,7 +183,6 @@ async def test_chat(message: str = Query(...)):
 
     response = await get_single_chat_response(message)
     return JSONResponse(status_code=200, content={"answer": response['answer'], "documents": response['retrieved_documents']})
-
 
 
 
@@ -216,31 +223,3 @@ def upload_file(file: UploadFile = File(...), metadata: str = Form({'tipo_docume
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
     
-
-@app.get('/get_all_questions_from_user/')
-def get_all_questions_from_user(user_id: str = Query(...)):
-    """
-    GET endpoint for getting all questions from a user.
-    """
-    db = QaADatabase()
-    return db.get_all_questions_from_user(user_id)
-
-
-@app.post('/add_question/')
-def add_question(question: str = Form(...), answer: str = Form(...), document: str = Form(None), author: str = Form(None)):
-    """
-    POST endpoint for adding a question and answer to the database.
-    Receives: question, answer, document (nullable), and author.
-    """
-    try:
-        db = QaADatabase()
-        db.add_question(question, answer, document, author)
-        return JSONResponse(status_code=200, content={"status": "success"})
-    except Exception as e:
-        return JSONResponse(status_code=500, content={"error": str(e)})
-
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8000))
-    print(f"Listening on port {port}")
-    uvicorn.run("server.api:app", host="0.0.0.0", port=port)

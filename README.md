@@ -8,7 +8,7 @@ This is a basic project which objective is to build a RAG System for public affa
 ## General Architecture 
 
 <p align='center'>
-    <img src="SystemGeneralArchitecture.svg" alt="SystemArchitectue" width="600"/>
+    <img src="SystemGeneralArchitecture.svg" alt="SystemArchitectue" width="800"/>
 </p>
 
 

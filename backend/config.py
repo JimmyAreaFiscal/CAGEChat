@@ -47,6 +47,8 @@ class Settings(BaseSettings):
 
         GENERAL_TASKS_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("GENERAL_TASKS_CHAT_MODEL_CONFIG", {"type": "openai", 'kwargs': {"model": "gpt-4.1-nano-2025-04-14"}})
 
+        EVALUATOR_MODEL_CONFIG : Dict[str, Any] = extract_dict_from_env("EVALUATOR_CHAT_MODEL_CONFIG", {"type": "openai", 'kwargs': {"model": "gpt-4.1-2025-04-14"}})
+
         CHAT_MODEL_CONFIG : Dict[str, Any] = {
                                                 "reasoning": REASONING_MODEL_CONFIG,
                                                 "general_tasks": GENERAL_TASKS_MODEL_CONFIG
