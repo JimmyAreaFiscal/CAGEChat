@@ -6,6 +6,9 @@ It uses the modules of the CAGEChat backend to rebuild the graph and add it into
 Inside the test workflow, it adds N nodes based on the amount of test classes. 
 
 """
+import asyncio
+import json
+import random
 import sys, os
 
 # Add the CAGEChat directory to the Python path
@@ -123,6 +126,62 @@ def test_workflow_builder(config: Settings = settings, workflow: StateGraph = ch
 
 
 
+async def execute_test_pipeline(folder_path: str, amount_of_test_cases: int = 10):
+    test_workflow = test_workflow_builder().compile() 
 
+    scores = {
+        "question": [],
+        "reference": [],
+        "retrieved_contexts": [],
+        "context_precision": [],
+        "faithfulness": [],
+        "response_relevancy": [],
+        "response_groundness": [],
+        "answer_accuracy": [],
+        "context_relevancy": []
+    }
+
+    list_of_test_files = os.listdir(folder_path)
+    test_data = []
+    for test_file in list_of_test_files:
+        chunk = json.load(open(os.path.join(folder_path, test_file)))
+
+        if isinstance(chunk, list):
+            test_data.extend(chunk)
+        else:
+            test_data.append(chunk)
+    
+    random_sample = random.sample(test_data, amount_of_test_cases)
+    if random_sample:
+        for test_case in random_sample:
+            scores["question"].append(test_case["question"])
+            scores["reference"].append(test_case["reference"])
+            
+            try:
+                response = await test_workflow.ainvoke({"question": test_case["question"], "reference": test_case["reference"]})
+                scores["retrieved_contexts"].append(response["retrieved_documents"])
+                scores["context_precision"].append(response["context_precision"])
+                scores["faithfulness"].append(response["faithfulness"])
+                scores["response_relevancy"].append(response["response_relevancy"])
+                scores["response_groundness"].append(response["response_groundness"])
+                scores["answer_accuracy"].append(response["answer_accuracy"])
+                scores["context_relevancy"].append(response["context_relevancy"])
+            except Exception as e:
+                print(f"Error on test case {test_case['question']}: {e}")
+                continue
+            
+    return scores 
+
+
+if __name__ == "__main__":
+    scores = asyncio.run(execute_test_pipeline())
+    print(scores)
+            
+            
+        
+        
+    
+    
+    
 
 
