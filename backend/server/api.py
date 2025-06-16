@@ -114,6 +114,9 @@ async def generate_chat_responses(message: str, thread_id: Optional[str] = None,
 
     yield f'data: {{"type": "end"}} \n\n'
 
+@app.get("/health")
+def read_health():
+   return {"status": "ok"}
 
 
 async def get_single_chat_response(message: str):
