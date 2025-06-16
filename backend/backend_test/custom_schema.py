@@ -11,6 +11,7 @@ from ragas import SingleTurnSample
 class TestState(TypedDict):
     question: Annotated[str, LastValue]
     reference: Annotated[str, LastValue]
+    
     sample: Annotated[SingleTurnSample, LastValue]
 
     context_precision_score: Annotated[float, LastValue]

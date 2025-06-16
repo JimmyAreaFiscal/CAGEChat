@@ -11,6 +11,8 @@ import json
 import random
 import sys, os
 
+import numpy as np
+
 # Add the CAGEChat directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
@@ -21,17 +23,13 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../')))
 
 from config import Settings, settings
 from modules.graphs.graph_builder import chat_workflow_builder
-from modules.utils.general_utils import config_nodes
-
-from modules.utils.schemas import AgentState
 from backend_test.custom_schema import TestState
-
+from plotly import express as px
 from langgraph.graph import StateGraph, END 
 
 from langchain_core.messages import HumanMessage
 from ragas import SingleTurnSample
-from uuid import uuid4
-message = "Quais são os procedimentos administrativos no Estado do Rio Grande do Sul?"
+
 
 from backend_test.evaluation_modules.context_precision import evaluate_context_precision
 from backend_test.evaluation_modules.context_entity_recall import evaluate_context_entity_recall
@@ -157,20 +155,57 @@ async def execute_test_pipeline(folder_path: str, amount_of_test_cases: int = 10
             scores["question"].append(test_case["question"])
             scores["reference"].append(test_case["reference"])
             
-            try:
-                response = await test_workflow.ainvoke({"question": test_case["question"], "reference": test_case["reference"]})
-                scores["retrieved_contexts"].append(response["retrieved_documents"])
-                scores["context_precision"].append(response["context_precision"])
-                scores["faithfulness"].append(response["faithfulness"])
-                scores["response_relevancy"].append(response["response_relevancy"])
-                scores["response_groundness"].append(response["response_groundness"])
-                scores["answer_accuracy"].append(response["answer_accuracy"])
-                scores["context_relevancy"].append(response["context_relevancy"])
-            except Exception as e:
-                print(f"Error on test case {test_case['question']}: {e}")
-                continue
+            response = await test_workflow.ainvoke({"question": test_case["question"], "reference": test_case["reference"]})
+            
+            scores["retrieved_contexts"].append(response['sample'].retrieved_contexts)
+            scores["context_precision"].append(response["context_precision_score"])
+            scores["faithfulness"].append(response["faithfulness_score"])
+            scores["response_relevancy"].append(response["response_relevancy_score"])
+            scores["response_groundness"].append(response["response_groundness_score"])
+            scores["answer_accuracy"].append(response["answer_accuracy_score"])
+            scores["context_relevancy"].append(response["context_relevancy_score"])
+            
             
     return scores 
+
+
+def generate_score_statistics(scores: dict, metrics: list = ["context_precision", "faithfulness", "response_relevancy", "response_groundness", "answer_accuracy", "context_relevancy"]) -> dict:
+    """
+    This function is responsible for generating the statistics of the scores
+    """
+    metrics_statistics = {}
+    
+    # For each metric, generate the histogram, the boxplot, the mean, the median, the standard deviation, the minimum and the maximum
+    # Use plotly instead of matplotlib
+    for metric in metrics:
+        metrics_statistics[metric] = {
+            "histogram": px.histogram(scores[metric]),
+            "boxplot": px.box(scores[metric]),
+            "mean": np.mean(scores[metric]),
+            "median": np.median(scores[metric]),
+            "std": np.std(scores[metric]),
+            "min": np.min(scores[metric]),
+            "max": np.max(scores[metric])
+        }
+
+        # Show the plots in the terminal
+        print("===== Showing the metric: ", metric)
+        print(" > Mean: ", metrics_statistics[metric]["mean"])
+        print(" > Median: ", metrics_statistics[metric]["median"])
+        print(" > Standard Deviation: ", metrics_statistics[metric]["std"])
+        print(" > Minimum: ", metrics_statistics[metric]["min"])
+        print(" > Maximum: ", metrics_statistics[metric]["max"])
+
+        # Alter the size of the plots
+        metrics_statistics[metric]["histogram"].update_layout(width=600, height=400)
+        metrics_statistics[metric]["boxplot"].update_layout(width=600, height=400)
+
+        metrics_statistics[metric]["histogram"].show()
+        metrics_statistics[metric]["boxplot"].show()
+
+        
+    return metrics_statistics
+    
 
 
 if __name__ == "__main__":
