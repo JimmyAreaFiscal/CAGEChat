@@ -2,14 +2,15 @@ import os
 import yaml
 from langchain_core.prompts import ChatPromptTemplate 
 from langchain_core.messages import AIMessage 
+from config import Settings, settings
 from modules.utils.schemas import AgentState
-from modules.utils.llm import ChatLLM
+from modules.utils.llm import GeneralTasksLLM
 from modules.utils.templates import GENERATOR_PROMPT_TEMPLATE
 import logging
 
 logging.basicConfig(level=logging.INFO)
 
-def generate_answer(state: AgentState):
+def generate_answer(state: AgentState, config: Settings = settings):
     """ 
     This node is responsible for generating a response after receiving the documents and the rephrased question from the RAG model.
     """
@@ -20,7 +21,8 @@ def generate_answer(state: AgentState):
     qa_context = state['qa_context']
     rephrased_question = state['rephrased_question']
 
-    llm = ChatLLM
+    llm = GeneralTasksLLM(config)
+
     prompt = ChatPromptTemplate.from_template(GENERATOR_PROMPT_TEMPLATE)
     rag_chain = prompt | llm 
     response = rag_chain.invoke(
@@ -33,7 +35,7 @@ def generate_answer(state: AgentState):
     logging.info(f"generate_answer: Generated answer: {generation}")
     return state 
 
-def cannot_answer(state: AgentState):
+def cannot_answer(state: AgentState, config: Settings = settings):
     """ 
     This node is responsible for generating a response when the RAG model does not find any relevant documents.
     """
@@ -49,7 +51,7 @@ def cannot_answer(state: AgentState):
     state['agent_think'] = "Desculpe, não consigo responder a essa questão por não ter encontrado documentos relevantes. Por favor, reformule a questão."
     return state 
 
-def off_topic_response(state: AgentState):
+def off_topic_response(state: AgentState, config: Settings = settings):
     """ 
     This node is responsible for generating a response when the question is not related to the available topics.
     """

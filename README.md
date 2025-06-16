@@ -4,6 +4,15 @@ Welcome to my CAGEChat Project!
 
 This is a basic project which objective is to build a RAG System for public affais for the Contadorria e Auditoria Geral do Estado do Rio Grande do Sul (CAGE-RS). 
 
+
+## General Architecture 
+
+<p align='center'>
+    <img src="SystemGeneralArchitecture.svg" alt="SystemArchitectue" width="800"/>
+</p>
+
+
+
 The repo contains two parts of the project: 
 
 ## Backend 

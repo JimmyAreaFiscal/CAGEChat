@@ -24,18 +24,30 @@ from modules.query_refine.question_decomposition import question_decomposition, 
 from modules.query_refine.question_router import on_topic_router
 from modules.answer_generation.answer_routers import proceed_to_answer_router
 from modules.utils.schemas import InputDocument
-def chat_workflow_builder() -> StateGraph:
+from modules.utils.general_utils import config_nodes
+from config import Settings, settings
+
+
+def chat_workflow_builder(config: Settings = settings) -> StateGraph:
     """
     This workflow is responsible for the main workflow of the system, responsible for the answer generation.
+
+    Optionally accepts a Settings parameter to allow configuration of LLMs and other components.
+    Pass the Settings object to all nodes/functions that require it.
+    Example:
+        def chat_workflow_builder(settings: Settings = default_settings) -> StateGraph:
+            ...
+            chat_workflow.add_node("generate_answer", lambda state: generate_answer(state, llm=GeneralTasksLLM(settings)))
+            ...
     """
     # Conversation workflow
     chat_workflow = StateGraph(AgentState)
 
     # Start with query refinement and filtering
-    chat_workflow.add_node("question_rewriter", question_rewriter)
-    chat_workflow.add_node("question_classifier", question_classifier)
-    chat_workflow.add_node("off_topic_response", off_topic_response)
-    chat_workflow.add_node("question_decomposition", question_decomposition)
+    chat_workflow.add_node("question_rewriter", config_nodes(question_rewriter, config))
+    chat_workflow.add_node("question_classifier", config_nodes(question_classifier, config))
+    chat_workflow.add_node("off_topic_response", config_nodes(off_topic_response, config))
+    chat_workflow.add_node("question_decomposition", config_nodes(question_decomposition, config))
     chat_workflow.set_entry_point("question_rewriter")
     chat_workflow.add_edge("question_rewriter", "question_classifier")
     chat_workflow.add_conditional_edges(
@@ -48,9 +60,9 @@ def chat_workflow_builder() -> StateGraph:
     )
 
     # Then, give an Q&A context to the answer generation
-    chat_workflow.add_node("subquestion_qa_retrieval", subquestion_qa_retrieval)
-    chat_workflow.add_node("generate_answer", generate_answer)
-    chat_workflow.add_node("cannot_answer", cannot_answer)
+    chat_workflow.add_node("subquestion_qa_retrieval", config_nodes(subquestion_qa_retrieval, config))
+    chat_workflow.add_node("generate_answer", config_nodes(generate_answer, config))
+    chat_workflow.add_node("cannot_answer", config_nodes(cannot_answer, config))
     chat_workflow.add_edge("question_decomposition", "subquestion_qa_retrieval")
     chat_workflow.add_conditional_edges(
         "subquestion_qa_retrieval",
@@ -69,12 +81,12 @@ def chat_workflow_builder() -> StateGraph:
     return chat_workflow
 
 
-def upload_documents_workflow_builder() -> StateGraph:
+def upload_documents_workflow_builder(config: Settings = settings) -> StateGraph:
     """
     This workflow is responsible for the upload of documents.
     """
     upload_workflow = StateGraph(InputDocument)
-    upload_workflow.add_node("upload_documents", upload_documents)
+    upload_workflow.add_node("upload_documents", config_nodes(upload_documents, config))
     upload_workflow.add_edge("upload_documents", END)
     upload_workflow.set_entry_point("upload_documents")
     return upload_workflow

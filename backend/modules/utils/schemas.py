@@ -13,7 +13,7 @@ class AgentState(TypedDict):
     subquestions: List[str]
 
     qa_context: List[Dict[Literal['question', 'answer', 'document'], Any]]
-
+    retrieved_documents: List[Document]
     agent_think: str
     on_topic: str 
     rephrased_question: str 

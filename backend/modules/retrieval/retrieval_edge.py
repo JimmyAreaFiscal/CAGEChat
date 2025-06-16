@@ -1,10 +1,11 @@
 import logging
 
+from config import Settings, settings
 from modules.utils.schemas import RetrievalState
 
 logging.basicConfig(level=logging.INFO)
 
-def proceed_retrieval_router(state: RetrievalState):
+def proceed_retrieval_router(state: RetrievalState, config: Settings = settings):
     logging.info("Entering proceed_retrieval_router")
     rephrase_count = state.get('rephrase_count', 0)
     if state.get('proceed_to_generate', False):

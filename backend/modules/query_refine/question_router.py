@@ -6,11 +6,11 @@ This module is responsible for routing the question to the correct node.
 
 from modules.utils.schemas import AgentState
 import logging
-
+from config import Settings, settings
 logging.basicConfig(level=logging.INFO)
 
 
-def on_topic_router(state: AgentState) -> AgentState:
+def on_topic_router(state: AgentState, config: Settings = settings) -> AgentState:
     logging.info("Entering on_topic_router")
     on_topic = state.get('on_topic', 'Não').strip().lower() 
     if on_topic == 'sim':

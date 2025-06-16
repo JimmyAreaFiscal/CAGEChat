@@ -13,7 +13,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-ALLOWED_DOCUMENT_TYPES = ['manuais', 'leis', 'jurisprudencia']
+ALLOWED_DOCUMENT_TYPES = ['manual', 'guia', 'livro', 'lei', 'instrução normativa', 'norma', 'jurisprudência', 'parecer']
 
 
 class CustomLoader:

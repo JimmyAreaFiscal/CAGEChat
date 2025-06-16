@@ -6,17 +6,18 @@ import tempfile
 import os
 import json
 from langchain_core.messages import HumanMessage, AIMessageChunk
-from modules.graphs.graph import chat_graph, upload_graph
-from config import settings
+from modules.graphs.graph import chat_graph, upload_graph, memory
+
+from config import Settings, settings
 from modules.database.database import QaADatabase
 import uvicorn
 
-FINAL_NODES = settings.FINAL_NODES
+FINAL_NODES = settings.GraphSettings.FINAL_NODES
 
 app = FastAPI()
 
 app.add_middleware(
-    **settings.CORS_CONFIG
+    **settings.ApiSettings.CORS_CONFIG
 )
 
 def serialise_ai_message_chunk(chunk):
@@ -27,20 +28,26 @@ def serialise_ai_message_chunk(chunk):
             f'Object of type {type(chunk).__name__} is not correctly formatted for serialisation'
         ) 
 
-async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = None):
-    is_new_conversation = checkpoint_id is None
+async def generate_chat_responses(message: str, thread_id: Optional[str] = None, checkpoint_id: Optional[str] = None):
+    is_new_conversation = thread_id is None
+    
     if is_new_conversation:
-        new_checkpoint_id = str(uuid4())
-        config = {"configurable": {'thread_id': new_checkpoint_id}}
+        new_thread_id = str(uuid4())
+        config = {"configurable": {'thread_id': new_thread_id}}
+        
         events = chat_graph.astream_events(
             {"question": HumanMessage(content=message)},
             version='v2',
             config=config,
         )
-        payload = {"type": "checkpoint", "checkpoint_id": new_checkpoint_id}
+        payload = {"type": "thread", "thread_id": new_thread_id}
         yield f"data: {json.dumps(payload)}\n\n"
+    
     else:
-        config = {"configurable": {'thread_id': checkpoint_id}}
+
+        config = {"configurable": {'thread_id': thread_id}}
+        if checkpoint_id:
+            config["configurable"]["checkpoint_id"] = checkpoint_id
         events = chat_graph.astream_events(
             {"question": HumanMessage(content=message)},
             version='v2',
@@ -54,21 +61,19 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
         event_type = event['event']
         
         name_agent = event['name']
-
+        final_agent = event['name'] in FINAL_NODES
         output = event['data'].get('output', {})
         if output and isinstance(output, dict):
             if output.get('tags', {}).get('avoid_spam', False):
                 continue
 
-        if output and name_agent == 'LangGraph':
+        elif output and name_agent == 'LangGraph':
             continue
         
-        if not final_agent and event_type == 'on_chain_start':  
+        # elif not final_agent and event_type == 'on_chain_start':  
             # Only streams tokens when it is the final node. Otherwise, return agent_thinking
-            if event['name'] in FINAL_NODES:
-                final_agent = event['name']
 
-        if not final_agent and event_type == 'on_chain_end' and isinstance(event['data']['output'], dict) and 'agent_think' in event['data']['output'].keys():
+        elif not final_agent and event_type == 'on_chain_end' and isinstance(event['data']['output'], dict) and 'agent_think' in event['data']['output'].keys():
             msg = event['data']['output']['agent_think']
             name_agent = event['name']
 
@@ -89,12 +94,22 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
 
         
             
-        if final_agent and event_type == 'on_chat_model_stream':
+        elif final_agent and event_type == 'on_chat_model_stream':
             
             chunk_content = serialise_ai_message_chunk(event['data']['chunk'])
             safe_content = chunk_content.replace("'", "\\").replace("\n", "\\n")
 
-            payload = {"type": "final_answer", "agent": name_agent, "content": safe_content}
+            payload = {"type": "final_answer", "agent": name_agent, "content": safe_content, "streaming": True}
+            yield f"data: {json.dumps(payload)}\n\n"
+
+        elif final_agent and event_type == 'on_chain_stream':
+            msg = event['data']['chunk']['messages'][-1].content
+            name_agent = event['name']
+
+            safe_content = msg.replace("'", "\\").replace("\n", "\\n")
+
+            payload = {"type": "final_answer", "agent": name_agent, "content": safe_content, "streaming": False}
+            
             yield f"data: {json.dumps(payload)}\n\n"
 
     yield f'data: {{"type": "end"}} \n\n'
@@ -103,14 +118,37 @@ async def generate_chat_responses(message: str, checkpoint_id: Optional[str] = N
 def read_health():
    return {"status": "ok"}
 
-@app.get('/get_chat_history/')
-def get_chat_history(user_id: str = Query(...)):
+
+async def get_single_chat_response(message: str):
     """
-    GET endpoint for getting the chat history.
+    This function is responsible for getting a single chat response.
     """
-    raise NotImplementedError("This endpoint is not implemented yet.")
+
+    thread_id = str(uuid4())
+    config = {"configurable": {'thread_id': thread_id}}
+    response = await chat_graph.ainvoke(
+        {"question": HumanMessage(content=message)},
+        config=config
+    )
+
+    DB_URI = settings.DatabaseSettings.DATABASE_URL
+    with memory:
+
+        # Delete the checkpoint from the MemorySaver
+        await memory.adelete_thread(thread_id)
     
-@app.get('/chat_stream/')
+    return response
+
+
+async def get_last_checkpoint_id(thread_id: str):
+
+    DB_URI = settings.DatabaseSettings.DATABASE_URL 
+    with memory:
+        history = await memory.get_tuples(thread_id)
+        return history[-1][0]
+
+
+@app.get('/chat/chat_stream/')
 async def chat_stream(message: str = Query(...), checkpoint_id: Optional[str] = Query(None)):
     """
     GET endpoint for answer generation using chat_graph. Streams responses.
@@ -119,6 +157,37 @@ async def chat_stream(message: str = Query(...), checkpoint_id: Optional[str] = 
         generate_chat_responses(message, checkpoint_id),
         media_type='text/event-stream',
     )
+
+
+@app.get('/chat/get_documents/')
+async def get_documents(thread_id: str = Query(...)):
+    """
+    GET endpoint for getting the documents from the object storage.
+    """
+    return JSONResponse(status_code=500, content={"error": "Not implemented"})
+
+
+@app.delete('/chat/delete_chat/')
+async def delete_chat(thread_id: str = Form(...)):
+    """
+    DELETE endpoint for deleting a chat.
+    """
+    with memory:
+        await memory.delete_thread(thread_id)
+    return JSONResponse(status_code=200, content={"status": "success", "thread_id": thread_id})
+    
+
+@app.get('/test/single_chat/')
+async def test_chat(message: str = Query(...)):
+    """
+    GET endpoint for testing the chat. This returns a single chat response, without streaming.
+    Also, it returns in the SDK format, with the documents and the answer. 
+    """
+
+    response = await get_single_chat_response(message)
+    return JSONResponse(status_code=200, content={"answer": response['answer'], "documents": response['retrieved_documents']})
+
+
 
 
 @app.post('/upload_file/')
@@ -157,31 +226,3 @@ def upload_file(file: UploadFile = File(...), metadata: str = Form({'tipo_docume
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
     
-
-@app.get('/get_all_questions_from_user/')
-def get_all_questions_from_user(user_id: str = Query(...)):
-    """
-    GET endpoint for getting all questions from a user.
-    """
-    db = QaADatabase()
-    return db.get_all_questions_from_user(user_id)
-
-
-@app.post('/add_question/')
-def add_question(question: str = Form(...), answer: str = Form(...), document: str = Form(None), author: str = Form(None)):
-    """
-    POST endpoint for adding a question and answer to the database.
-    Receives: question, answer, document (nullable), and author.
-    """
-    try:
-        db = QaADatabase()
-        db.add_question(question, answer, document, author)
-        return JSONResponse(status_code=200, content={"status": "success"})
-    except Exception as e:
-        return JSONResponse(status_code=500, content={"error": str(e)})
-
-
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    print(f"Listening on port {port}")
-    uvicorn.run("server.api:app", host="0.0.0.0", port=port)
