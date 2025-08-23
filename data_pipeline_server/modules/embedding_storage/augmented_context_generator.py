@@ -12,8 +12,6 @@ from modules.utils.templates import GENERATE_RESUME_PROMPT_TEMPLATE, GENERATE_QU
 logging.basicConfig(level=logging.INFO)
 
 
-
-
 async def generate_resume(state: InputDocument, config: Settings = settings) -> InputDocument:
     logging.info("Entering generate_resume")
 

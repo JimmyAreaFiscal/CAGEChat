@@ -19,8 +19,9 @@ from pydantic import Field
 from pydantic_settings import BaseSettings
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Callable
+from dotenv import load_dotenv
 
-
+load_dotenv()
 
 def extract_dict_from_env(env_var: str, default_value: Dict[str, Any] = {}) -> Dict[str, Any]:
     """
