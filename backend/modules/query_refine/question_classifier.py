@@ -12,7 +12,7 @@ from langchain_core.messages import SystemMessage, HumanMessage
 from config import Settings, settings
 from modules.utils.schemas import AgentState, GradeQuestion
 from modules.utils.llm import GeneralTasksLLM
-from modules.utils.templates import QUESTION_CLASSIFIER_TEMPLATE
+from .prompts import QUESTION_CLASSIFIER_TEMPLATE
 import logging
 
 logging.basicConfig(level=logging.INFO)

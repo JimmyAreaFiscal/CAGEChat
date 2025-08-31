@@ -15,7 +15,6 @@ In order to modularize it better, node codes should be placed on specific folder
 
 from langgraph.graph import StateGraph, END 
 
-from modules.upload_docs.loader_node import upload_documents
 from modules.utils.schemas import AgentState
 from modules.answer_generation.answer_generator import generate_answer, off_topic_response, cannot_answer
 from modules.query_refine.question_rewriter import question_rewriter
@@ -81,13 +80,4 @@ def chat_workflow_builder(config: Settings = settings) -> StateGraph:
     return chat_workflow
 
 
-def upload_documents_workflow_builder(config: Settings = settings) -> StateGraph:
-    """
-    This workflow is responsible for the upload of documents.
-    """
-    upload_workflow = StateGraph(InputDocument)
-    upload_workflow.add_node("upload_documents", config_nodes(upload_documents, config))
-    upload_workflow.add_edge("upload_documents", END)
-    upload_workflow.set_entry_point("upload_documents")
-    return upload_workflow
 

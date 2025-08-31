@@ -11,7 +11,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.messages import SystemMessage, HumanMessage, AIMessage 
 from modules.utils.schemas import AgentState
 from modules.utils.llm import GeneralTasksLLM
-from modules.utils.templates import QUESTION_REWRITER_TEMPLATE
+from .prompts import QUESTION_REWRITER_TEMPLATE
 from config import Settings, settings
 
 def question_rewriter(state: AgentState, config: Settings = settings) -> AgentState:

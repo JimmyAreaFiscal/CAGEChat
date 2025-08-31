@@ -16,7 +16,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 from config import Settings, settings
-from modules.utils.templates import DECOMPOSITION_PROMPT_TEMPLATE
+from .prompts import DECOMPOSITION_PROMPT_TEMPLATE
 from modules.utils.schemas import DecomposedQuestion, AgentState
 from modules.utils.llm import ReasoningLLM
 from modules.graphs.subgraph_builder import retrieval_workflow_builder

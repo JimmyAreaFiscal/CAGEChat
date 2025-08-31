@@ -19,6 +19,9 @@ from modules.utils.schemas import _avoid_spam
 from config import Settings, settings
 logging.basicConfig(level=logging.INFO)
 
+
+
+
 def retrieve(state: RetrievalState, config: Settings = settings):
     """
     This function is responsible for retrieving documents from the vector store.
@@ -27,8 +30,6 @@ def retrieve(state: RetrievalState, config: Settings = settings):
 
     """
     logging.info("Entering retrieve")
-
-    
 
     retrieval_question = state.get('retrieval_question', None)
 
